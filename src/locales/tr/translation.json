@@ -1,0 +1,46 @@
+{
+    "helloWorld": "Merhaba Dünya",
+    "about": {
+        "title": "Hakkımda",
+        "description": "17+ yıldır Kıdemli Yazılım Geliştirici olarak çalışıyorum ve yazılım geliştirme konusunda geniş deneyime sahibim. Nesne yönelimli programlama, yazılım desenleri, prensipleri, metodolojileri ve çeşitli geliştirme araçları ile web (ön yüz & arka yüz) ve android(xamarin) uygulamaları geliştirdim. Teknik ve analitik becerilerimi hem bağımsız hem de ekip olarak problem çözmede kullanıyorum. 2024 öncesi son altı yıl Angular, TypeScript, C#, HTML, CSS ve JavaScript teknolojileriyle çalıştım, şu anda Principal Frontend Developer olarak çalışıyorum."
+    },
+    "experience": {
+        "title": "Deneyim",
+        "etiya": {
+            "company": "Etiya",
+            "position": "Baş Yazılım Uzmanı • 2024 - Günümüz"
+        },
+        "virtudev": {
+            "company": "VirtuDev",
+            "position": "Takım Lideri • 2018 - 2024"
+        }
+    },
+    "footer": {
+        "copyright": "Samet ÇELİKBIÇAK. Tüm hakları saklıdır."
+    },
+    "header": {
+        "name": "Samet ÇELİKBIÇAK",
+        "about": "Hakkımda",
+        "experience": "Deneyim",
+        "projects": "Projeler"
+    },
+    "profile": {
+        "name": "Samet ÇELİKBIÇAK",
+        "title": "Baş Yazılım Uzmanı"
+    },
+    "projects": {
+        "title": "Projeler",
+        "enum2array": {
+            "title": "Enum2Array",
+            "description": "Enum'ları diziye dönüştürmeye yardımcı olan bir fonksiyon. Bir enum tanımlayın ve bu fonksiyon ile enum'u diziye dönüştürün."
+        },
+        "tsci": {
+            "title": "TSCI CLI",
+            "description": "Farklı paketleyicilerle HTML & CSS & TypeScript projeleri oluşturmak için TypeScript CLI."
+        },
+        "storage-function": {
+            "title": "Storage Function",
+            "description": "Tarayıcı depolarını yönetmek için bir fonksiyon. Anahtar-değer çiftlerini session veya local storage'a kaydedebilir, depolardan anahtar-değer çiftlerini alabilirsiniz. Tüm fonksiyonlar için detaylara bakabilirsiniz."
+        }
+    }
+}

@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 function Header() {
+  const { t } = useTranslation();
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-b-[#243647] px-2 sm:px-8 py-4">
       <div className="flex items-center gap-3 text-text-primary">
@@ -6,7 +9,7 @@ function Header() {
           <img src="./sc.png" alt="Logo" />
         </div>
         <h2 className="text-text-primary text-xl font-bold leading-tight">
-          Samet ÇELİKBIÇAK
+          {t('header.name')}
         </h2>
       </div>
       <div className="flex items-center gap-4">
@@ -15,19 +18,19 @@ function Header() {
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
             href="#about"
           >
-            About
+            {t('header.about')}
           </a>
           <a
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
             href="#experience"
           >
-            Experience
+            {t('header.experience')}
           </a>
           <a
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
             href="#projects"
           >
-            Projects
+            {t('header.projects')}
           </a>
         </nav>
       </div>

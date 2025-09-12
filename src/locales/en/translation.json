@@ -1,0 +1,46 @@
+{
+    "helloWorld": "Hello World",
+    "about": {
+        "title": "About",
+        "description": "I have 17+ years of working as a Senior Software Developer with extensive experience in software development, including object oriented programming, patterns, principles, software methodologies with various development tools, web (front-end & back-end) and android(xamarin) applications. I am using technical and analytical skills to problem solve both independently, as well as part of a group. I worked with Angular, TypeScript, C#, HTML, CSS and JavaScript technologies last six years before 2024, nowadays working Principal Frontend Developer."
+    },
+    "experience": {
+        "title": "Experience",
+        "etiya": {
+            "company": "Etiya",
+            "position": "Principal Software Specialist • 2024 - Present"
+        },
+        "virtudev": {
+            "company": "VirtuDev",
+            "position": "Team Lead • 2018 - 2024"
+        }
+    },
+    "footer": {
+        "copyright": "Samet ÇELİKBIÇAK. All rights reserved."
+    },
+    "header": {
+        "name": "Samet ÇELİKBIÇAK",
+        "about": "About",
+        "experience": "Experience",
+        "projects": "Projects"
+    },
+    "profile": {
+        "name": "Samet ÇELİKBIÇAK",
+        "title": "Principal Software Specialist"
+    },
+    "projects": {
+        "title": "Projects",
+        "enum2array": {
+            "title": "Enum2Array",
+            "description": "A function to help converting enums to an array. Define an enum then use this function to convert that enum to an array."
+        },
+        "tsci": {
+            "title": "TSCI CLI",
+            "description": "TypeScript CLI for creating HTML & CSS & TypeScript project with different bundlers."
+        },
+        "storage-function": {
+            "title": "Storage Function",
+            "description": "A function to manipulate browser storages. Such as store a key value pair to session or local storage, getting key value pairs from local or session storage. You can check all available functions for more details."
+        }
+    }
+}

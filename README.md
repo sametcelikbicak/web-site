@@ -1,43 +1,93 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Personal Portfolio Website
 
-Currently, two official plugins are available:
+This is a modern, multilingual personal portfolio website built with **React**, **TypeScript**, and **Vite**. It features a responsive design, dark/light theme toggle, and showcases professional experience and projects. The site supports both English and Turkish languages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- ⚡ Built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Vite](https://vitejs.dev/)
+- 🎨 Uses [TailwindCSS](https://tailwindcss.com/) for styling and theming
+- 🌗 Dark/Light theme toggle (context-based)
+- 🌍 Multilingual support (English & Turkish) via [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/)
+- 🧑‍💻 Professional experience and project showcase
+- 📦 Modular component structure
+- 🧹 Code linting with [ESLint](https://eslint.org/) and formatting with [Prettier](https://prettier.io/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
 ```
+src/
+  components/      # Main UI components (Header, Profile, About, Experience, Projects, Footer)
+  hooks/           # Custom React hooks (e.g., useTheme)
+  locales/         # Translation files (en, tr)
+  types/           # TypeScript types (theme)
+  theme.tsx        # Theme context/provider
+  i18n.tsx         # i18next configuration
+  index.css        # TailwindCSS and custom styles
+  App.tsx          # Main app component
+  main.tsx         # App entry point
+public/
+  sc.png           # Profile/logo image
+  icons/           # Additional icons
+index.html         # Main HTML file
+vite.config.ts     # Vite configuration
+eslint.config.js   # ESLint configuration
+tsconfig*.json     # TypeScript configs
+```
+
+## Scripts
+
+| Command   | Description                |
+|-----------|----------------------------|
+| `dev`     | Start development server   |
+| `build`   | Build for production       |
+| `preview` | Preview production build   |
+| `lint`    | Run ESLint                 |
+| `format`  | Format code with Prettier  |
+
+## Main Packages
+
+- **react**, **react-dom**: UI library
+- **typescript**: Type safety
+- **vite**: Fast build tool
+- **tailwindcss**, **@tailwindcss/vite**: Utility-first CSS framework
+- **i18next**, **react-i18next**: Internationalization
+- **eslint**, **prettier**: Linting & formatting
+
+## ESLint & Formatting
+
+ESLint is configured for React, TypeScript, and hooks best practices. Prettier is used for code formatting. See `eslint.config.js` for details.
+
+## Theming
+
+Theme context is provided via `ThemeProvider` (`src/theme.tsx`). Use the theme toggle button in the header to switch between dark and light modes.
+
+## Internationalization
+
+Translations are managed in `src/locales/en/translation.json` and `src/locales/tr/translation.json`. The language can be switched via the header dropdown.
+
+## Experience & Projects
+
+Professional experience and projects are listed in the UI and translation files. Project images are loaded from external sources or the `public` folder.
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## License
+
+MIT
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 

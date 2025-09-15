@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 function Experience() {
   const { t } = useTranslation();
   return (
-    <section className="scroll-mt-20 text-left" id="experience">
+    <section className="scroll-mt-20 text-left main-bg" id="experience">
       <h2 className="text-text-primary text-2xl sm:text-3xl font-bold leading-tight tracking-tight mb-8">
         {t('experience.title')}
       </h2>

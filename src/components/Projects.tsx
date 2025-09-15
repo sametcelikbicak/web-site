@@ -29,14 +29,16 @@ function Projects() {
         {PROJECTS.map((project) => (
           <div
             key={project.key}
-            className="flex flex-col gap-4 bg-white rounded-lg overflow-hidden transition-shadow duration-300"
+            className="flex flex-col items-center main-bg rounded-lg overflow-hidden transition-shadow duration-300 p-6"
           >
-            <div
-              className="w-full bg-center bg-no-repeat aspect-video bg-cover"
-              style={{ backgroundImage: `url('${project.image}')` }}
-            ></div>
-            <div className="p-4 flex flex-col">
-              <p className="text-text-primary text-base sm:text-lg font-semibold leading-normal">
+            <img
+              src={project.image}
+              alt={t(`projects.${project.key}.title`)}
+              className="object-contain mb-4"
+              style={{ background: 'transparent' }}
+            />
+            <div className="flex flex-col items-center text-center">
+              <p className="text-text-primary text-base sm:text-lg font-semibold leading-normal mb-2">
                 {t(`projects.${project.key}.title`)}
               </p>
               <p className="text-text-secondary text-sm sm:text-base font-normal leading-normal">

@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useTheme } from '../theme';
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const { t, i18n } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   }
@@ -41,20 +43,26 @@ function Header() {
         </nav>
         <button
           className="cursor-pointer"
+          aria-label="Toggle theme"
+          onClick={toggleTheme}
+          style={{ fontSize: '1.5rem' }}
+        >{theme === 'light' ? '🌞' : '🌙'}</button>
+        <button
+          className="cursor-pointer"
           aria-label="Select language"
           onClick={() => setShowDropdown((prev) => !prev)}
           style={{ fontSize: '1.5rem' }}
         >{i18n.language === 'tr' ? '🇹🇷' : '🇬🇧'}</button>
         {showDropdown && (
-          <div className="absolute right-0 w-28 bg-white border border-gray-200 rounded shadow-lg z-10 flex flex-col top-14">
+          <div className="absolute right-0 w-28 header-bg border border-gray-200 rounded shadow-lg z-10 flex flex-col top-14">
             <button
               onClick={() => { changeLanguage('tr'); setShowDropdown(false); }}
-              className={`p-2 flex items-center gap-2 hover:bg-gray-100 ${i18n.language === 'tr' ? 'font-bold' : ''}`}
+              className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'tr' ? 'font-bold' : ''}`}
               aria-label="Türkçe"
             >🇹🇷 <span>Türkçe</span></button>
             <button
               onClick={() => { changeLanguage('en'); setShowDropdown(false); }}
-              className={`p-2 flex items-center gap-2 hover:bg-gray-100 ${i18n.language === 'en' ? 'font-bold' : ''}`}
+              className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'en' ? 'font-bold' : ''}`}
               aria-label="English"
             >🇬🇧 <span>English</span></button>
           </div>

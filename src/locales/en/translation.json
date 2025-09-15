@@ -1,19 +1,7 @@
 {
-    "helloWorld": "Hello World",
     "about": {
         "title": "About",
-        "description": "I have 17+ years of working as a Senior Software Developer with extensive experience in software development, including object oriented programming, patterns, principles, software methodologies with various development tools, web (front-end & back-end) and android(xamarin) applications. I am using technical and analytical skills to problem solve both independently, as well as part of a group. I worked with Angular, TypeScript, C#, HTML, CSS and JavaScript technologies last six years before 2024, nowadays working Principal Frontend Developer."
-    },
-    "experience": {
-        "title": "Experience",
-        "etiya": {
-            "company": "Etiya",
-            "position": "Principal Software Specialist • 2024 - Present"
-        },
-        "virtudev": {
-            "company": "VirtuDev",
-            "position": "Team Lead • 2018 - 2024"
-        }
+        "description": "I have been working in the software industry since 2007. During this time, I have held positions as Software Developer, Senior Software Developer, and Team Lead. I possess extensive experience in software development. I have developed web (frontend & backend) and Android (Xamarin) applications using object-oriented programming, software design patterns, principles, methodologies, and various development tools. I leverage my technical and analytical skills to solve problems both independently and as part of a team. Until 2024, I worked as a Fullstack Developer, and since then, I have continued my career as a Principal Software Specialist, focusing on Frontend development. Throughout my career, I have been working with technologies such as Angular, TypeScript, C#, HTML, CSS, JavaScript, and React."
     },
     "footer": {
         "copyright": "Samet ÇELİKBIÇAK. All rights reserved."
@@ -26,8 +14,9 @@
     },
     "profile": {
         "name": "Samet ÇELİKBIÇAK",
-        "title": "Principal Software Specialist"
+        "title": "Team Lead | Principal Software Specialist"
     },
+    "experience": "Experience",
     "projects": {
         "title": "Projects",
         "enum2array": {

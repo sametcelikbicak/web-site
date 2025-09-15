@@ -12,8 +12,8 @@ function Header() {
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-solid border-gray-200 dark:border-b-[#243647] px-6">
-      <div className="flex items-center gap-3 text-text-primary">
-        <div className="w-10 h10">
+      <div className="flex items-center gap-3 text-text-primary cursor-pointer" onClick={() => window.history.pushState({}, '', '/')}>
+        <div className="w-10 h-10">
           <img src="./sc.png" alt="Logo" />
         </div>
         <h2 className="text-text-primary text-xl font-bold leading-tight">

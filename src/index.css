@@ -48,3 +48,31 @@ body {
 .text-text-secondary {
   color: var(--text-secondary);
 }
+
+
+@media (max-width: 768px) {
+  header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hamburger-menu-overlay {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-menu-content {
+    width: 80vw;
+    max-width: 320px;
+    margin: auto;
+    position: relative;
+  }
+
+  .md\:flex {
+    display: none !important;
+  }
+
+  .md\:hidden {
+    display: flex !important;
+  }
+}

@@ -13,7 +13,7 @@ function Header() {
   };
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-solid border-gray-200 dark:border-b-[#243647] px-6 relative">
+    <header className="flex items-center justify-between whitespace-nowrap border-solid border-gray-200 dark:border-b-[#243647] px-6 py-4 sticky top-0 z-50 bg-white dark:bg-[var(--header-bg)]">
       <div
         className="flex items-center gap-3 text-text-primary cursor-pointer"
         onClick={() => window.history.pushState({}, '', '/')}

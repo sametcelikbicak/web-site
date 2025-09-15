@@ -8,8 +8,6 @@ import Projects from './components/Projects';
 import { ThemeProvider } from './theme';
 import './i18n';
 
-
-
 function App() {
   return (
     <ThemeProvider>
@@ -26,6 +24,5 @@ function App() {
     </ThemeProvider>
   );
 }
-
 
 export default App;

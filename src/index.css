@@ -1,52 +1,50 @@
 @import 'tailwindcss';
 
 :root {
-    --primary-color: #007bff;
-    --background-color: #f8f9fa;
-    --text-primary: #222;
-    --text-secondary: #555;
-    --header-bg: #fff;
+  --primary-color: #007bff;
+  --background-color: #f8f9fa;
+  --text-primary: #222;
+  --text-secondary: #555;
+  --header-bg: #fff;
 }
 
-[data-theme="dark"] {
-    --primary-color: #90cdf4;
-    --background-color: #181a20;
-    --text-primary: #f8f9fa;
-    --text-secondary: #cbd5e1;
-    --header-bg: #23272f;
+[data-theme='dark'] {
+  --primary-color: #90cdf4;
+  --background-color: #181a20;
+  --text-primary: #f8f9fa;
+  --text-secondary: #cbd5e1;
+  --header-bg: #23272f;
 }
-
 
 body {
-    background: var(--background-color) !important;
-    color: var(--text-primary);
+  background: var(--background-color) !important;
+  color: var(--text-primary);
 }
 
 .main-bg {
-    background: var(--background-color) !important;
+  background: var(--background-color) !important;
 }
 
-
 .header-bg {
-    background: var(--header-bg) !important;
+  background: var(--header-bg) !important;
 }
 
 .lang-hover {
-    transition: background 0.2s;
+  transition: background 0.2s;
 }
 
 .lang-hover:hover {
-    background: #f3f4f6;
+  background: #f3f4f6;
 }
 
-[data-theme="dark"] .lang-hover:hover {
-    background: #333a45 !important;
+[data-theme='dark'] .lang-hover:hover {
+  background: #333a45 !important;
 }
 
 .text-text-primary {
-    color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .text-text-secondary {
-    color: var(--text-secondary);
+  color: var(--text-secondary);
 }

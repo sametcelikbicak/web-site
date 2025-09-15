@@ -2,40 +2,40 @@ import { useTranslation } from 'react-i18next';
 
 const EXPERIENCES = [
   {
-    "company": "Etiya",
-    "position": "Principal Software Specialist",
-    "startDate": "02-2024",
-    "endDate": ""
+    company: 'Etiya',
+    position: 'Principal Software Specialist',
+    startDate: '02-2024',
+    endDate: '',
   },
   {
-    "company": "VirtuDev",
-    "position": "Team Lead | Senior Software Specialist",
-    "startDate": "06-2018",
-    "endDate": "01-2024"
+    company: 'VirtuDev',
+    position: 'Team Lead | Senior Software Specialist',
+    startDate: '06-2018',
+    endDate: '01-2024',
   },
   {
-    "company": "Univera Kurumsal Teknoloji Çözümleri",
-    "position": "Software Developer",
-    "startDate": "12-2015",
-    "endDate": "05-2018"
+    company: 'Univera Kurumsal Teknoloji Çözümleri',
+    position: 'Software Developer',
+    startDate: '12-2015',
+    endDate: '05-2018',
   },
   {
-    "company": "Agito Software & Consulting",
-    "position": "Software Developer",
-    "startDate": "09-2012",
-    "endDate": "09-2014"
+    company: 'Agito Software & Consulting',
+    position: 'Software Developer',
+    startDate: '09-2012',
+    endDate: '09-2014',
   },
   {
-    "company": "Doğanata Şirketler Grubu",
-    "position": "Software Developer",
-    "startDate": "03-2012",
-    "endDate": "08-2012"
+    company: 'Doğanata Şirketler Grubu',
+    position: 'Software Developer',
+    startDate: '03-2012',
+    endDate: '08-2012',
   },
   {
-    "company": "Birim Bilgi Teknolojileri",
-    "position": "Software Developer",
-    "startDate": "07-2007",
-    "endDate": "01-2012"
+    company: 'Birim Bilgi Teknolojileri',
+    position: 'Software Developer',
+    startDate: '07-2007',
+    endDate: '01-2012',
   },
 ];
 
@@ -49,7 +49,9 @@ function Experience() {
       {EXPERIENCES.map((exp) => (
         <div key={exp.company} className="flex flex-col gap-8 mt-4">
           <div className="flex gap-4 sm:gap-6">
-            <div className="text-[var(--primary-color)] text-xl sm:text-2xl font-bold mt-1">💼</div>
+            <div className="text-[var(--primary-color)] text-xl sm:text-2xl font-bold mt-1">
+              💼
+            </div>
             <div className="flex-1">
               <p className="text-text-primary text-base sm:text-lg font-semibold leading-normal">
                 {exp.company}
@@ -60,10 +62,8 @@ function Experience() {
             </div>
           </div>
         </div>
-      ))
-      }
+      ))}
     </section>
-
   );
 }
 

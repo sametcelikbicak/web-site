@@ -1,35 +1,35 @@
 {
-    "about": {
-        "title": "Hakkımda",
-        "description": "2007 yılından beri yazılım sektöründe çalışmaktayım. Bu süre içerisinde Software Developer, Senior Software Developer ve Team Lead pozisyonlarında görev aldım. Yazılım geliştirme konusunda geniş deneyime sahibim. Nesne yönelimli programlama, yazılım desenleri, prensipleri, metodolojileri ve çeşitli geliştirme araçları ile web (ön yüz & arka yüz) ve Android (Xamarin) uygulamaları geliştirdim. Teknik ve analitik becerilerimi hem bağımsız hem de ekip olarak problem çözmede kullanıyorum. 2024 yılına kadar Fullstack Developer olarak çalıştım, 2024 sonrasında ise Principal Software Specialist olarak Frontend alanında kariyerime devam ediyorum. Kariyerimde Angular, TypeScript, C#, HTML, CSS, JavaScript ve React teknolojileriyle çalışmalarımı sürdürmekteyim."
-    },
-    "footer": {
-        "copyright": "Samet ÇELİKBIÇAK. Tüm hakları saklıdır."
-    },
-    "header": {
-        "name": "Samet ÇELİKBIÇAK",
-        "about": "Hakkımda",
-        "experience": "Deneyim",
-        "projects": "Projeler"
-    },
-    "profile": {
-        "name": "Samet ÇELİKBIÇAK",
-        "title": "Team Lead | Principal Software Specialist"
-    },
+  "about": {
+    "title": "Hakkımda",
+    "description": "2007 yılından beri yazılım sektöründe çalışmaktayım. Bu süre içerisinde Software Developer, Senior Software Developer ve Team Lead pozisyonlarında görev aldım. Yazılım geliştirme konusunda geniş deneyime sahibim. Nesne yönelimli programlama, yazılım desenleri, prensipleri, metodolojileri ve çeşitli geliştirme araçları ile web (ön yüz & arka yüz) ve Android (Xamarin) uygulamaları geliştirdim. Teknik ve analitik becerilerimi hem bağımsız hem de ekip olarak problem çözmede kullanıyorum. 2024 yılına kadar Fullstack Developer olarak çalıştım, 2024 sonrasında ise Principal Software Specialist olarak Frontend alanında kariyerime devam ediyorum. Kariyerimde Angular, TypeScript, C#, HTML, CSS, JavaScript ve React teknolojileriyle çalışmalarımı sürdürmekteyim."
+  },
+  "footer": {
+    "copyright": "Samet ÇELİKBIÇAK. Tüm hakları saklıdır."
+  },
+  "header": {
+    "name": "Samet ÇELİKBIÇAK",
+    "about": "Hakkımda",
     "experience": "Deneyim",
-    "projects": {
-        "title": "Projeler",
-        "enum2array": {
-            "title": "Enum2Array",
-            "description": "Enum'ları diziye dönüştürmeye yardımcı olan bir fonksiyon. Bir enum tanımlayın ve bu fonksiyon ile enum'u diziye dönüştürün."
-        },
-        "tsci": {
-            "title": "TSCI CLI",
-            "description": "Farklı paketleyicilerle HTML & CSS & TypeScript projeleri oluşturmak için TypeScript CLI."
-        },
-        "storage-function": {
-            "title": "Storage Function",
-            "description": "Tarayıcı depolarını yönetmek için bir fonksiyon. Anahtar-değer çiftlerini session veya local storage'a kaydedebilir, depolardan anahtar-değer çiftlerini alabilirsiniz. Tüm fonksiyonlar için detaylara bakabilirsiniz."
-        }
+    "projects": "Projeler"
+  },
+  "profile": {
+    "name": "Samet ÇELİKBIÇAK",
+    "title": "Team Lead | Principal Software Specialist"
+  },
+  "experience": "Deneyim",
+  "projects": {
+    "title": "Projeler",
+    "enum2array": {
+      "title": "Enum2Array",
+      "description": "Enum'ları diziye dönüştürmeye yardımcı olan bir fonksiyon. Bir enum tanımlayın ve bu fonksiyon ile enum'u diziye dönüştürün."
+    },
+    "tsci": {
+      "title": "TSCI CLI",
+      "description": "Farklı paketleyicilerle HTML & CSS & TypeScript projeleri oluşturmak için TypeScript CLI."
+    },
+    "storage-function": {
+      "title": "Storage Function",
+      "description": "Tarayıcı depolarını yönetmek için bir fonksiyon. Anahtar-değer çiftlerini session veya local storage'a kaydedebilir, depolardan anahtar-değer çiftlerini alabilirsiniz. Tüm fonksiyonlar için detaylara bakabilirsiniz."
     }
+  }
 }

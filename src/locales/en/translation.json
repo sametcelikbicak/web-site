@@ -1,35 +1,35 @@
 {
-    "about": {
-        "title": "About",
-        "description": "I have been working in the software industry since 2007. During this time, I have held positions as Software Developer, Senior Software Developer, and Team Lead. I possess extensive experience in software development. I have developed web (frontend & backend) and Android (Xamarin) applications using object-oriented programming, software design patterns, principles, methodologies, and various development tools. I leverage my technical and analytical skills to solve problems both independently and as part of a team. Until 2024, I worked as a Fullstack Developer, and since then, I have continued my career as a Principal Software Specialist, focusing on Frontend development. Throughout my career, I have been working with technologies such as Angular, TypeScript, C#, HTML, CSS, JavaScript, and React."
-    },
-    "footer": {
-        "copyright": "Samet ÇELİKBIÇAK. All rights reserved."
-    },
-    "header": {
-        "name": "Samet ÇELİKBIÇAK",
-        "about": "About",
-        "experience": "Experience",
-        "projects": "Projects"
-    },
-    "profile": {
-        "name": "Samet ÇELİKBIÇAK",
-        "title": "Team Lead | Principal Software Specialist"
-    },
+  "about": {
+    "title": "About",
+    "description": "I have been working in the software industry since 2007. During this time, I have held positions as Software Developer, Senior Software Developer, and Team Lead. I possess extensive experience in software development. I have developed web (frontend & backend) and Android (Xamarin) applications using object-oriented programming, software design patterns, principles, methodologies, and various development tools. I leverage my technical and analytical skills to solve problems both independently and as part of a team. Until 2024, I worked as a Fullstack Developer, and since then, I have continued my career as a Principal Software Specialist, focusing on Frontend development. Throughout my career, I have been working with technologies such as Angular, TypeScript, C#, HTML, CSS, JavaScript, and React."
+  },
+  "footer": {
+    "copyright": "Samet ÇELİKBIÇAK. All rights reserved."
+  },
+  "header": {
+    "name": "Samet ÇELİKBIÇAK",
+    "about": "About",
     "experience": "Experience",
-    "projects": {
-        "title": "Projects",
-        "enum2array": {
-            "title": "Enum2Array",
-            "description": "A function to help converting enums to an array. Define an enum then use this function to convert that enum to an array."
-        },
-        "tsci": {
-            "title": "TSCI CLI",
-            "description": "TypeScript CLI for creating HTML & CSS & TypeScript project with different bundlers."
-        },
-        "storage-function": {
-            "title": "Storage Function",
-            "description": "A function to manipulate browser storages. Such as store a key value pair to session or local storage, getting key value pairs from local or session storage. You can check all available functions for more details."
-        }
+    "projects": "Projects"
+  },
+  "profile": {
+    "name": "Samet ÇELİKBIÇAK",
+    "title": "Team Lead | Principal Software Specialist"
+  },
+  "experience": "Experience",
+  "projects": {
+    "title": "Projects",
+    "enum2array": {
+      "title": "Enum2Array",
+      "description": "A function to help converting enums to an array. Define an enum then use this function to convert that enum to an array."
+    },
+    "tsci": {
+      "title": "TSCI CLI",
+      "description": "TypeScript CLI for creating HTML & CSS & TypeScript project with different bundlers."
+    },
+    "storage-function": {
+      "title": "Storage Function",
+      "description": "A function to manipulate browser storages. Such as store a key value pair to session or local storage, getting key value pairs from local or session storage. You can check all available functions for more details."
     }
+  }
 }

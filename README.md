@@ -1,4 +1,3 @@
-
 # Personal Portfolio Website
 
 This is a modern, multilingual personal portfolio website built with **React**, **TypeScript**, and **Vite**. It features a responsive design, dark/light theme toggle, and showcases professional experience and projects. The site supports both English and Turkish languages.
@@ -37,13 +36,13 @@ tsconfig*.json     # TypeScript configs
 
 ## Scripts
 
-| Command   | Description                |
-|-----------|----------------------------|
-| `dev`     | Start development server   |
-| `build`   | Build for production       |
-| `preview` | Preview production build   |
-| `lint`    | Run ESLint                 |
-| `format`  | Format code with Prettier  |
+| Command   | Description               |
+| --------- | ------------------------- |
+| `dev`     | Start development server  |
+| `build`   | Build for production      |
+| `preview` | Preview production build  |
+| `lint`    | Run ESLint                |
+| `format`  | Format code with Prettier |
 
 ## Main Packages
 

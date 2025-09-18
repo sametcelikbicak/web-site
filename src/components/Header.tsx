@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import SunIcon from './SunIcon';
 import MoonIcon from './MoonIcon';
@@ -9,9 +10,10 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
-  }
+  };
 
   return (
     <header
@@ -20,10 +22,10 @@ function Header() {
     >
       <div
         className="flex items-center gap-3 text-text-primary cursor-pointer"
-        onClick={() => window.history.pushState({}, '', '/')}
+        onClick={() => navigate('/')}
       >
         <div className="w-10 h-10">
-          <img src="./sc.png" alt="Logo" />
+          <img src="/sc.png" alt="Logo" />
         </div>
         <h2 className="text-text-primary text-xl font-bold leading-tight">
           {t('header.name')}
@@ -32,23 +34,34 @@ function Header() {
       {/* Desktop navigation */}
       <div className="hidden md:flex items-center gap-4">
         <nav className="flex items-center gap-8">
-          <a
+          <Link
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
-            href="#about"
+            to="/#about"
+            reloadDocument={false}
           >
             {t('header.about')}
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
-            href="#experience"
+            to="/#experience"
+            reloadDocument={false}
           >
             {t('header.experience')}
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
-            href="#projects"
+            to="/#projects"
+            reloadDocument={false}
           >
             {t('header.projects')}
+          </Link>
+          <a
+            className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
+            href="https://sametcelikbicak.hashnode.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Blog
           </a>
         </nav>
         <button
@@ -79,30 +92,45 @@ function Header() {
         </button>
         <HamburgerMenu open={menuOpen} onClose={() => setMenuOpen(false)}>
           <nav className="flex flex-col gap-6 mt-6">
-            <a
+            <Link
               className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
-              href="#about"
+              to="/#about"
               onClick={() => setMenuOpen(false)}
+              reloadDocument={false}
             >
               {t('header.about')}
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
-              href="#experience"
+              to="/#experience"
               onClick={() => setMenuOpen(false)}
+              reloadDocument={false}
             >
               {t('header.experience')}
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
-              href="#projects"
+              to="/#projects"
               onClick={() => setMenuOpen(false)}
+              reloadDocument={false}
             >
               {t('header.projects')}
+            </Link>
+            <a
+              className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
+              href="https://sametcelikbicak.hashnode.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Blog
             </a>
             <div className="flex gap-2 mt-2">
               <button
-                onClick={() => { toggleLanguage(); setMenuOpen(false); }}
+                onClick={() => {
+                  toggleLanguage();
+                  setMenuOpen(false);
+                }}
                 className="p-2 flex items-center gap-2 lang-hover"
                 aria-label="Toggle language"
                 style={{ fontSize: '1.5rem' }}
@@ -112,7 +140,10 @@ function Header() {
               <button
                 className="cursor-pointer ml-4"
                 aria-label="Toggle theme"
-                onClick={() => { toggleTheme(); setMenuOpen(false); }}
+                onClick={() => {
+                  toggleTheme();
+                  setMenuOpen(false);
+                }}
                 style={{ fontSize: '1.5rem' }}
               >
                 {theme === 'light' ? <SunIcon /> : <MoonIcon />}

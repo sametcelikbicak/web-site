@@ -51,7 +51,6 @@ body {
   color: var(--text-secondary);
 }
 
-
 @media (max-width: 768px) {
   header {
     padding-left: 1rem;

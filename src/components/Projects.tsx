@@ -5,19 +5,19 @@ const PROJECTS = [
     key: 'enum2array',
     image:
       'https://raw.githubusercontent.com/sametcelikbicak/enum2array/81a91637434dc2d11eac821c589dea7a8a79d1e8/assets/enum2array.svg',
-    link: 'https://www.npmjs.com/package/enum2array'
+    link: 'https://www.npmjs.com/package/enum2array',
   },
   {
     key: 'tsci',
     image:
       'https://raw.githubusercontent.com/sametcelikbicak/tsci/refs/heads/main/assets/tsci.jpeg',
-    link: 'https://www.npmjs.com/package/tsci'
+    link: 'https://www.npmjs.com/package/tsci',
   },
   {
     key: 'storage-function',
     image:
       'https://raw.githubusercontent.com/sametcelikbicak/storage-function/0b679da3eac7a09d471b4eaa3b741a978cba74a8/assets/storage-function.svg',
-    link: 'https://www.npmjs.com/package/storage-function'
+    link: 'https://www.npmjs.com/package/storage-function',
   },
 ];
 

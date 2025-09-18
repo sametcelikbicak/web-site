@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
+import SunIcon from './SunIcon';
+import MoonIcon from './MoonIcon';
 import HamburgerMenu from './HamburgerMenu';
 
 function Header() {
@@ -50,12 +52,11 @@ function Header() {
           </a>
         </nav>
         <button
-          className="cursor-pointer"
+          className="cursor-pointer text-text-secondary hover:text-[var(--primary-color)]"
           aria-label="Toggle theme"
           onClick={toggleTheme}
-          style={{ fontSize: '1.5rem' }}
         >
-          {theme === 'light' ? '🌞' : '🌙'}
+          {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>
         <button
           className="cursor-pointer"
@@ -114,7 +115,7 @@ function Header() {
                 onClick={() => { toggleTheme(); setMenuOpen(false); }}
                 style={{ fontSize: '1.5rem' }}
               >
-                {theme === 'light' ? '🌞' : '🌙'}
+                {theme === 'light' ? <SunIcon /> : <MoonIcon />}
               </button>
             </div>
           </nav>

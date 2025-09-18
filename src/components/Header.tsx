@@ -4,13 +4,12 @@ import { useTheme } from '../hooks/useTheme';
 import HamburgerMenu from './HamburgerMenu';
 
 function Header() {
-  const [showDropdown, setShowDropdown] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
+  }
 
   return (
     <header
@@ -60,36 +59,12 @@ function Header() {
         </button>
         <button
           className="cursor-pointer"
-          aria-label="Select language"
-          onClick={() => setShowDropdown((prev) => !prev)}
+          aria-label="Toggle language"
+          onClick={toggleLanguage}
           style={{ fontSize: '1.5rem' }}
         >
           {i18n.language === 'tr' ? '🇹🇷' : '🇺🇸'}
         </button>
-        {showDropdown && (
-          <div className="absolute right-0 w-28 header-bg border border-gray-200 rounded shadow-lg z-10 flex flex-col top-14">
-            <button
-              onClick={() => {
-                changeLanguage('tr');
-                setShowDropdown(false);
-              }}
-              className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'tr' ? 'font-bold' : ''}`}
-              aria-label="Türkçe"
-            >
-              🇹🇷 <span>Türkçe</span>
-            </button>
-            <button
-              onClick={() => {
-                changeLanguage('en');
-                setShowDropdown(false);
-              }}
-              className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'en' ? 'font-bold' : ''}`}
-              aria-label="English"
-            >
-              🇺🇸 <span>English</span>
-            </button>
-          </div>
-        )}
       </div>
       {/* Mobile hamburger menu */}
       <div className="md:hidden flex items-center">
@@ -126,18 +101,12 @@ function Header() {
             </a>
             <div className="flex gap-2 mt-2">
               <button
-                onClick={() => { changeLanguage('tr'); setMenuOpen(false); }}
-                className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'tr' ? 'font-bold' : ''}`}
-                aria-label="Türkçe"
+                onClick={() => { toggleLanguage(); setMenuOpen(false); }}
+                className="p-2 flex items-center gap-2 lang-hover"
+                aria-label="Toggle language"
+                style={{ fontSize: '1.5rem' }}
               >
-                🇹🇷 <span>Türkçe</span>
-              </button>
-              <button
-                onClick={() => { changeLanguage('en'); setMenuOpen(false); }}
-                className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'en' ? 'font-bold' : ''}`}
-                aria-label="English"
-              >
-                🇺🇸 <span>English</span>
+                {i18n.language === 'tr' ? '🇹🇷' : '🇺🇸'}
               </button>
               <button
                 className="cursor-pointer ml-4"

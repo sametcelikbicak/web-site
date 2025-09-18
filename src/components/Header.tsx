@@ -13,7 +13,10 @@ function Header() {
   };
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-solid border-gray-200 dark:border-b-[#243647] px-6 py-4 sticky top-0 z-50 bg-white dark:bg-[var(--header-bg)]">
+    <header
+      className="flex items-center justify-between whitespace-nowrap border-solid px-6 py-2 sticky top-0 z-50 bg-white dark:bg-[var(--header-bg)]"
+      style={{ borderBottom: '1px solid var(--header-border)' }}
+    >
       <div
         className="flex items-center gap-3 text-text-primary cursor-pointer"
         onClick={() => window.history.pushState({}, '', '/')}
@@ -61,7 +64,7 @@ function Header() {
           onClick={() => setShowDropdown((prev) => !prev)}
           style={{ fontSize: '1.5rem' }}
         >
-          {i18n.language === 'tr' ? '🇹🇷' : '🇬🇧'}
+          {i18n.language === 'tr' ? '🇹🇷' : '🇺🇸'}
         </button>
         {showDropdown && (
           <div className="absolute right-0 w-28 header-bg border border-gray-200 rounded shadow-lg z-10 flex flex-col top-14">
@@ -83,7 +86,7 @@ function Header() {
               className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'en' ? 'font-bold' : ''}`}
               aria-label="English"
             >
-              🇬🇧 <span>English</span>
+              🇺🇸 <span>English</span>
             </button>
           </div>
         )}
@@ -134,7 +137,7 @@ function Header() {
                 className={`p-2 flex items-center gap-2 lang-hover ${i18n.language === 'en' ? 'font-bold' : ''}`}
                 aria-label="English"
               >
-                🇬🇧 <span>English</span>
+                🇺🇸 <span>English</span>
               </button>
               <button
                 className="cursor-pointer ml-4"

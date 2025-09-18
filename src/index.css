@@ -5,7 +5,8 @@
   --background-color: #f8f9fa;
   --text-primary: #222;
   --text-secondary: #555;
-  --header-bg: #fff;
+  --header-bg: #f8f9fa;
+  --header-border: #e5e7eb;
 }
 
 [data-theme='dark'] {
@@ -13,7 +14,8 @@
   --background-color: #181a20;
   --text-primary: #f8f9fa;
   --text-secondary: #cbd5e1;
-  --header-bg: #23272f;
+  --header-bg: #181a20;
+  --header-border: #243647;
 }
 
 body {

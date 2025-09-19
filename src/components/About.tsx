@@ -11,9 +11,9 @@ function About() {
         {t('about.title')}
       </h2>
       <p className="text-text-secondary text-base sm:text-lg font-normal leading-relaxed">
-        {aboutText.split('\n').map((line, idx) => (
-          <Fragment key={idx}>
-            {idx > 0 && <br />}
+        {aboutText.split('\n').map((line, index) => (
+          <Fragment key={line + Math.random()}>
+            {index > 0 && <br />}
             <span
               style={{
                 textIndent: '2em',

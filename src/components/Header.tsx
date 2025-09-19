@@ -67,6 +67,7 @@ function Header() {
           </a>
         </nav>
         <button
+          type="button"
           className="cursor-pointer text-text-secondary hover:text-[var(--primary-color)]"
           aria-label="Toggle theme"
           onClick={toggleTheme}
@@ -74,6 +75,7 @@ function Header() {
           {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>
         <button
+          type="button"
           className="cursor-pointer"
           aria-label="Toggle language"
           onClick={toggleLanguage}
@@ -85,6 +87,7 @@ function Header() {
       {/* Mobile hamburger menu */}
       <div className="md:hidden flex items-center">
         <button
+          type="button"
           className="cursor-pointer"
           aria-label="Open menu"
           style={{ fontSize: '2rem', background: 'none', border: 'none' }}
@@ -129,6 +132,7 @@ function Header() {
             </a>
             <div className="flex gap-2 mt-2">
               <button
+                type="button"
                 onClick={() => {
                   toggleLanguage();
                   setMenuOpen(false);
@@ -140,6 +144,7 @@ function Header() {
                 {i18n.language === 'tr' ? <TRIcon /> : <ENIcon />}
               </button>
               <button
+                type="button"
                 className="cursor-pointer ml-4"
                 aria-label="Toggle theme"
                 onClick={() => {

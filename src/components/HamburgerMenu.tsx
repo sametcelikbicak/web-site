@@ -43,6 +43,7 @@ const HamburgerMenu: FC<HamburgerMenuProps> = ({ open, onClose, children }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <button
+          type="button"
           style={{
             position: 'absolute',
             top: 16,

@@ -36,22 +36,39 @@ tsconfig*.json     # TypeScript configs
 
 ## Scripts
 
-| Command   | Description               |
-| --------- | ------------------------- |
-| `dev`     | Start development server  |
-| `build`   | Build for production      |
-| `preview` | Preview production build  |
-| `lint`    | Run ESLint                |
-| `format`  | Format code with Prettier |
+| Command     | Description                         |
+| ----------- | ----------------------------------- |
+| `dev`       | Start development server            |
+| `build`     | Build for production                |
+| `preview`   | Preview production build            |
+| `lint`      | Run ESLint                          |
+| `format`    | Format code with Prettier           |
+| `predeploy` | Build before deployment             |
+| `deploy`    | Deploy to GitHub Pages (`gh-pages`) |
 
 ## Main Packages
 
 - **react**, **react-dom**: UI library
+- **react-router-dom**: Routing for React
+- **react-markdown**: Render Markdown in React
 - **typescript**: Type safety
 - **vite**: Fast build tool
 - **tailwindcss**, **@tailwindcss/vite**: Utility-first CSS framework
 - **i18next**, **react-i18next**: Internationalization
 - **eslint**, **prettier**: Linting & formatting
+
+## Deployment
+
+To deploy the site to GitHub Pages:
+
+1. Make sure your repository is set up with the correct `homepage` in `package.json` (if needed).
+2. Run:
+   ```bash
+   npm run deploy
+   ```
+   This will build the project and publish the `dist` folder to the `gh-pages` branch using the `gh-pages` package.
+
+The `predeploy` script ensures the site is built before deploying.
 
 ## ESLint & Formatting
 
@@ -87,32 +104,3 @@ Professional experience and projects are listed in the UI and translation files.
 ## License
 
 MIT
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```

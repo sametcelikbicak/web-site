@@ -5,6 +5,8 @@ import { useTheme } from '../hooks/useTheme';
 import SunIcon from './SunIcon';
 import MoonIcon from './MoonIcon';
 import HamburgerMenu from './HamburgerMenu';
+import TRIcon from './TRIcon';
+import ENIcon from './ENIcon';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -77,7 +79,7 @@ function Header() {
           onClick={toggleLanguage}
           style={{ fontSize: '1.5rem' }}
         >
-          {i18n.language === 'tr' ? '🇹🇷' : '🇺🇸'}
+          {i18n.language === 'tr' ? <TRIcon /> : <ENIcon />}
         </button>
       </div>
       {/* Mobile hamburger menu */}
@@ -135,7 +137,7 @@ function Header() {
                 aria-label="Toggle language"
                 style={{ fontSize: '1.5rem' }}
               >
-                {i18n.language === 'tr' ? '🇹🇷' : '🇺🇸'}
+                {i18n.language === 'tr' ? <TRIcon /> : <ENIcon />}
               </button>
               <button
                 className="cursor-pointer ml-4"

@@ -57,7 +57,10 @@ function Experience() {
                 {exp.company}
               </p>
               <p className="text-text-secondary text-sm sm:text-base font-normal leading-normal">
-                {exp.position} | 🗓 {exp.startDate} - {exp.endDate}
+                {exp.position} |{' '}
+                <span className="italic">
+                  {exp.startDate} - {exp.endDate}
+                </span>
               </p>
             </div>
           </div>

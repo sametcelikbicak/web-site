@@ -52,6 +52,13 @@ function Header() {
           </Link>
           <Link
             className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
+            to="/#skills"
+            reloadDocument={false}
+          >
+            {t('skills')}
+          </Link>
+          <Link
+            className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
             to="/#projects"
             reloadDocument={false}
           >
@@ -112,6 +119,14 @@ function Header() {
               reloadDocument={false}
             >
               {t('header.experience')}
+            </Link>
+            <Link
+              className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
+              to="/#skills"
+              onClick={() => setMenuOpen(false)}
+              reloadDocument={false}
+            >
+              {t('skills')}
             </Link>
             <Link
               className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"

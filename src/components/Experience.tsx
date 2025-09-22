@@ -39,7 +39,7 @@ const EXPERIENCES = [
   },
 ];
 
-function Experience() {
+const Experience = () => {
   const { t } = useTranslation();
   return (
     <section className="scroll-mt-20 text-left main-bg" id="experience">
@@ -68,6 +68,6 @@ function Experience() {
       ))}
     </section>
   );
-}
+};
 
 export default Experience;

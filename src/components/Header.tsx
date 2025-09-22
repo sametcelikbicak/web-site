@@ -8,7 +8,7 @@ import HamburgerMenu from './HamburgerMenu';
 import TRIcon from './TRIcon';
 import ENIcon from './ENIcon';
 
-function Header() {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
@@ -176,6 +176,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

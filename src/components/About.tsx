@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function About() {
+const About = () => {
   const { t } = useTranslation();
   const aboutText = t('about.description');
 
@@ -28,6 +28,6 @@ function About() {
       </p>
     </section>
   );
-}
+};
 
 export default About;

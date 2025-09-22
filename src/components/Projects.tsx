@@ -21,7 +21,7 @@ const PROJECTS = [
   },
 ];
 
-function Projects() {
+const Projects = () => {
   const { t } = useTranslation();
   return (
     <section className="scroll-mt-20 text-left" id="projects">
@@ -54,6 +54,6 @@ function Projects() {
       </div>
     </section>
   );
-}
+};
 
 export default Projects;

@@ -1,7 +1,23 @@
-
 import { useTranslation } from 'react-i18next';
-import { SiTypescript, SiTailwindcss, SiSharp, SiPnpm, SiGit, SiAngular, SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiGithub, SiBitbucket, SiGitlab, SiNpm, SiYarn, SiDocker } from 'react-icons/si';
-
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiSharp,
+  SiPnpm,
+  SiGit,
+  SiAngular,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiGithub,
+  SiBitbucket,
+  SiGitlab,
+  SiNpm,
+  SiYarn,
+  SiDocker,
+} from 'react-icons/si';
 
 const SKILLS = [
   { name: 'Angular', icon: SiAngular },
@@ -20,10 +36,10 @@ const SKILLS = [
   { name: 'NPM', icon: SiNpm },
   { name: 'Yarn', icon: SiYarn },
   { name: 'PNPM', icon: SiPnpm },
-  { name: 'Docker', icon: SiDocker }
+  { name: 'Docker', icon: SiDocker },
 ];
 
-function Skills() {
+const Skills = () => {
   const { t } = useTranslation();
   return (
     <section className="scroll-mt-20 text-left" id="skills">
@@ -42,6 +58,6 @@ function Skills() {
       </div>
     </section>
   );
-}
+};
 
 export default Skills;

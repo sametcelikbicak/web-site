@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 const PROFILE_IMAGE =
   'https://avatars.githubusercontent.com/u/5312741?s=400&u=c94aaea8002d28b4a487d6d11a7bc784abe60ff6&v=4';
 
-function Profile() {
+const Profile = () => {
   const { t } = useTranslation();
   return (
     <section className="flex flex-col items-center text-center gap-6">
@@ -24,6 +24,6 @@ function Profile() {
       </div>
     </section>
   );
-}
+};
 
 export default Profile;

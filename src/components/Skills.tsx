@@ -1,26 +1,26 @@
+
 import { useTranslation } from 'react-i18next';
+import { SiTypescript, SiTailwindcss, SiSharp, SiPnpm, SiGit, SiAngular, SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiGithub, SiBitbucket, SiGitlab, SiNpm, SiYarn, SiDocker } from 'react-icons/si';
+
 
 const SKILLS = [
-  { name: 'Angular', icon: 'angular' },
-  { name: 'TypeScript', icon: 'typescript' },
-  { name: 'HTML5', icon: 'html' },
-  { name: 'CSS3', icon: 'css' },
-  { name: 'JavaScript', icon: 'javascript' },
-  { name: 'React', icon: 'react' },
-  { name: 'Tailwind', icon: 'tailwind' },
-  { name: 'C#', icon: 'cs' },
-  { name: 'NodeJS', icon: 'nodejs' },
-  { name: 'Git', icon: 'git' },
-  { name: 'GitHub', icon: 'github' },
-  { name: 'Bitbucket', icon: 'bitbucket' },
-  { name: 'GitLab', icon: 'gitlab' },
-  { name: 'NPM', icon: 'npm' },
-  { name: 'Yarn', icon: 'yarn' },
-  { name: 'PNPM', icon: 'pnpm' },
-  { name: 'Docker', icon: 'docker' },
-  { name: 'WebStorm', icon: 'webstorm' },
-  { name: 'Rider', icon: 'rider' },
-  { name: 'VSCode', icon: 'vscode' },
+  { name: 'Angular', icon: SiAngular },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'HTML5', icon: SiHtml5 },
+  { name: 'CSS3', icon: SiCss3 },
+  { name: 'JavaScript', icon: SiJavascript },
+  { name: 'React', icon: SiReact },
+  { name: 'Tailwind', icon: SiTailwindcss },
+  { name: 'C#', icon: SiSharp },
+  { name: 'NodeJS', icon: SiNodedotjs },
+  { name: 'Git', icon: SiGit },
+  { name: 'GitHub', icon: SiGithub },
+  { name: 'Bitbucket', icon: SiBitbucket },
+  { name: 'GitLab', icon: SiGitlab },
+  { name: 'NPM', icon: SiNpm },
+  { name: 'Yarn', icon: SiYarn },
+  { name: 'PNPM', icon: SiPnpm },
+  { name: 'Docker', icon: SiDocker }
 ];
 
 function Skills() {
@@ -31,15 +31,9 @@ function Skills() {
         {t('skills')}
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        {SKILLS.map(({ name, icon }) => (
+        {SKILLS.map(({ name, icon: Icon }) => (
           <div key={name} className="flex flex-col items-center gap-2">
-            <img
-              src={`https://skillicons.dev/icons?i=${icon}`}
-              alt={name}
-              width={40}
-              height={40}
-              loading="lazy"
-            />
+            <Icon size={40} title={name} />
             <span className="text-text-secondary text-sm font-medium">
               {name}
             </span>

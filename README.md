@@ -27,7 +27,6 @@ src/
   main.tsx         # App entry point
 public/
   sc.png           # Profile/logo image
-  icons/           # Additional icons
 index.html         # Main HTML file
 vite.config.ts     # Vite configuration
 eslint.config.js   # ESLint configuration
@@ -50,7 +49,6 @@ tsconfig*.json     # TypeScript configs
 
 - **react**, **react-dom**: UI library
 - **react-router-dom**: Routing for React
-- **react-markdown**: Render Markdown in React
 - **typescript**: Type safety
 - **vite**: Fast build tool
 - **tailwindcss**, **@tailwindcss/vite**: Utility-first CSS framework
@@ -81,6 +79,7 @@ Theme context is provided via `ThemeProvider` (`src/theme.tsx`). Use the theme t
 ## Internationalization
 
 Translations are managed in `src/locales/en/translation.json` and `src/locales/tr/translation.json`. The language can be switched via the header dropdown.
+
 
 ## Experience & Projects
 

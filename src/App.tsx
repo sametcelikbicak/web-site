@@ -43,9 +43,6 @@ const App = () => {
                 </>
               }
             />
-            {/* Blog functionality will be added later. */}
-            {/* <Route path="/blog" element={<Blog />} /> */}
-            {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
           </Routes>
         </main>
       </div>

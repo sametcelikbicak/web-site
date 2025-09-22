@@ -17,6 +17,7 @@ import {
   SiNpm,
   SiYarn,
   SiDocker,
+  SiDotnet,
 } from 'react-icons/si';
 
 const SKILLS = [
@@ -28,6 +29,7 @@ const SKILLS = [
   { name: 'React', icon: SiReact },
   { name: 'Tailwind', icon: SiTailwindcss },
   { name: 'C#', icon: SiSharp },
+  { name: '.Net', icon: SiDotnet },
   { name: 'NodeJS', icon: SiNodedotjs },
   { name: 'Git', icon: SiGit },
   { name: 'GitHub', icon: SiGithub },

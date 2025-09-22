@@ -1,13 +1,6 @@
-import type { ElementType } from 'react';
 import { SiGithub, SiLinkedin, SiX, SiYoutube } from 'react-icons/si';
 
-type SocialLink = {
-  name: 'LinkedIn' | 'X' | 'YouTube' | 'GitHub';
-  url: string;
-  icon: ElementType;
-};
-
-const socialLinks: SocialLink[] = [
+const socialLinks = [
   {
     name: 'GitHub',
     url: 'https://github.com/sametcelikbicak',

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { FaBuilding } from 'react-icons/fa';
 
 const EXPERIENCES = [
   {
@@ -49,8 +50,8 @@ const Experience = () => {
       {EXPERIENCES.map((exp) => (
         <div key={exp.company} className="flex flex-col gap-8 mt-4">
           <div className="flex gap-4 sm:gap-6">
-            <div className="text-[var(--primary-color)] text-xl sm:text-2xl font-bold mt-1">
-              💼
+            <div className="text-xl sm:text-2xl font-bold mt-1">
+              <FaBuilding />
             </div>
             <div className="flex-1">
               <p className="text-text-primary text-base sm:text-lg font-semibold leading-normal">

@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react';
+import { type FC, type ReactNode, useEffect } from 'react';
 
 interface HamburgerMenuProps {
   open: boolean;
@@ -11,34 +11,49 @@ const HamburgerMenu: FC<HamburgerMenuProps> = ({ open, onClose, children }) => {
   const bgColor = theme === 'dark' ? 'var(--header-bg)' : '#fff';
   const textColor = theme === 'dark' ? 'var(--text-primary)' : '#222';
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
     <div
-      className={`hamburger-menu-overlay${open ? ' open' : ''}`}
+      className={open ? ' open' : ''}
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         width: '100vw',
         height: '100vh',
-        background: 'rgba(0,0,0,0.6)',
-        display: open ? 'flex' : 'none',
-        flexDirection: 'column',
+        background: open ? 'rgba(0,0,0,0.6)' : 'transparent',
+        display: open ? 'block' : 'none',
         zIndex: 1000,
+        transition: 'background 0.3s',
       }}
       onClick={onClose}
     >
       <div
-        className="hamburger-menu-content"
         style={{
           background: bgColor,
           color: textColor,
-          width: '80vw',
-          maxWidth: 320,
-          margin: 'auto',
-          borderRadius: 8,
+          width: 260,
+          maxWidth: '80vw',
+          height: '100vh',
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          boxShadow: '-2px 0 8px rgba(0,0,0,0.2)',
+          borderTopLeftRadius: 8,
+          borderBottomLeftRadius: 8,
           padding: 24,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-          position: 'relative',
+          transform: open ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)',
         }}
         onClick={(e) => e.stopPropagation()}
       >

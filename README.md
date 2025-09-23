@@ -80,7 +80,6 @@ Theme context is provided via `ThemeProvider` (`src/theme.tsx`). Use the theme t
 
 Translations are managed in `src/locales/en/translation.json` and `src/locales/tr/translation.json`. The language can be switched via the header dropdown.
 
-
 ## Experience & Projects
 
 Professional experience and projects are listed in the UI and translation files. Project images are loaded from external sources or the `public` folder.

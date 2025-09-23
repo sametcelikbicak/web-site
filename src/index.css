@@ -57,18 +57,6 @@ body {
     padding-right: 1rem;
   }
 
-  .hamburger-menu-overlay {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hamburger-menu-content {
-    width: 80vw;
-    max-width: 320px;
-    margin: auto;
-    position: relative;
-  }
-
   .md\:flex {
     display: none !important;
   }

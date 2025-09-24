@@ -11,22 +11,26 @@ This is a modern, multilingual personal portfolio website built with **React**, 
 - 🧑‍💻 Professional experience and project showcase
 - 📦 Modular component structure
 - 🧹 Code linting with [ESLint](https://eslint.org/) and formatting with [Prettier](https://prettier.io/)
+- 🛡️ Git hooks with [Husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) for pre-commit quality checks
 
 ## Project Structure
 
 ```
 src/
-  components/      # Main UI components (Header, Profile, About, Experience, Projects, Footer)
-  hooks/           # Custom React hooks (e.g., useTheme)
-  locales/         # Translation files (en, tr)
-  types/           # TypeScript types (theme)
-  theme.tsx        # Theme context/provider
-  i18n.tsx         # i18next configuration
-  index.css        # TailwindCSS and custom styles
-  App.tsx          # Main app component
-  main.tsx         # App entry point
+   components/      # Main UI components (Header, Profile, About, Experience, Projects, Footer)
+   hooks/           # Custom React hooks (e.g., useTheme)
+   locales/         # Translation files (en, tr)
+   types/           # TypeScript types (theme)
+   theme.tsx        # Theme context/provider
+   i18n.tsx         # i18next configuration
+   index.css        # TailwindCSS and custom styles
+   App.tsx          # Main app component
+   main.tsx         # App entry point
 public/
-  sc.png           # Profile/logo image
+   sc.png           # Profile/logo image
+.husky/            # Husky git hooks (e.g., pre-commit)
+.huskyrc.json      # Husky configuration
+.lintstagedrc.json # lint-staged configuration
 index.html         # Main HTML file
 vite.config.ts     # Vite configuration
 eslint.config.js   # ESLint configuration
@@ -71,6 +75,16 @@ The `predeploy` script ensures the site is built before deploying.
 ## ESLint & Formatting
 
 ESLint is configured for React, TypeScript, and hooks best practices. Prettier is used for code formatting. See `eslint.config.js` for details.
+
+## Git Hooks: Husky & lint-staged
+
+[Husky](https://typicode.github.io/husky/) is used to manage Git hooks, and [lint-staged](https://github.com/okonet/lint-staged) ensures that only staged files are linted and formatted before each commit.
+
+- **Pre-commit hook**: Automatically runs `npm run lint` and `npm run format` on staged files matching `*.{js,jsx,ts,tsx,css,md,json}` before allowing a commit.
+- Configuration for lint-staged is in `.lintstagedrc.json`.
+- You can find the Husky hook in `.husky/pre-commit`.
+
+This helps maintain code quality and consistent formatting across all commits.
 
 ## Theming
 

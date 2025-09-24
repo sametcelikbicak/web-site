@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useEffect } from 'react';
+import { type ReactNode, useEffect } from 'react';
 
 interface HamburgerMenuProps {
   open: boolean;
@@ -6,9 +6,9 @@ interface HamburgerMenuProps {
   children: ReactNode;
 }
 
-const HamburgerMenu: FC<HamburgerMenuProps> = ({ open, onClose, children }) => {
+const HamburgerMenu = ({ open, onClose, children }: HamburgerMenuProps) => {
   const theme = document.documentElement.getAttribute('data-theme') || 'light';
-  const bgColor = theme === 'dark' ? 'var(--header-bg)' : '#fff';
+  const bgColor = theme === 'dark' ? 'var(--background-color)' : '#fff';
   const textColor = theme === 'dark' ? 'var(--text-primary)' : '#222';
 
   useEffect(() => {

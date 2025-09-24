@@ -5,7 +5,6 @@
   --background-color: #f8f9fa;
   --text-primary: #222;
   --text-secondary: #555;
-  --header-bg: #f8f9fa;
   --header-border: #e5e7eb;
 }
 
@@ -14,7 +13,6 @@
   --background-color: #181a20;
   --text-primary: #f8f9fa;
   --text-secondary: #cbd5e1;
-  --header-bg: #181a20;
   --header-border: #243647;
 }
 
@@ -25,10 +23,6 @@ body {
 
 .main-bg {
   background: var(--background-color) !important;
-}
-
-.header-bg {
-  background: var(--header-bg) !important;
 }
 
 .lang-hover {

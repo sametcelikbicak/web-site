@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
@@ -34,6 +35,8 @@
     "eslint-plugin-react-x": "^1.53.1",
     "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.0",
     "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",

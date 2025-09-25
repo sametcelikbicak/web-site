@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import { ThemeProvider } from './theme';
 import './i18n';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Header from './components/Header';
-import Profile from './components/Profile';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
+import About from './components/About/About';
+import Experience from './components/Experience/Experience';
+import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   const location = useLocation();

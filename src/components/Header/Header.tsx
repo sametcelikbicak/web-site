@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useTheme } from '../hooks/useTheme';
-import SunIcon from './SunIcon';
-import MoonIcon from './MoonIcon';
-import HamburgerMenu from './HamburgerMenu';
-import TRIcon from './TRIcon';
-import ENIcon from './ENIcon';
+import { useTheme } from '../../hooks/useTheme';
+import SunIcon from '../SunIcon/SunIcon';
+import MoonIcon from '../MoonIcon/MoonIcon';
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+import TRIcon from '../TRIcon/TRIcon';
+import ENIcon from '../ENIcon/ENIcon';
 
 const HEADER_ITEMS = [
   { to: '/#about', labelKey: 'header.about' },

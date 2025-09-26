@@ -37,4 +37,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./dist
           force_orphan: true
-          commit_message: 'Deploy to Pages (${GITHUB_SHA::8})'
+          commit_message: 'Deploy to Pages (${{ github.sha.substring(0,8) }})'

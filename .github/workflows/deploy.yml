@@ -30,15 +30,11 @@ jobs:
       - name: Run project tests
         run: npm run test
 
-      - name: Set short SHA
-        id: short_sha
-        run: echo "SHORT_SHA=${GITHUB_SHA::8}" >> $GITHUB_ENV
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          commit_message: "Deploy to Pages (${{ env.SHORT_SHA }})"
+          commit_message: "Deploy to Pages"
           allow_empty_commit: true

@@ -1,4 +1,5 @@
 # Prettier
+*.yml
 # *.js
 # *.ts
 # *.tsx

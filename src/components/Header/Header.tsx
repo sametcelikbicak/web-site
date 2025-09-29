@@ -7,16 +7,22 @@ import MoonIcon from '../MoonIcon/MoonIcon';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import TRIcon from '../TRIcon/TRIcon';
 import ENIcon from '../ENIcon/ENIcon';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const HEADER_ITEMS = [
-  { to: '/#about', labelKey: 'header.about' },
-  { to: '/#experience', labelKey: 'header.experience' },
-  { to: '/#skills', labelKey: 'skills' },
-  { to: '/#projects', labelKey: 'header.projects' },
+  { to: '/#about', labelKey: 'header.about', analyticsKey: 'About' },
+  {
+    to: '/#experience',
+    labelKey: 'header.experience',
+    analyticsKey: 'Experience',
+  },
+  { to: '/#skills', labelKey: 'skills', analyticsKey: 'Skills' },
+  { to: '/#projects', labelKey: 'header.projects', analyticsKey: 'Projects' },
   {
     to: 'https://sametcelikbicak.hashnode.dev/',
     labelKey: 'Blog',
     external: true,
+    analyticsKey: 'Blog',
   },
 ];
 
@@ -28,6 +34,7 @@ const Header = () => {
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
   };
+  const { trackButtonClick } = useAnalytics();
 
   return (
     <header
@@ -56,6 +63,7 @@ const Header = () => {
                 href={item.to}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackButtonClick(item.analyticsKey)}
               >
                 {t(item.labelKey)}
               </a>
@@ -65,6 +73,7 @@ const Header = () => {
                 className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
                 to={item.to}
                 reloadDocument={false}
+                onClick={() => trackButtonClick(item.analyticsKey)}
               >
                 {t(item.labelKey)}
               </Link>
@@ -75,7 +84,10 @@ const Header = () => {
           type="button"
           className="cursor-pointer text-text-secondary hover:text-[var(--primary-color)]"
           aria-label="Toggle theme"
-          onClick={toggleTheme}
+          onClick={() => {
+            toggleTheme();
+            trackButtonClick('theme-toggle');
+          }}
         >
           {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>
@@ -83,7 +95,10 @@ const Header = () => {
           type="button"
           className="cursor-pointer"
           aria-label="Toggle language"
-          onClick={toggleLanguage}
+          onClick={() => {
+            toggleLanguage();
+            trackButtonClick('language-toggle');
+          }}
           style={{ fontSize: '1.5rem' }}
         >
           {i18n.language === 'tr' ? <TRIcon /> : <ENIcon />}
@@ -110,7 +125,10 @@ const Header = () => {
                   href={item.to}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    trackButtonClick(item.analyticsKey);
+                  }}
                 >
                   {t(item.labelKey)}
                 </a>
@@ -119,7 +137,10 @@ const Header = () => {
                   key={item.labelKey}
                   className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
                   to={item.to}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    trackButtonClick(item.analyticsKey);
+                  }}
                   reloadDocument={false}
                 >
                   {t(item.labelKey)}
@@ -133,6 +154,7 @@ const Header = () => {
                 onClick={() => {
                   toggleLanguage();
                   setMenuOpen(false);
+                  trackButtonClick('language-toggle');
                 }}
                 className="p-2 flex items-center gap-2 lang-hover"
                 aria-label="Toggle language"
@@ -147,6 +169,7 @@ const Header = () => {
                 onClick={() => {
                   toggleTheme();
                   setMenuOpen(false);
+                  trackButtonClick('theme-toggle');
                 }}
                 style={{ fontSize: '1.5rem' }}
               >

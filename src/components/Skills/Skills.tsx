@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import useAnalytics from '../../hooks/useAnalytics';
 import {
   SiTypescript,
   SiTailwindcss,
@@ -43,6 +45,12 @@ const SKILLS = [
 
 const Skills = () => {
   const { t } = useTranslation();
+  const { trackSectionView } = useAnalytics();
+
+  useEffect(() => {
+    trackSectionView('skills');
+  }, [trackSectionView]);
+
   return (
     <section className="scroll-mt-20 text-left" id="skills">
       <h2 className="text-text-primary text-2xl sm:text-3xl font-bold leading-tight tracking-tight mb-8">

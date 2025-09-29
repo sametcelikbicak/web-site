@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FaBuilding } from 'react-icons/fa';
+import useAnalytics from '../../hooks/useAnalytics';
+import { useEffect } from 'react';
 
 const EXPERIENCES = [
   {
@@ -42,6 +44,12 @@ const EXPERIENCES = [
 
 const Experience = () => {
   const { t } = useTranslation();
+  const { trackSectionView } = useAnalytics();
+
+  useEffect(() => {
+    trackSectionView('experience');
+  }, [trackSectionView]);
+
   return (
     <section className="scroll-mt-20 text-left main-bg" id="experience">
       <h2 className="text-text-primary text-2xl sm:text-3xl font-bold leading-tight tracking-tight mb-8">

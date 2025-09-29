@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const PROJECTS = [
   {
@@ -23,6 +25,12 @@ const PROJECTS = [
 
 const Projects = () => {
   const { t } = useTranslation();
+  const { trackSectionView } = useAnalytics();
+
+  useEffect(() => {
+    trackSectionView('projects');
+  }, [trackSectionView]);
+
   return (
     <section className="scroll-mt-20 text-left" id="projects">
       <h2 className="text-text-primary text-2xl sm:text-3xl font-bold leading-tight tracking-tight mb-8">

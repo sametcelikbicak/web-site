@@ -1,9 +1,15 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const About = () => {
   const { t } = useTranslation();
+  const { trackSectionView } = useAnalytics();
   const aboutText = t('about.description');
+
+  useEffect(() => {
+    trackSectionView('about');
+  }, [trackSectionView]);
 
   return (
     <section className="scroll-mt-20 text-left" id="about">

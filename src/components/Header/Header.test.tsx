@@ -8,6 +8,22 @@ const mockThemeContext: ThemeContextProps = {
   toggleTheme: jest.fn(),
 };
 
+beforeAll(() => {
+  class MockIntersectionObserver {
+    root = null;
+    rootMargin = '';
+    thresholds = [];
+    constructor() {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() {
+      return [];
+    }
+  }
+  global.IntersectionObserver = MockIntersectionObserver;
+});
+
 describe('Header', () => {
   it('renders without crashing', () => {
     render(

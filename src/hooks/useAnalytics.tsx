@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 type EventParams = {
   category?: string;
@@ -18,28 +18,31 @@ declare global {
 
 export default function useAnalytics() {
   // Generic event tracker
-  const trackEvent = (
-    action: string,
-    { category, label }: EventParams = {}
-  ) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', action, {
-        event_category: category,
-        event_label: label,
-      });
-    }
-  };
+  const trackEvent = useCallback(
+    (action: string, { category, label }: EventParams = {}) => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', action, {
+          event_category: category,
+          event_label: label,
+        });
+      }
+    },
+    []
+  );
 
   // Specific helpers
   const trackButtonClick = (label: string) => {
     trackEvent('click', { category: 'button', label });
   };
 
-  const trackSectionView = (id: string) => {
-    trackEvent('view_section', { category: 'section', label: id });
-  };
+  const trackSectionView = useCallback(
+    (id: string) => {
+      trackEvent('view_section', { category: 'section', label: id });
+    },
+    [trackEvent]
+  );
 
-  const initScrollTracking = () => {
+  const initScrollTracking = useCallback(() => {
     const scrollTracked: Record<number, boolean> = {
       25: false,
       50: false,
@@ -47,7 +50,7 @@ export default function useAnalytics() {
       100: false,
     };
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
@@ -62,12 +65,17 @@ export default function useAnalytics() {
           scrollTracked[pct] = true;
         }
       });
-    });
-  };
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [trackEvent]);
 
   // Auto-init section observer + scroll tracking once
   useEffect(() => {
-    initScrollTracking();
+    const cleanupScroll = initScrollTracking();
 
     const sections = document.querySelectorAll<HTMLElement>('section');
     const observer = new IntersectionObserver(
@@ -82,7 +90,12 @@ export default function useAnalytics() {
     );
 
     sections.forEach((section) => observer.observe(section));
-  }, []);
+
+    return () => {
+      if (typeof cleanupScroll === 'function') cleanupScroll();
+      observer.disconnect();
+    };
+  }, [initScrollTracking, trackSectionView]);
 
   return { trackEvent, trackButtonClick, trackSectionView };
 }

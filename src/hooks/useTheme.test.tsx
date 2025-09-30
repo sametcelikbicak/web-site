@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react';
 import { useTheme } from './useTheme';
 import { ThemeContext, Theme } from '../types/theme';
-import React from 'react';
+import { ReactNode, useMemo } from 'react';
 
 const mockToggleTheme = jest.fn();
 
@@ -10,12 +10,14 @@ const MockProvider = ({
   children,
 }: {
   theme?: Theme;
-  children: React.ReactNode;
-}) => (
-  <ThemeContext.Provider value={{ theme, toggleTheme: mockToggleTheme }}>
-    {children}
-  </ThemeContext.Provider>
-);
+  children: ReactNode;
+}) => {
+  const contextValue = useMemo(
+    () => ({ theme, toggleTheme: mockToggleTheme }),
+    [theme]
+  );
+  return <ThemeContext value={contextValue}>{children}</ThemeContext>;
+};
 
 describe('useTheme', () => {
   beforeEach(() => {

@@ -5,6 +5,7 @@ import {
   SiX,
   SiYoutube,
 } from 'react-icons/si';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const socialLinks = [
   {
@@ -35,6 +36,8 @@ const socialLinks = [
 ];
 
 const SocialLinks = () => {
+  const { trackButtonClick } = useAnalytics();
+
   return (
     <div className="flex gap-4 justify-center my-3">
       {socialLinks.map((link) => {
@@ -47,6 +50,7 @@ const SocialLinks = () => {
             rel="noopener noreferrer"
             aria-label={link.name}
             className="text-2xl text-text-secondary hover:text-[var(--primary-color)] transition-colors"
+            onClick={() => trackButtonClick(link.name)}
           >
             <Icon />
           </a>

@@ -12,6 +12,7 @@ This is a modern, multilingual personal portfolio website built with **React**, 
 - 📦 Modular component structure
 - 🧹 Code linting with [ESLint](https://eslint.org/) and formatting with [Prettier](https://prettier.io/)
 - 🛡️ Git hooks with [Husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) for pre-commit quality checks
+- 📊 Integrated [Google Tag Manager (GTM)](https://tagmanager.google.com/) for analytics and event tracking
 
 ## Project Structure
 
@@ -112,6 +113,23 @@ Professional experience and projects are listed in the UI and translation files.
    ```bash
    npm run build
    ```
+
+## Analytics: Google Tag Manager (GTM)
+
+Google Tag Manager is integrated for analytics and event tracking. The site loads GTM via `index.html` and exposes a custom React hook (`useAnalytics`) for tracking user interactions:
+
+- **Automatic tracking**: Section views and scroll depth are tracked automatically.
+- **Manual tracking**: Use the `trackButtonClick`, `trackEvent`, and `trackSectionView` methods from the `useAnalytics` hook to log custom events.
+
+Example usage:
+
+```tsx
+import useAnalytics from './hooks/useAnalytics';
+const { trackButtonClick } = useAnalytics();
+<button onClick={() => trackButtonClick('MyButton')}>Click me</button>;
+```
+
+See `src/hooks/useAnalytics.tsx` for details.
 
 ## License
 

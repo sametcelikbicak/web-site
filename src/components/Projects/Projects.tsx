@@ -21,6 +21,12 @@ const PROJECTS = [
       'https://raw.githubusercontent.com/sametcelikbicak/storage-function/0b679da3eac7a09d471b4eaa3b741a978cba74a8/assets/storage-function.svg',
     link: 'https://www.npmjs.com/package/storage-function',
   },
+  {
+    key: 'pomodoro',
+    image:
+      'https://raw.githubusercontent.com/sametcelikbicak/pomodoro/5c03dca9b63b406c579978468adae42a07fc2dcf/public/pomodoro.svg',
+    link: 'https://sametcelikbicak.github.io/pomodoro/',
+  },
 ];
 
 const Projects = () => {

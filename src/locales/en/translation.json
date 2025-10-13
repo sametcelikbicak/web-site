@@ -31,6 +31,10 @@
     "storage-function": {
       "title": "Storage Function",
       "description": "A function to manipulate browser storages. Such as store a key value pair to session or local storage, getting key value pairs from local or session storage. You can check all available functions for more details."
+    },
+    "pomodoro": {
+      "title": "Pomodoro",
+      "description": "A simple Pomodoro timer application to help you manage your time effectively using the Pomodoro Technique."
     }
   }
 }

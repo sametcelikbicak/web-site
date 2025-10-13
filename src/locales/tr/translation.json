@@ -31,6 +31,10 @@
     "storage-function": {
       "title": "Storage Function",
       "description": "Tarayıcı depolarını yönetmek için bir fonksiyon. Anahtar-değer çiftlerini session veya local storage'a kaydedebilir, depolardan anahtar-değer çiftlerini alabilirsiniz. Tüm fonksiyonlar için detaylara bakabilirsiniz."
+    },
+    "pomodoro": {
+      "title": "Pomodoro",
+      "description": "Pomodoro Tekniği'ni kullanarak zamanınızı etkili bir şekilde yönetmenize yardımcı olan basit bir Pomodoro zamanlayıcı uygulaması."
     }
   }
 }

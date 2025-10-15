@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { FaBuilding } from 'react-icons/fa';
-import useAnalytics from '../../hooks/useAnalytics';
+import useAnalytics from '@/hooks/useAnalytics';
 import { useEffect } from 'react';
 
 const EXPERIENCES = [

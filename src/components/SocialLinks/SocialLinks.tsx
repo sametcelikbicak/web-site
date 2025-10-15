@@ -5,7 +5,7 @@ import {
   SiX,
   SiYoutube,
 } from 'react-icons/si';
-import useAnalytics from '../../hooks/useAnalytics';
+import useAnalytics from '@/hooks/useAnalytics';
 
 const socialLinks = [
   {

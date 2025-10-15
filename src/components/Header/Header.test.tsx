@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import Header from './Header';
-import { ThemeContext, ThemeContextProps } from '../../types/theme';
+import Header from '@/components/Header/Header';
+import { ThemeContext, ThemeContextProps } from '@/types/theme';
 import { MemoryRouter } from 'react-router-dom';
 
 const mockThemeContext: ThemeContextProps = {

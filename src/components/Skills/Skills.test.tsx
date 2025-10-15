@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Skills from './Skills';
+import Skills from '@/components/Skills/Skills';
 
 beforeAll(() => {
   class MockIntersectionObserver {

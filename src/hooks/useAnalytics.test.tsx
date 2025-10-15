@@ -1,4 +1,4 @@
-import useAnalytics from './useAnalytics';
+import useAnalytics from '@/hooks/useAnalytics';
 import { renderHook } from '@testing-library/react';
 
 describe('useAnalytics', () => {

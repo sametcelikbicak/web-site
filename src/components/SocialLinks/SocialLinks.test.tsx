@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import SocialLinks from './SocialLinks';
+import SocialLinks from '@/components/SocialLinks/SocialLinks';
 
 beforeAll(() => {
   class MockIntersectionObserver {

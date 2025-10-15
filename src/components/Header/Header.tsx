@@ -59,37 +59,45 @@ const Header = () => {
             item.external ? (
               <a
                 key={item.labelKey}
-                className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
+                className="text-text-secondary text-base font-medium leading-normal transition-colors"
                 href={item.to}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackButtonClick(item.analyticsKey)}
               >
-                {t(item.labelKey)}
+                <span className="hover:text-[var(--primary-color)]">
+                  {t(item.labelKey)}
+                </span>
               </a>
             ) : (
               <Link
                 key={item.labelKey}
-                className="text-text-secondary hover:text-[var(--primary-color)] text-base font-medium leading-normal transition-colors"
+                className="text-text-secondary text-base font-medium leading-normal transition-colors"
                 to={item.to}
                 reloadDocument={false}
                 onClick={() => trackButtonClick(item.analyticsKey)}
               >
-                {t(item.labelKey)}
+                <span className="hover:text-[var(--primary-color)]">
+                  {t(item.labelKey)}
+                </span>
               </Link>
             )
           )}
         </nav>
         <button
           type="button"
-          className="cursor-pointer text-text-secondary hover:text-[var(--primary-color)]"
+          className="cursor-pointer text-text-secondary"
           aria-label="Toggle theme"
           onClick={() => {
             toggleTheme();
             trackButtonClick('theme-toggle');
           }}
         >
-          {theme === 'light' ? <SunIcon /> : <MoonIcon />}
+          {theme === 'light' ? (
+            <SunIcon className="hover:text-[var(--primary-color)]" />
+          ) : (
+            <MoonIcon className="hover:text-[var(--primary-color)]" />
+          )}
         </button>
         <button
           type="button"
@@ -121,7 +129,7 @@ const Header = () => {
               item.external ? (
                 <a
                   key={item.labelKey}
-                  className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
+                  className="text-text-secondary text-lg font-medium leading-normal transition-colors"
                   href={item.to}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -130,12 +138,14 @@ const Header = () => {
                     trackButtonClick(item.analyticsKey);
                   }}
                 >
-                  {t(item.labelKey)}
+                  <span className="hover:text-[var(--primary-color)]">
+                    {t(item.labelKey)}
+                  </span>
                 </a>
               ) : (
                 <Link
                   key={item.labelKey}
-                  className="text-text-secondary hover:text-[var(--primary-color)] text-lg font-medium leading-normal transition-colors"
+                  className="text-text-secondary text-lg font-medium leading-normal transition-colors"
                   to={item.to}
                   onClick={() => {
                     setMenuOpen(false);
@@ -143,7 +153,9 @@ const Header = () => {
                   }}
                   reloadDocument={false}
                 >
-                  {t(item.labelKey)}
+                  <span className="hover:text-[var(--primary-color)]">
+                    {t(item.labelKey)}
+                  </span>
                 </Link>
               )
             )}
@@ -173,7 +185,11 @@ const Header = () => {
                 }}
                 style={{ fontSize: '1.5rem' }}
               >
-                {theme === 'light' ? <SunIcon /> : <MoonIcon />}
+                {theme === 'light' ? (
+                  <SunIcon className="hover:text-[var(--primary-color)]" />
+                ) : (
+                  <MoonIcon className="hover:text-[var(--primary-color)]" />
+                )}
               </button>
             </div>
           </nav>

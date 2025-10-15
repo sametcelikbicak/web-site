@@ -49,10 +49,10 @@ const SocialLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
-            className="text-2xl text-text-secondary hover:text-[var(--primary-color)] transition-colors"
+            className="text-2xl text-text-secondary transition-colors"
             onClick={() => trackButtonClick(link.name)}
           >
-            <Icon />
+            <Icon className="hover:text-[var(--primary-color)]" />
           </a>
         );
       })}

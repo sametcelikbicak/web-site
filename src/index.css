@@ -21,30 +21,6 @@ body {
   color: var(--text-primary);
 }
 
-.main-bg {
-  background: var(--background-color) !important;
-}
-
-.lang-hover {
-  transition: background 0.2s;
-}
-
-.lang-hover:hover {
-  background: #f3f4f6;
-}
-
-[data-theme='dark'] .lang-hover:hover {
-  background: #333a45 !important;
-}
-
-.text-text-primary {
-  color: var(--text-primary);
-}
-
-.text-text-secondary {
-  color: var(--text-secondary);
-}
-
 @media (max-width: 768px) {
   header {
     padding-left: 1rem;

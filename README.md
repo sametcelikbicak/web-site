@@ -124,7 +124,7 @@ Google Tag Manager is integrated for analytics and event tracking. The site load
 Example usage:
 
 ```tsx
-import useAnalytics from './hooks/useAnalytics';
+import useAnalytics from '@/hooks/useAnalytics';
 const { trackButtonClick } = useAnalytics();
 <button onClick={() => trackButtonClick('MyButton')}>Click me</button>;
 ```

@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
-import { useTheme } from './useTheme';
-import { ThemeContext, Theme } from '../types/theme';
+import { useTheme } from '@/hooks/useTheme';
+import { ThemeContext, Theme } from '@/types/theme';
 import { ReactNode, useMemo } from 'react';
 
 const mockToggleTheme = jest.fn();

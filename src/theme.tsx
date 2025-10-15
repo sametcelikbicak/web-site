@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, type ReactNode } from 'react';
-import { ThemeContext, type Theme } from './types/theme';
+import { ThemeContext, type Theme } from '@/types/theme';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('dark');

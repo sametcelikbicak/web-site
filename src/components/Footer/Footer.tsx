@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import SocialLinks from '@/components/SocialLinks/SocialLinks';
 
 const Footer = () => {
   const { t } = useTranslation();

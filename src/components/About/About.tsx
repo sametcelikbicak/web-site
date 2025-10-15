@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import useAnalytics from '../../hooks/useAnalytics';
+import useAnalytics from '@/hooks/useAnalytics';
 
 const About = () => {
   const { t } = useTranslation();

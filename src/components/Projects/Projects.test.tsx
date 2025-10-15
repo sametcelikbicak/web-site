@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Projects from './Projects';
+import Projects from '@/components/Projects/Projects';
 
 beforeAll(() => {
   class MockIntersectionObserver {

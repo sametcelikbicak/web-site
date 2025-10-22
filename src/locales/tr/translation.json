@@ -18,6 +18,23 @@
     "title": "Team Lead | Principal Software Specialist"
   },
   "experience": "Deneyim",
+  "education": {
+    "title": "Eğitim",
+    "school": {
+      "ahmetYeseviUniversity": {
+        "name": "Ahmet Yesevi Üniversitesi",
+        "division": "Yönetim Bilişim Sistemleri, Yüksek Lisans"
+      },
+      "anadoluUniversity": {
+        "name": "Anadolu Üniversitesi",
+        "division": "İşletme, Lisans"
+      },
+      "dokuzEylulUniversity": {
+        "name": "Dokuz Eylul Üniversitesi",
+        "division": "Bilgisayar Teknolojisi ve Programlama, Ön Lisans"
+      }
+    }
+  },
   "projects": {
     "title": "Projeler",
     "enum2array": {

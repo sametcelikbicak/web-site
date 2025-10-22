@@ -18,6 +18,23 @@
     "title": "Team Lead | Principal Software Specialist"
   },
   "experience": "Experience",
+  "education": {
+    "title": "Education",
+    "school": {
+      "ahmetYeseviUniversity": {
+        "name": "Ahmet Yesevi University",
+        "division": "Management Information System, Master degree"
+      },
+      "anadoluUniversity": {
+        "name": "Anadolu University",
+        "division": "Business Management, Bachelor's degree"
+      },
+      "dokuzEylulUniversity": {
+        "name": "Dokuz Eylul University",
+        "division": "Computer Technologies and Programming, Associate degree"
+      }
+    }
+  },
   "projects": {
     "title": "Projects",
     "enum2array": {

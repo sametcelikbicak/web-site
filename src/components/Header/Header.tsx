@@ -16,6 +16,11 @@ const HEADER_ITEMS = [
     labelKey: 'header.experience',
     analyticsKey: 'Experience',
   },
+  {
+    to: '/#education',
+    labelKey: 'education.title',
+    analyticsKey: 'Education',
+  },
   { to: '/#skills', labelKey: 'skills', analyticsKey: 'Skills' },
   { to: '/#projects', labelKey: 'header.projects', analyticsKey: 'Projects' },
   {

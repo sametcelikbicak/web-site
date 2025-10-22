@@ -9,6 +9,7 @@ import Experience from '@/components/Experience/Experience';
 import Skills from '@/components/Skills/Skills';
 import Projects from '@/components/Projects/Projects';
 import Footer from '@/components/Footer/Footer';
+import Education from '@/components/Education/Education';
 
 const App = () => {
   const location = useLocation();
@@ -37,6 +38,7 @@ const App = () => {
                   <Profile />
                   <About />
                   <Experience />
+                  <Education />
                   <Skills />
                   <Projects />
                   <Footer />

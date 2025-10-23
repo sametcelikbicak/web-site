@@ -58,7 +58,7 @@ const Experience = () => {
       {EXPERIENCES.map((exp) => (
         <div key={exp.company} className="flex flex-col gap-8 mt-4">
           <div className="flex gap-4 sm:gap-6">
-            <div className="text-xl sm:text-2xl font-bold mt-1">
+            <div className="text-xl sm:text-2xl font-bold flex items-center">
               <FaBuilding />
             </div>
             <div className="flex-1">

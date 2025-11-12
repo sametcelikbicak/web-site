@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaUserGraduate } from 'react-icons/fa6';
 import useAnalytics from '@/hooks/useAnalytics';
-import { useEffect } from 'react';
 
 const EDUCATIONS = [
   {

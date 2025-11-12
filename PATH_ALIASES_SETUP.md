@@ -27,7 +27,7 @@ The `vite.config.ts` includes alias resolution:
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
@@ -55,42 +55,26 @@ The `.vscode/settings.json` enforces absolute imports:
 }
 ```
 
-### 5. ESLint Rules
+### 5. Path Alias Enforcement
 
-The `eslint.config.js` prevents relative imports:
-
-```javascript
-rules: {
-  'no-restricted-imports': [
-    'error',
-    {
-      patterns: [
-        {
-          group: ['../*', './*'],
-          message: 'Relative imports are not allowed. Use @/ path aliases instead.',
-        },
-      ],
-    },
-  ],
-}
-```
+Biome can be configured to check for import style and enforce path alias usage. See `biome.json` for custom rules.
 
 ## Usage Examples
 
 ### ✅ Good (Use these)
 
 ```typescript
-import Header from '@/components/Header/Header';
-import useAnalytics from '@/hooks/useAnalytics';
-import { Theme } from '@/types/theme';
+import Header from "@/components/Header/Header";
+import useAnalytics from "@/hooks/useAnalytics";
+import { Theme } from "@/types/theme";
 ```
 
-### ❌ Bad (Will cause ESLint errors)
+### ❌ Bad (Will cause lint errors)
 
 ```typescript
-import Header from './components/Header/Header';
-import useAnalytics from '../../hooks/useAnalytics';
-import { Theme } from '../types/theme';
+import Header from "./components/Header/Header";
+import useAnalytics from "../../hooks/useAnalytics";
+import { Theme } from "../types/theme";
 ```
 
 ## Auto-Import Behavior
@@ -100,13 +84,11 @@ When you use VS Code with this configuration:
 1. **Auto-completion** will suggest imports with `@/` aliases
 2. **Auto-import** when you type a component name will use `@/` aliases
 3. **Organize imports** will preserve `@/` aliases
-4. **ESLint** will show errors for any relative imports
+4. **Biome** will show errors for any relative imports (if configured)
 
 ## Scripts
 
-- `npm run lint` - Check for ESLint errors including import violations
-- `npm run lint-fix` - Auto-fix ESLint errors where possible
-- `npm run lint-imports` - Focus specifically on import rule violations
+- `npm run format` - Auto-format code with Biome
 
 ## IDE Setup
 
@@ -121,7 +103,7 @@ When you use VS Code with this configuration:
 Make sure your IDE:
 
 1. Recognizes the TypeScript path mappings in `tsconfig.app.json`
-2. Has ESLint integration enabled
+2. Has Biome integration enabled
 3. Supports TypeScript auto-import suggestions
 
 ## Troubleshooting
@@ -131,4 +113,4 @@ If auto-imports aren't working:
 1. Reload VS Code TypeScript server: `Ctrl/Cmd + Shift + P` → "TypeScript: Restart TS Server"
 2. Check that `tsconfig.app.json` paths are correctly configured
 3. Ensure VS Code is using the workspace TypeScript version
-4. Verify ESLint is running and showing import errors for relative paths
+4. Verify Biome is running and showing import errors for relative paths

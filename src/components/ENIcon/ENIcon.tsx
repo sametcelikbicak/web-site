@@ -8,6 +8,7 @@ const ENIcon = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 36 36"
     {...props}
   >
+    <title>English</title>
     <path
       fill="#B22334"
       d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2M18 9h18v2H18z"

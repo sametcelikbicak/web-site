@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
-import Header from '@/components/Header/Header';
-import { ThemeContext, ThemeContextProps } from '@/types/theme';
 import { MemoryRouter } from 'react-router-dom';
+import Header from '@/components/Header/Header';
+import { ThemeContext, type ThemeContextProps } from '@/types/theme';
 
 const mockThemeContext: ThemeContextProps = {
   theme: 'light',
@@ -13,7 +13,6 @@ beforeAll(() => {
     root = null;
     rootMargin = '';
     thresholds = [];
-    constructor() {}
     observe() {}
     unobserve() {}
     disconnect() {}

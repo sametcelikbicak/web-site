@@ -44,8 +44,9 @@ const Projects = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {PROJECTS.map((project) => (
-          <div
+          <button
             key={project.key}
+            type="button"
             className="flex flex-col items-center main-bg rounded-lg overflow-hidden transition-shadow duration-300 p-6 cursor-pointer"
             onClick={() => window.open(project.link, '_blank')}
           >
@@ -63,7 +64,7 @@ const Projects = () => {
                 {t(`projects.${project.key}.description`)}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </section>

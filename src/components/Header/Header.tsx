@@ -1,13 +1,13 @@
-import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useTheme } from '@/hooks/useTheme';
-import SunIcon from '@/components/SunIcon/SunIcon';
-import MoonIcon from '@/components/MoonIcon/MoonIcon';
-import HamburgerMenu from '@/components/HamburgerMenu/HamburgerMenu';
-import TRIcon from '@/components/TRIcon/TRIcon';
+import { useTranslation } from 'react-i18next';
+import { Link, useNavigate } from 'react-router-dom';
 import ENIcon from '@/components/ENIcon/ENIcon';
+import HamburgerMenu from '@/components/HamburgerMenu/HamburgerMenu';
+import MoonIcon from '@/components/MoonIcon/MoonIcon';
+import SunIcon from '@/components/SunIcon/SunIcon';
+import TRIcon from '@/components/TRIcon/TRIcon';
 import useAnalytics from '@/hooks/useAnalytics';
+import { useTheme } from '@/hooks/useTheme';
 
 const HEADER_ITEMS = [
   { to: '/#about', labelKey: 'header.about', analyticsKey: 'About' },
@@ -46,9 +46,11 @@ const Header = () => {
       className="flex items-center justify-between whitespace-nowrap border-solid px-6 py-2 sticky top-0 z-50 bg-white dark:bg-[var(--background-color)]"
       style={{ borderBottom: '1px solid var(--header-border)' }}
     >
-      <div
+      <button
+        type="button"
         className="flex items-center gap-3 text-text-primary cursor-pointer"
         onClick={() => navigate('/')}
+        aria-label="Go to home"
       >
         <div className="w-10 h-10">
           <img src="/sc.png" alt="Logo" />
@@ -56,7 +58,7 @@ const Header = () => {
         <h2 className="text-text-primary text-xl font-bold leading-tight">
           {t('header.name')}
         </h2>
-      </div>
+      </button>
       {/* Desktop navigation */}
       <div className="hidden md:flex items-center gap-4">
         <nav className="flex items-center gap-8">

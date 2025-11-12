@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 type EventParams = {
   category?: string;
@@ -89,7 +89,7 @@ export default function useAnalytics() {
       { threshold: 0.5 }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    for (const section of Array.from(sections)) observer.observe(section);
 
     return () => {
       if (typeof cleanupScroll === 'function') cleanupScroll();

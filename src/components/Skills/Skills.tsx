@@ -1,26 +1,26 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import useAnalytics from '@/hooks/useAnalytics';
 import {
-  SiTypescript,
-  SiTailwindcss,
-  SiSharp,
-  SiPnpm,
-  SiGit,
   SiAngular,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiNodedotjs,
-  SiGithub,
   SiBitbucket,
-  SiGitlab,
-  SiNpm,
-  SiYarn,
+  SiCss3,
   SiDocker,
   SiDotnet,
+  SiGit,
+  SiGithub,
+  SiGitlab,
+  SiHtml5,
+  SiJavascript,
+  SiNodedotjs,
+  SiNpm,
+  SiPnpm,
+  SiReact,
+  SiSharp,
+  SiTailwindcss,
+  SiTypescript,
+  SiYarn,
 } from 'react-icons/si';
+import useAnalytics from '@/hooks/useAnalytics';
 
 const SKILLS = [
   { name: 'Angular', icon: SiAngular },

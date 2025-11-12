@@ -10,7 +10,7 @@ This is a modern, multilingual personal portfolio website built with **React**, 
 - 🌍 Multilingual support (English & Turkish) via [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/)
 - 🧑‍💻 Professional experience and project showcase
 - 📦 Modular component structure
-- 🧹 Code linting with [ESLint](https://eslint.org/) and formatting with [Prettier](https://prettier.io/)
+- 🧹 Code linting and formatting with [Biome](https://biomejs.dev/)
 - 🛡️ Git hooks with [Husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) for pre-commit quality checks
 - 📊 Integrated [Google Tag Manager (GTM)](https://tagmanager.google.com/) for analytics and event tracking
 
@@ -45,8 +45,7 @@ tsconfig*.json     # TypeScript configs
 | `dev`       | Start development server            |
 | `build`     | Build for production                |
 | `preview`   | Preview production build            |
-| `lint`      | Run ESLint                          |
-| `format`    | Format code with Prettier           |
+| `format`    | Format code with Biome              |
 | `predeploy` | Build before deployment             |
 | `deploy`    | Deploy to GitHub Pages (`gh-pages`) |
 
@@ -58,7 +57,7 @@ tsconfig*.json     # TypeScript configs
 - **vite**: Fast build tool
 - **tailwindcss**, **@tailwindcss/vite**: Utility-first CSS framework
 - **i18next**, **react-i18next**: Internationalization
-- **eslint**, **prettier**: Linting & formatting
+- **biome**: Linting & formatting
 
 ## Deployment
 
@@ -73,13 +72,13 @@ To deploy the site to GitHub Pages:
 
 The `predeploy` script ensures the site is built before deploying.
 
-## ESLint & Formatting
+## Linting & Formatting
 
-ESLint is configured for React, TypeScript, and hooks best practices. Prettier is used for code formatting. See `eslint.config.js` for details.
+Biome is configured for TypeScript, React, and formatting. See `biome.json` for details.
 
 ## Git Hooks: Husky & lint-staged
 
-[Husky](https://typicode.github.io/husky/) is used to manage Git hooks, and [lint-staged](https://github.com/okonet/lint-staged) ensures that only staged files are linted and formatted before each commit.
+[Husky](https://typicode.github.io/husky/) is used to manage Git hooks, and [lint-staged](https://github.com/okonet/lint-staged) ensures that only staged files are checked and formatted with Biome before each commit.
 
 - **Pre-commit hook**: Automatically runs `npm run lint` and `npm run format` on staged files matching `*.{js,jsx,ts,tsx,css,md,json}` before allowing a commit.
 - Configuration for lint-staged is in `.lintstagedrc.json`.
@@ -124,9 +123,9 @@ Google Tag Manager is integrated for analytics and event tracking. The site load
 Example usage:
 
 ```tsx
-import useAnalytics from '@/hooks/useAnalytics';
+import useAnalytics from "@/hooks/useAnalytics";
 const { trackButtonClick } = useAnalytics();
-<button onClick={() => trackButtonClick('MyButton')}>Click me</button>;
+<button onClick={() => trackButtonClick("MyButton")}>Click me</button>;
 ```
 
 See `src/hooks/useAnalytics.tsx` for details.

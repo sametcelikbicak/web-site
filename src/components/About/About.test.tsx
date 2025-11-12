@@ -6,7 +6,6 @@ beforeAll(() => {
     root = null;
     rootMargin = '';
     thresholds = [];
-    constructor() {}
     observe() {}
     unobserve() {}
     disconnect() {}

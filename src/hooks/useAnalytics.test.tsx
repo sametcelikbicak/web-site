@@ -1,5 +1,5 @@
-import useAnalytics from '@/hooks/useAnalytics';
 import { renderHook } from '@testing-library/react';
+import useAnalytics from '@/hooks/useAnalytics';
 
 describe('useAnalytics', () => {
   beforeAll(() => {
@@ -10,7 +10,6 @@ describe('useAnalytics', () => {
       root = null;
       rootMargin = '';
       thresholds = [];
-      constructor() {}
       observe() {}
       unobserve() {}
       disconnect() {}

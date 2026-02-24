@@ -35,8 +35,10 @@ const App = () => {
               path="/"
               element={
                 <>
-                  <Profile />
-                  <About />
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <Profile />
+                    <About />
+                  </div>
                   <Experience />
                   <Education />
                   <Skills />

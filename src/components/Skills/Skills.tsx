@@ -11,12 +11,15 @@ import {
   SiGitlab,
   SiHtml5,
   SiJavascript,
+  SiNestjs,
+  SiNextdotjs,
   SiNodedotjs,
   SiNpm,
   SiPnpm,
   SiReact,
   SiSharp,
   SiTailwindcss,
+  SiTurborepo,
   SiTypescript,
   SiYarn,
 } from 'react-icons/si';
@@ -29,10 +32,12 @@ const SKILLS = [
   { name: 'CSS3', icon: SiCss3 },
   { name: 'JavaScript', icon: SiJavascript },
   { name: 'React', icon: SiReact },
+  { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'NestJS', icon: SiNestjs },
   { name: 'Tailwind', icon: SiTailwindcss },
+  { name: 'NodeJS', icon: SiNodedotjs },
   { name: 'C#', icon: SiSharp },
   { name: '.Net', icon: SiDotnet },
-  { name: 'NodeJS', icon: SiNodedotjs },
   { name: 'Git', icon: SiGit },
   { name: 'GitHub', icon: SiGithub },
   { name: 'Bitbucket', icon: SiBitbucket },
@@ -41,6 +46,7 @@ const SKILLS = [
   { name: 'Yarn', icon: SiYarn },
   { name: 'PNPM', icon: SiPnpm },
   { name: 'Docker', icon: SiDocker },
+  { name: 'Turborepo', icon: SiTurborepo },
 ];
 
 const Skills = () => {

@@ -12,7 +12,7 @@ const About = () => {
   }, [trackSectionView]);
 
   return (
-    <section className="scroll-mt-20 text-left" id="about">
+    <div className="scroll-mt-20 text-left" id="about">
       <h2 className="text-text-primary text-2xl sm:text-3xl font-bold leading-tight tracking-tight mb-6">
         {t('about.title')}
       </h2>
@@ -32,7 +32,7 @@ const About = () => {
           </Fragment>
         ))}
       </p>
-    </section>
+    </div>
   );
 };
 

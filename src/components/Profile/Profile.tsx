@@ -1,19 +1,17 @@
 import { useTranslation } from 'react-i18next';
 
-const PROFILE_IMAGE =
-  'https://avatars.githubusercontent.com/u/5312741?s=400&u=c94aaea8002d28b4a487d6d11a7bc784abe60ff6&v=4';
-
 const Profile = () => {
   const { t } = useTranslation();
   return (
-    <section className="flex flex-col items-center text-center gap-6">
-      <div
-        className="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-40 w-40 border-4 border-solid border-white dark:border-[#243647] shadow-lg"
+    <div className="flex flex-col items-center text-center gap-6">
+      <img
+        src="/sc_caricature.png"
+        alt="Profile"
+        className="max-w-xs object-cover shadow-lg"
         style={{
           boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10)',
-          backgroundImage: `url('${PROFILE_IMAGE}')`,
         }}
-      ></div>
+      />
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-text-primary text-4xl sm:text-5xl font-bold leading-tight tracking-tighter">
           {t('profile.name')}
@@ -22,7 +20,7 @@ const Profile = () => {
           {t('profile.title')}
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 

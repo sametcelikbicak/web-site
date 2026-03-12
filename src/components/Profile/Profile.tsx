@@ -34,7 +34,7 @@ const Profile = () => {
           onLoad={() => setImgLoaded(true)}
         />
       </div>
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-2 mb-8">
         <h1 className="text-text-primary text-4xl sm:text-5xl font-bold leading-tight tracking-tighter">
           {t('profile.name')}
         </h1>

@@ -57,7 +57,7 @@ const Experience = () => {
       </h2>
       {EXPERIENCES.map((exp) => (
         <div key={exp.company} className="flex flex-col gap-8 mt-4">
-          <div className="flex gap-4 sm:gap-6">
+          <div className="flex gap-4 sm:gap-6 hover:text-(--primary-color) hover:scale-y-110">
             <div className="text-xl sm:text-2xl font-bold flex items-center">
               <FaBuilding />
             </div>

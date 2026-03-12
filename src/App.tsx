@@ -36,8 +36,17 @@ const App = () => {
               element={
                 <>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <Profile />
-                    <About />
+                    {/* On small screens, Profile first, then About. On large screens, About left, Profile right. */}
+                    <div className="block lg:hidden">
+                      <Profile />
+                      <About />
+                    </div>
+                    <div className="hidden lg:block">
+                      <About />
+                    </div>
+                    <div className="hidden lg:block">
+                      <Profile />
+                    </div>
                   </div>
                   <Experience />
                   <Education />

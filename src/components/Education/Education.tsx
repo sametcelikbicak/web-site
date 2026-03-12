@@ -42,7 +42,7 @@ const Education = () => {
       </h2>
       {EDUCATIONS.map((exp) => (
         <div key={exp.school} className="flex flex-col gap-8 mt-4">
-          <div className="flex gap-4 sm:gap-6">
+          <div className="flex gap-4 sm:gap-6 hover:text-(--primary-color) hover:scale-y-110">
             <div className="text-xl sm:text-2xl font-bold flex items-center">
               <FaUserGraduate />
             </div>

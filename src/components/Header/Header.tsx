@@ -66,27 +66,23 @@ const Header = () => {
             item.external ? (
               <a
                 key={item.labelKey}
-                className="text-text-secondary text-base font-medium leading-normal transition-colors"
+                className="text-text-secondary text-base font-medium leading-normal transition-colors hover:text-(--primary-color) hover:scale-110"
                 href={item.to}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackButtonClick(item.analyticsKey)}
               >
-                <span className="hover:text-[var(--primary-color)]">
-                  {t(item.labelKey)}
-                </span>
+                {t(item.labelKey)}
               </a>
             ) : (
               <Link
                 key={item.labelKey}
-                className="text-text-secondary text-base font-medium leading-normal transition-colors"
+                className="text-text-secondary text-base font-medium leading-normal transition-colors hover:text-(--primary-color) hover:scale-110"
                 to={item.to}
                 reloadDocument={false}
                 onClick={() => trackButtonClick(item.analyticsKey)}
               >
-                <span className="hover:text-[var(--primary-color)]">
-                  {t(item.labelKey)}
-                </span>
+                {t(item.labelKey)}
               </Link>
             )
           )}
@@ -136,7 +132,7 @@ const Header = () => {
               item.external ? (
                 <a
                   key={item.labelKey}
-                  className="text-text-secondary text-lg font-medium leading-normal transition-colors"
+                  className="text-text-secondary text-lg font-medium leading-normal transition-colors hover:text-(--primary-color)"
                   href={item.to}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -145,14 +141,12 @@ const Header = () => {
                     trackButtonClick(item.analyticsKey);
                   }}
                 >
-                  <span className="hover:text-[var(--primary-color)]">
-                    {t(item.labelKey)}
-                  </span>
+                  {t(item.labelKey)}
                 </a>
               ) : (
                 <Link
                   key={item.labelKey}
-                  className="text-text-secondary text-lg font-medium leading-normal transition-colors"
+                  className="text-text-secondary text-lg font-medium leading-normal transition-colors hover:text-(--primary-color)"
                   to={item.to}
                   onClick={() => {
                     setMenuOpen(false);
@@ -160,9 +154,7 @@ const Header = () => {
                   }}
                   reloadDocument={false}
                 >
-                  <span className="hover:text-[var(--primary-color)]">
-                    {t(item.labelKey)}
-                  </span>
+                  {t(item.labelKey)}
                 </Link>
               )
             )}
@@ -175,7 +167,7 @@ const Header = () => {
                   setMenuOpen(false);
                   trackButtonClick('language-toggle');
                 }}
-                className="p-2 flex items-center gap-2 lang-hover"
+                className="p-2 flex items-center gap-2 hover:scale-110"
                 aria-label="Toggle language"
                 style={{ fontSize: '1.5rem' }}
               >

@@ -64,7 +64,10 @@ const Skills = () => {
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {SKILLS.map(({ name, icon: Icon }) => (
-          <div key={name} className="flex flex-col items-center gap-2">
+          <div
+            key={name}
+            className="flex flex-col items-center gap-2 hover:text-(--primary-color)"
+          >
             <Icon size={40} title={name} />
             <span className="text-text-secondary text-sm font-medium">
               {name}

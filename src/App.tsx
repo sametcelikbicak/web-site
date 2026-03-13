@@ -10,6 +10,7 @@ import Header from '@/components/Header/Header';
 import Profile from '@/components/Profile/Profile';
 import Projects from '@/components/Projects/Projects';
 import Skills from '@/components/Skills/Skills';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const App = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const App = () => {
     }
   }, [location]);
 
+  const isMobile = useIsMobile();
   return (
     <ThemeProvider>
       <Header />
@@ -36,8 +38,17 @@ const App = () => {
               element={
                 <>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <Profile />
-                    <About />
+                    {isMobile ? (
+                      <>
+                        <Profile />
+                        <About />
+                      </>
+                    ) : (
+                      <>
+                        <About />
+                        <Profile />
+                      </>
+                    )}
                   </div>
                   <Experience />
                   <Education />

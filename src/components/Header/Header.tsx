@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <header
-      className="flex items-center justify-between whitespace-nowrap border-solid px-6 py-2 sticky top-0 z-50 bg-white dark:bg-[var(--background-color)]"
+      className="flex items-center justify-between whitespace-nowrap border-solid px-6 py-2 sticky top-0 z-50 bg-white dark:bg-(--background-color)"
       style={{ borderBottom: '1px solid var(--header-border)' }}
     >
       <button
@@ -89,22 +89,18 @@ const Header = () => {
         </nav>
         <button
           type="button"
-          className="cursor-pointer text-text-secondary"
+          className="cursor-pointer text-text-secondary hover:text-(--primary-color) hover:scale-110"
           aria-label="Toggle theme"
           onClick={() => {
             toggleTheme();
             trackButtonClick('theme-toggle');
           }}
         >
-          {theme === 'light' ? (
-            <SunIcon className="hover:text-[var(--primary-color)]" />
-          ) : (
-            <MoonIcon className="hover:text-[var(--primary-color)]" />
-          )}
+          {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>
         <button
           type="button"
-          className="cursor-pointer"
+          className="cursor-pointer hover:scale-110"
           aria-label="Toggle language"
           onClick={() => {
             toggleLanguage();
@@ -175,7 +171,7 @@ const Header = () => {
               </button>
               <button
                 type="button"
-                className="cursor-pointer ml-4"
+                className="cursor-pointer ml-4 hover:text-(--primary-color) hover:scale-110"
                 aria-label="Toggle theme"
                 onClick={() => {
                   toggleTheme();
@@ -184,11 +180,7 @@ const Header = () => {
                 }}
                 style={{ fontSize: '1.5rem' }}
               >
-                {theme === 'light' ? (
-                  <SunIcon className="hover:text-[var(--primary-color)]" />
-                ) : (
-                  <MoonIcon className="hover:text-[var(--primary-color)]" />
-                )}
+                {theme === 'light' ? <SunIcon /> : <MoonIcon />}
               </button>
             </div>
           </nav>

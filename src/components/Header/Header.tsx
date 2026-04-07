@@ -53,7 +53,14 @@ const Header = () => {
         aria-label="Go to home"
       >
         <div className="w-10 h-10">
-          <img src="/sc.png" alt="Logo" />
+          <img
+            src="/sc.webp"
+            alt="Logo"
+            className="w-full h-full object-contain"
+            onError={(e) => {
+              e.currentTarget.src = '/sc.png';
+            }}
+          />
         </div>
         <h2 className="text-text-primary text-xl font-bold leading-tight">
           {t('header.name')}

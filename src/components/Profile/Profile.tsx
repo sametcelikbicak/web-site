@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 const Profile = () => {
   const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <div className="flex flex-col items-center text-center gap-6">
@@ -22,9 +23,9 @@ const Profile = () => {
           />
         )}
         <img
-          src="/sc_caricature.png"
+          src={imgError ? '/sc_caricature.png' : '/sc_caricature.webp'}
           alt="Profile"
-          className={`rounded-lg shadow-lg transition-opacity duration-300 absolute top-0 left-0 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`rounded-lg shadow-lg transition-opacity duration-300 absolute top-0 left-0 ${imgLoaded || imgError ? 'opacity-100' : 'opacity-0'}`}
           style={{
             width: 320,
             height: 480,
@@ -32,6 +33,10 @@ const Profile = () => {
             boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10)',
           }}
           onLoad={() => setImgLoaded(true)}
+          onError={() => {
+            setImgError(true);
+            setImgLoaded(true);
+          }}
         />
       </div>
       <div className="flex flex-col items-center gap-2 mb-8">

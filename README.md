@@ -13,6 +13,9 @@ This is a modern, multilingual personal portfolio website built with **React**, 
 - 🧹 Code linting and formatting with [Biome](https://biomejs.dev/)
 - 🛡️ Git hooks with [Husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) for pre-commit quality checks
 - 📊 Integrated [Google Tag Manager (GTM)](https://tagmanager.google.com/) for analytics and event tracking
+- 🖼️ WebP image optimization with automatic PNG fallback for compatibility
+- 🗺️ SEO optimized with sitemap.xml and robots.txt
+- 🤖 `llms.txt` for AI assistants to understand project context
 
 ## Project Structure
 
@@ -28,7 +31,14 @@ src/
    App.tsx          # Main app component
    main.tsx         # App entry point
 public/
-   sc.png           # Profile/logo image
+   sc.png           # Profile/logo image (PNG fallback)
+   sc.webp          # Profile/logo image (WebP optimized)
+   sc_caricature.png  # Caricature profile image (PNG fallback)
+   sc_caricature.webp # Caricature profile image (WebP optimized)
+   sitemap.xml      # SEO sitemap for search engines
+   robots.txt       # Search engine crawler rules
+   llms.txt         # LLM / AI assistant project context file
+   CNAME            # GitHub Pages custom domain configuration
 .husky/            # Husky git hooks (e.g., pre-commit)
 .huskyrc.json      # Husky configuration
 .lintstagedrc.json # lint-staged configuration
@@ -93,6 +103,14 @@ Theme context is provided via `ThemeProvider` (`src/theme.tsx`). Use the theme t
 ## Internationalization
 
 Translations are managed in `src/locales/en/translation.json` and `src/locales/tr/translation.json`. The language can be switched via the header dropdown.
+
+## Images & Performance
+
+Optimized WebP images are used with automatic PNG fallback handling:
+
+- All images first try to load WebP versions for smaller file sizes and better performance
+- Gracefully falls back to PNG if WebP fails to load for any reason (corrupted files, browser support issues)
+- Proper loading states with skeleton placeholders
 
 ## Experience & Projects
 

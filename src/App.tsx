@@ -1,16 +1,17 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { ThemeProvider } from '@/theme';
 import '@/i18n';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import About from '@/components/About/About';
-import Education from '@/components/Education/Education';
-import Experience from '@/components/Experience/Experience';
-import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import Profile from '@/components/Profile/Profile';
-import Projects from '@/components/Projects/Projects';
-import Skills from '@/components/Skills/Skills';
 import { useIsMobile } from '@/hooks/useIsMobile';
+
+const Experience = lazy(() => import('@/components/Experience/Experience'));
+const Education = lazy(() => import('@/components/Education/Education'));
+const Skills = lazy(() => import('@/components/Skills/Skills'));
+const Projects = lazy(() => import('@/components/Projects/Projects'));
+const Footer = lazy(() => import('@/components/Footer/Footer'));
 
 const App = () => {
   const location = useLocation();
@@ -50,11 +51,13 @@ const App = () => {
                       </>
                     )}
                   </div>
-                  <Experience />
-                  <Education />
-                  <Skills />
-                  <Projects />
-                  <Footer />
+                  <Suspense fallback={null}>
+                    <Experience />
+                    <Education />
+                    <Skills />
+                    <Projects />
+                    <Footer />
+                  </Suspense>
                 </>
               }
             />

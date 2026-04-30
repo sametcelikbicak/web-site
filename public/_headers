@@ -1,5 +1,11 @@
 /
-  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </docs/agent-discovery.md>; rel="service-doc"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </docs/agent-discovery.md>; rel="service-doc"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"
+  Vary: Accept
 
 /index.html
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </docs/agent-discovery.md>; rel="service-doc"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"
+  Vary: Accept
+
+/index.md
+  Content-Type: text/markdown; charset=utf-8
   Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </docs/agent-discovery.md>; rel="service-doc"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"

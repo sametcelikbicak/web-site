@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://sametcelikbicak.com/",
+      "describedby": [
+        {
+          "href": "https://sametcelikbicak.com/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://sametcelikbicak.com/docs/agent-discovery.md",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}

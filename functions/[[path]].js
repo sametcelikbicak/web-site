@@ -83,7 +83,28 @@ URL: https://sametcelikbicak.github.io/pomodoro/
 `;
 
 const LINK_HEADER =
-  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </docs/agent-discovery.md>; rel="service-doc"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"';
+  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </docs/api.md>; rel="service-doc"; type="text/markdown", </status/health.json>; rel="status"; type="application/json", </llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"';
+
+const CONTENT_TYPES = new Map([
+  ['/.well-known/api-catalog', 'application/linkset+json; charset=utf-8'],
+  ['/.well-known/openid-configuration', 'application/json; charset=utf-8'],
+  [
+    '/.well-known/oauth-authorization-server',
+    'application/json; charset=utf-8',
+  ],
+  ['/.well-known/oauth-protected-resource', 'application/json; charset=utf-8'],
+  ['/.well-known/jwks.json', 'application/json; charset=utf-8'],
+  ['/.well-known/mcp/server-card.json', 'application/json; charset=utf-8'],
+  ['/.well-known/agent-skills/index.json', 'application/json; charset=utf-8'],
+  [
+    '/.well-known/agent-skills/profile-summary/SKILL.md',
+    'text/markdown; charset=utf-8',
+  ],
+  ['/index.md', 'text/markdown; charset=utf-8'],
+  ['/openapi.json', 'application/vnd.oai.openapi+json; charset=utf-8'],
+  ['/status/health.json', 'application/json; charset=utf-8'],
+  ['/mcp', 'application/json; charset=utf-8'],
+]);
 
 const markdownTokenCount = (markdown) =>
   Math.ceil(markdown.trim().split(/\s+/).length * 1.3);
@@ -104,6 +125,8 @@ const isHtmlRoute = (request) => {
 };
 
 export const onRequest = async ({ env, request }) => {
+  const { pathname } = new URL(request.url);
+
   if (acceptsMarkdown(request) && isHtmlRoute(request)) {
     return new Response(MARKDOWN_HOMEPAGE, {
       headers: {
@@ -116,5 +139,20 @@ export const onRequest = async ({ env, request }) => {
     });
   }
 
-  return env.ASSETS.fetch(request);
+  const response = await env.ASSETS.fetch(request);
+  const headers = new Headers(response.headers);
+
+  const contentType = CONTENT_TYPES.get(pathname);
+  if (contentType) headers.set('Content-Type', contentType);
+
+  if (isHtmlRoute(request)) {
+    headers.set('Link', LINK_HEADER);
+    headers.append('Vary', 'Accept');
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 };

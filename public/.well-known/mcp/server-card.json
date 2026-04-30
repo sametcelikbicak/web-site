@@ -1,0 +1,37 @@
+{
+  "serverInfo": {
+    "name": "sametcelikbicak.com",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://sametcelikbicak.com/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false
+  },
+  "resources": [
+    {
+      "uri": "https://sametcelikbicak.com/index.md",
+      "name": "Markdown homepage",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "https://sametcelikbicak.com/llms.txt",
+      "name": "LLM site summary",
+      "mimeType": "text/plain"
+    }
+  ],
+  "tools": [
+    {
+      "name": "get_profile_summary",
+      "description": "Return a concise public profile summary for Samet CELIKBICAK."
+    },
+    {
+      "name": "list_projects",
+      "description": "Return public portfolio project names, descriptions, and URLs."
+    }
+  ]
+}

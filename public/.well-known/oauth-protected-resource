@@ -1,0 +1,6 @@
+{
+  "resource": "https://sametcelikbicak.com/",
+  "authorization_servers": ["https://sametcelikbicak.com"],
+  "scopes_supported": ["public.read"],
+  "resource_documentation": "https://sametcelikbicak.com/docs/oauth.md"
+}

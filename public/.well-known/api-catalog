@@ -2,6 +2,12 @@
   "linkset": [
     {
       "anchor": "https://sametcelikbicak.com/",
+      "service-desc": [
+        {
+          "href": "https://sametcelikbicak.com/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
       "describedby": [
         {
           "href": "https://sametcelikbicak.com/llms.txt",
@@ -10,8 +16,14 @@
       ],
       "service-doc": [
         {
-          "href": "https://sametcelikbicak.com/docs/agent-discovery.md",
+          "href": "https://sametcelikbicak.com/docs/api.md",
           "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://sametcelikbicak.com/status/health.json",
+          "type": "application/json"
         }
       ]
     }

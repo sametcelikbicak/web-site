@@ -1,0 +1,75 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Samet CELIKBICAK Public Discovery API",
+    "version": "1.0.0",
+    "description": "Public, read-only metadata endpoints for agent discovery of sametcelikbicak.com."
+  },
+  "servers": [
+    {
+      "url": "https://sametcelikbicak.com"
+    }
+  ],
+  "paths": {
+    "/index.md": {
+      "get": {
+        "summary": "Markdown homepage",
+        "responses": {
+          "200": {
+            "description": "Markdown representation of the homepage",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "LLM-oriented site summary",
+        "responses": {
+          "200": {
+            "description": "Plain text agent summary",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status/health.json": {
+      "get": {
+        "summary": "Discovery health endpoint",
+        "responses": {
+          "200": {
+            "description": "Static health status for public discovery resources",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "service": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["status", "service"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

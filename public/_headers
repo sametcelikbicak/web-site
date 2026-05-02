@@ -1,0 +1,44 @@
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </docs/api.md>; rel="service-doc"; type="text/markdown", </status/health.json>; rel="status"; type="application/json", </llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"
+  Vary: Accept
+
+/index.html
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </docs/api.md>; rel="service-doc"; type="text/markdown", </status/health.json>; rel="status"; type="application/json", </llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"
+  Vary: Accept
+
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </docs/agent-discovery.md>; rel="service-doc"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+
+/.well-known/openid-configuration
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-authorization-server
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-protected-resource
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/jwks.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills/profile-summary/SKILL.md
+  Content-Type: text/markdown; charset=utf-8
+
+/openapi.json
+  Content-Type: application/vnd.oai.openapi+json; charset=utf-8
+
+/status/health.json
+  Content-Type: application/json; charset=utf-8
+
+/mcp
+  Content-Type: application/json; charset=utf-8

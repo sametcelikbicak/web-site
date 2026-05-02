@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "serverInfo": {
+      "name": "sametcelikbicak.com",
+      "version": "1.0.0"
+    },
+    "capabilities": {
+      "tools": {},
+      "resources": {}
+    }
+  }
+}

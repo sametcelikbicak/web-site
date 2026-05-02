@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "profile-summary",
+      "type": "skill-md",
+      "description": "Public profile, project, and discovery guidance for Samet CELIKBICAK.",
+      "url": "https://sametcelikbicak.com/.well-known/agent-skills/profile-summary/SKILL.md",
+      "digest": "sha256:d9bfc3b4f869b77ee40092ef3b7a6b2fd2efb39671a78f5609ecc607f7a3e9eb"
+    }
+  ]
+}

@@ -1,11 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "web-site",
+  "main": "src/worker.ts",
   "compatibility_date": "2026-05-02",
   "observability": {
     "enabled": true
   },
   "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
     "not_found_handling": "single-page-application"
   },
   "compatibility_flags": [

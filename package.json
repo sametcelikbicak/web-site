@@ -7,10 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "test": "jest --passWithNoTests",
-    "preview": "vite preview",
+    "preview": "npm run build && wrangler dev",
     "format": "biome check --write",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build && wrangler deploy",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.8",
+    "@cloudflare/vite-plugin": "^1.35.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^30.0.0",
@@ -39,6 +40,7 @@
     "lint-staged": "^16.2.7",
     "ts-jest": "^29.4.6",
     "typescript": "^5.9.3",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "wrangler": "^4.87.0"
   }
 }

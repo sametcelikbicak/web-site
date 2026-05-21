@@ -1,6 +1,40 @@
 {
+  "hero": {
+    "title": "Shaping the Future with Code and Design.",
+    "subtitle": "Principal Software Specialist with over {{years}} years of experience building scalable systems and intuitive interfaces."
+  },
+  "expertise": {
+    "label": "EXPERTISE",
+    "frontend": {
+      "title": "Frontend & UI",
+      "desc": "Crafting responsive, accessible, and performant user interfaces using modern web technologies like Angular, React, TypeScript, JavaScript and Tailwind CSS."
+    },
+    "architecture": {
+      "title": "System Architecture",
+      "desc": "Designing scalable, resilient, and maintainable backend systems and microservices with a focus on performance and security."
+    },
+    "performance": {
+      "title": "Performance Optimization",
+      "desc": "Profiling and optimizing applications to ensure fast load times, smooth interactions, and efficient resource utilization."
+    },
+    "leadership": {
+      "title": "Technical Leadership",
+      "desc": "Mentoring teams, establishing best practices, and guiding technical decisions to align with business objectives."
+    }
+  },
+  "stats": {
+    "experience": "YEARS OF EXPERIENCE",
+    "projects": "COMPLETED PROJECTS",
+    "stack": "TECHNOLOGY STACK",
+    "satisfaction": "CUSTOMER SATISFACTION"
+  },
+  "featuredProjects": {
+    "label": "FEATURED PROJECTS",
+    "viewAll": "View All Projects"
+  },
   "about": {
     "title": "About",
+    "subtitle": "My Journey",
     "description": "I have been working in the software industry since 2007. During this time, I have held positions as Software Developer, Senior Software Developer, and Team Lead.\n\nI possess extensive experience in software development. I have developed web (frontend & backend) and Android (Xamarin) applications using object-oriented programming, software design patterns, principles, methodologies, and various development tools. I leverage my technical and analytical skills to solve problems both independently and as part of a team.\n\nUntil 2024, I worked as a Fullstack Developer, and since then, I have continued my career as a Principal Software Specialist, focusing on Frontend development. Throughout my career, I have been working with technologies such as Angular, TypeScript, HTML, CSS, JavaScript, and React."
   },
   "footer": {
@@ -10,16 +44,62 @@
     "name": "Samet ÇELİKBIÇAK",
     "about": "About",
     "experience": "Experience",
-    "projects": "Projects"
+    "projects": "Projects",
+    "blog": "Blog"
   },
-  "skills": "Skills",
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My technical skills include modern web technologies, backend architectures, and DevOps tools."
+  },
   "profile": {
     "name": "Samet ÇELİKBIÇAK",
     "title": "Team Lead | Principal Software Specialist"
   },
-  "experience": "Experience",
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey spans over {{years}} years, encompassing leadership in software development processes, architectural design, and end-to-end product development."
+  },
+  "experiencesData": {
+    "etiya": {
+      "company": "Etiya",
+      "position": "Principal Software Specialist",
+      "desc": "Leading the frontend architecture and development of enterprise telecommunications software. Adding and modifying new features based on customer requests. Developing products from scratch based on customer requirements.",
+      "tech": ["Angular", "React", "TypeScript", "JavaScript", "Tailwind CSS", "Git", "AI"]
+    },
+    "virtudev": {
+      "company": "VirtuDev",
+      "position": "Team Lead | Senior Software Specialist",
+      "desc": "Managing the development team and contributing to full-stack feature development. Attending meetings related to system architectures, conducting code reviews, and ensuring timely project delivery.",
+      "tech": ["Angular", "TypeScript", "JavaScript", "Git", "Docker"]
+    },
+    "univera": {
+      "company": "Univera Kurumsal Teknoloji Çözümleri",
+      "position": "Software Developer",
+      "desc": "Web-based software development in the field of supply chain management. Making improvements to customer communication software based on customer requests, adding new features, optimizing database queries, and operating user interfaces.",
+      "tech": ["VB.Net", "ASP.NET", "C#", ".NET", "JavaScript", "SQL Server", "TFS"]
+    },
+    "agito": {
+      "company": "Agito Software & Consulting",
+      "position": "Software Developer",
+      "desc": "Insurance sector software development. New system installation in customer environments and upgrade of existing old software to new version.",
+      "tech": ["Oracle", "Forms & Reports", "PL/SQL", "TFS"]
+    },
+    "doganata": {
+      "company": "Doğanata Şirketler Grubu",
+      "position": "Software Developer",
+      "desc": "Working on Ceomed software. Developing new features and maintaining existing ones. Creating custom forms and reports for clients.",
+      "tech": ["Oracle", "Forms & Reports", "PL/SQL", "TFS"]
+    },
+    "birim": {
+      "company": "Birim Bilgi Teknolojileri",
+      "position": "Software Developer",
+      "desc": "Hospital Information Management System (HIMS) software development.",
+      "tech": ["Oracle", "Forms & Reports", "PL/SQL", "TFS"]
+    }
+  },
   "education": {
     "title": "Education",
+    "subtitle": "My academic background and the educational journey that shaped my areas of expertise.",
     "school": {
       "ahmetYeseviUniversity": {
         "name": "Ahmet Yesevi University",
@@ -37,6 +117,7 @@
   },
   "projects": {
     "title": "Projects",
+    "subtitle": "My contributions to the open-source world, including the various libraries and projects I have developed.",
     "enum2array": {
       "title": "Enum2Array",
       "description": "A function to help converting enums to an array. Define an enum then use this function to convert that enum to an array."
@@ -53,5 +134,14 @@
       "title": "Pomodoro",
       "description": "A simple Pomodoro timer application to help you manage your time effectively using the Pomodoro Technique."
     }
-  }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "My thoughts on technology, design, and software development.",
+    "backToBlog": "Back to Blog",
+    "noPosts": "No posts found yet.",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "backToTop": "Back to top"
 }

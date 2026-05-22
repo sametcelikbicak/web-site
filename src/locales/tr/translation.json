@@ -1,6 +1,40 @@
 {
+  "hero": {
+    "title": "Geleceği Kod ve Tasarımla Şekillendiriyoruz.",
+    "subtitle": "Ölçeklenebilir sistemler ve sezgisel arayüzler oluşturmada {{years}} yılı aşkın deneyime sahip Principal Software Specialist."
+  },
+  "expertise": {
+    "label": "UZMANLIK ALANLARI",
+    "frontend": {
+      "title": "Frontend & UI",
+      "desc": "Angular, React, TypeScript, JavaScript ve Tailwind CSS gibi modern web teknolojilerini kullanarak duyarlı, erişilebilir ve performanslı kullanıcı arayüzleri oluşturma."
+    },
+    "architecture": {
+      "title": "Sistem Mimarisi",
+      "desc": "Performans ve güvenliğe odaklanarak ölçeklenebilir, dayanıklı ve sürdürülebilir arka uç sistemleri ve mikro hizmetler tasarlama."
+    },
+    "performance": {
+      "title": "Performans Optimizasyonu",
+      "desc": "Hızlı yükleme süreleri, akıcı etkileşimler ve verimli kaynak kullanımı sağlamak için uygulamaların profilini çıkarma ve optimize etme."
+    },
+    "leadership": {
+      "title": "Teknik Liderlik",
+      "desc": "Ekiplere mentorluk yapma, en iyi uygulamaları belirleme ve teknik kararları iş hedefleriyle uyumlu hale getirme."
+    }
+  },
+  "stats": {
+    "experience": "YILLIK DENEYİM",
+    "projects": "TAMAMLANAN PROJE",
+    "stack": "TEKNOLOJİ YIĞINI",
+    "satisfaction": "MÜŞTERİ MEMNUNİYETİ"
+  },
+  "featuredProjects": {
+    "label": "ÖNE ÇIKAN PROJELER",
+    "viewAll": "Tüm Projeleri Gör"
+  },
   "about": {
     "title": "Hakkımda",
+    "subtitle": "Kariyer Yolculuğum",
     "description": "2007 yılından beri yazılım sektöründe çalışmaktayım. Bu süre içerisinde Software Developer, Senior Software Developer ve Team Lead pozisyonlarında görev aldım.\n\nYazılım geliştirme konusunda geniş deneyime sahibim. Nesne yönelimli programlama, yazılım desenleri, prensipleri, metodolojileri ve çeşitli geliştirme araçları ile web (ön yüz & arka yüz) ve Android (Xamarin) uygulamaları geliştirdim. Teknik ve analitik becerilerimi hem bağımsız hem de ekip olarak problem çözmede kullanıyorum.\n\n2024 yılına kadar Fullstack Developer olarak çalıştım, 2024 sonrasında ise Principal Software Specialist olarak Frontend alanında kariyerime devam ediyorum. Kariyerimde Angular, TypeScript, HTML, CSS, JavaScript ve React teknolojileriyle çalışmalarımı sürdürmekteyim."
   },
   "footer": {
@@ -10,16 +44,62 @@
     "name": "Samet ÇELİKBIÇAK",
     "about": "Hakkımda",
     "experience": "Deneyim",
-    "projects": "Projeler"
+    "projects": "Projeler",
+    "blog": "Blog"
   },
-  "skills": "Yetenekler",
+  "skills": {
+    "title": "Yetenekler",
+    "subtitle": "Modern web teknolojileri, backend mimarileri ve DevOps araçları konusundaki teknik yetkinliklerim."
+  },
   "profile": {
     "name": "Samet ÇELİKBIÇAK",
     "title": "Team Lead | Principal Software Specialist"
   },
-  "experience": "Deneyim",
+  "experience": {
+    "title": "Deneyim",
+    "subtitle": "Yazılım geliştirme süreçlerinde liderlik, mimari tasarım ve uçtan uca ürün geliştirme konularında {{years}} yılı aşkın profesyonel yolculuğum."
+  },
+  "experiencesData": {
+    "etiya": {
+      "company": "Etiya",
+      "position": "Principal Software Specialist",
+      "desc": "Kurumsal telekom yazılımları için frontend mimarisi ve geliştirmesine liderlik etme. Müşteri talepleri doğrultusunda yeni özellik ekleme ve düzenleme. Sıfırdan müşteri talepleri doğrultusunda ürün geliştirme",
+      "tech": ["Angular", "React", "TypeScript", "JavaScript", "Tailwind CSS", "Git", "AI"]
+    },
+    "virtudev": {
+      "company": "VirtuDev",
+      "position": "Team Lead | Senior Software Specialist",
+      "desc": "Geliştirici ekibini yönetirken full-stack özellik geliştirmeye katkıda bulunma. Sistem mimarileri ile ilgili toplantılara katılma, kod incelemelerini yapma ve projelerin zamanında teslimini sağlama.",
+      "tech": ["Angular", "TypeScript", "JavaScript", "Git", "Docker"]
+    },
+    "univera": {
+      "company": "Univera Kurumsal Teknoloji Çözümleri",
+      "position": "Software Developer",
+      "desc": "Tedarik zinciri yönetimi alanında web tabanlı yazılım geliştirme. Müşteri talepleri doğrultusunda yazılım içerisindeki taleplere yönelik geliştirmeler yapma, yeni özellikler ekleme, veritabanı sorgularını optimize etme ve kullanıcı arayüzü iyileştirmeleri.",
+      "tech": ["VB.Net", "ASP.NET", "C#", ".NET", "JavaScript", "SQL Server", "TFS"]
+    },
+    "agito": {
+      "company": "Agito Software & Consulting",
+      "position": "Software Developer",
+      "desc": "Sigorta sektörüne yönelik yazılım geliştirme. Müşteri ortamlarına yeni sistem kurulumu ve var olan eski yazılımın yeni versiyona yükseltilmesi.",
+      "tech": ["Oracle", "Forms & Reports", "PL/SQL", "TFS"]
+    },
+    "doganata": {
+      "company": "Doğanata Şirketler Grubu",
+      "position": "Software Developer",
+      "desc": "Ceomed yazılımı için geliştirme yapma. Müşteri yanında müşteriye özel formlar ve raporlar hazırlama.",
+      "tech": ["Oracle", "Forms & Reports", "PL/SQL", "TFS"]
+    },
+    "birim": {
+      "company": "Birim Bilgi Teknolojileri",
+      "position": "Software Developer",
+      "desc": "Hastane Bilgi Yönetim Sistemi (HBYS) yazılımı geliştirme.",
+      "tech": ["Oracle", "Forms & Reports", "PL/SQL", "TFS"]
+    }
+  },
   "education": {
     "title": "Eğitim",
+    "subtitle": "Akademik geçmişim ve uzmanlık alanlarımı şekillendiren eğitim yolculuğum.",
     "school": {
       "ahmetYeseviUniversity": {
         "name": "Ahmet Yesevi Üniversitesi",
@@ -37,6 +117,7 @@
   },
   "projects": {
     "title": "Projeler",
+    "subtitle": "Açık kaynak dünyasına katkılarım ve geliştirdiğim çeşitli kütüphaneler ile projeler.",
     "enum2array": {
       "title": "Enum2Array",
       "description": "Enum'ları diziye dönüştürmeye yardımcı olan bir fonksiyon. Bir enum tanımlayın ve bu fonksiyon ile enum'u diziye dönüştürün."
@@ -53,5 +134,14 @@
       "title": "Pomodoro",
       "description": "Pomodoro Tekniği'ni kullanarak zamanınızı etkili bir şekilde yönetmenize yardımcı olan basit bir Pomodoro zamanlayıcı uygulaması."
     }
-  }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Teknoloji, tasarım ve yazılım geliştirme üzerine düşüncelerim.",
+    "backToBlog": "Blog'a Dön",
+    "noPosts": "Henüz yazı bulunmuyor.",
+    "prev": "Önceki",
+    "next": "Sonraki"
+  },
+  "backToTop": "Başa dön"
 }

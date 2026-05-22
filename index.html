@@ -2,8 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/sc_caricature.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/sc.webp" as="image" type="image/webp" />
+
+    <!-- Google Fonts: Hanken Grotesk (display/body) + Geist (labels/code) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"></noscript>
+
     <link rel="icon" type="image/png" href="/sc.webp" />
-    <link href="/src/index.css" rel="stylesheet" />
     <link
       rel="api-catalog"
       type="application/linkset+json"
@@ -17,7 +37,8 @@
     <link rel="describedby" type="text/plain" href="/llms.txt" />
     <link rel="service-doc" type="text/markdown" href="/docs/api.md" />
     <link rel="alternate" type="text/markdown" href="/index.md" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+
     <title>
       Samet ÇELİKBIÇAK | Principal Software Specialist | Izmir, Turkey
     </title>
@@ -27,14 +48,10 @@
     />
     <meta
       name="keywords"
-      content="Samet ÇELİKBIÇAK, Principal Software Specialist, Developer, Izmir, Turkey, Angular, TypeScript, JavaScript, HTML, CSS, Open Source, Projects, Blog, GitHub"
+      content="Samet ÇELİKBIÇAK, samet çelikbıçak, SAMET ÇELİKBIÇAK, Samet Çelikbıçak, samet celikbicak, SAMET CELIKBICAK, Samet Celikbicak, sametcelikbicak, ÇELİKBIÇAK, celikbicak, Principal Software Specialist, Developer, Izmir, Turkey, Angular, TypeScript, JavaScript, HTML, CSS, Open Source, Projects, Blog, GitHub"
     />
     <meta name="author" content="Samet ÇELİKBIÇAK" />
-    <!-- SEO: Name Variations for better discoverability -->
-    <meta
-      name="keywords"
-      content="Samet ÇELİKBIÇAK, samet çelikbıçak, SAMET ÇELİKBIÇAK, Samet Çelikbıçak, samet celikbicak, SAMET CELIKBICAK, Samet Celikbicak, sametcelikbicak, ÇELİKBIÇAK, celikbicak"
-    />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sametcelikbicak.com/" />

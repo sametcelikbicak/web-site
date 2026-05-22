@@ -1,68 +1,80 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { ThemeProvider } from '@/theme';
 import '@/i18n';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import About from '@/components/About/About';
+import { Route, Routes } from 'react-router-dom';
+import BackToTop from '@/components/BackToTop/BackToTop';
+import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
-import Profile from '@/components/Profile/Profile';
-import { useIsMobile } from '@/hooks/useIsMobile';
 
-const Experience = lazy(() => import('@/components/Experience/Experience'));
-const Education = lazy(() => import('@/components/Education/Education'));
-const Skills = lazy(() => import('@/components/Skills/Skills'));
-const Projects = lazy(() => import('@/components/Projects/Projects'));
-const Footer = lazy(() => import('@/components/Footer/Footer'));
+const HomePage = lazy(() => import('@/pages/HomePage'));
+const AboutPage = lazy(() => import('@/pages/AboutPage'));
+const ExperiencePage = lazy(() => import('@/pages/ExperiencePage'));
+const EducationPage = lazy(() => import('@/pages/EducationPage'));
+const SkillsPage = lazy(() => import('@/pages/SkillsPage'));
+const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'));
+const BlogPage = lazy(() => import('@/pages/BlogPage'));
+const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
+
+const PageLoader = () => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '60vh',
+    }}
+  >
+    <div
+      style={{
+        width: 32,
+        height: 32,
+        border: '2px solid var(--color-ghost-border)',
+        borderTopColor: 'var(--color-primary)',
+        borderRadius: '50%',
+        animation: 'spin 0.8s linear infinite',
+      }}
+    />
+    <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+  </div>
+);
+
+const ScrollToTop = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+  return null;
+};
 
 const App = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === '/' && !location.hash) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (location.hash) {
-      const el = document.getElementById(location.hash.replace('#', ''));
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
-
-  const isMobile = useIsMobile();
   return (
     <ThemeProvider>
-      <Header />
-      <div className="w-full min-h-[90vh] main-bg shadow-none flex flex-col overflow-hidden p-6">
-        <main className="px-2 sm:px-8 justify-center pt-12 pb-4 w-full flex flex-col max-w-4xl flex-1 gap-16 mx-auto">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    {isMobile ? (
-                      <>
-                        <Profile />
-                        <About />
-                      </>
-                    ) : (
-                      <>
-                        <About />
-                        <Profile />
-                      </>
-                    )}
-                  </div>
-                  <Suspense fallback={null}>
-                    <Experience />
-                    <Education />
-                    <Skills />
-                    <Projects />
-                    <Footer />
-                  </Suspense>
-                </>
-              }
-            />
-          </Routes>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          background: 'var(--color-bg)',
+          overflowX: 'clip',
+        }}
+      >
+        <Header />
+        <main style={{ flex: 1 }}>
+          <ScrollToTop />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/experience" element={<ExperiencePage />} />
+              <Route path="/education" element={<EducationPage />} />
+              <Route path="/skills" element={<SkillsPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+            </Routes>
+          </Suspense>
         </main>
+        <Footer />
+        <BackToTop />
       </div>
     </ThemeProvider>
   );

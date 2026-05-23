@@ -1,4 +1,4 @@
-import { readFileSync, unlinkSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { cloudflare } from '@cloudflare/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
@@ -38,13 +38,26 @@ function inlineCssPlugin(): Plugin {
 
       html = html.replace(/<link[^>]*href=["'][^"']*\.css["'][^>]*\/?>/gi, '');
 
-      html = html.replace('</head>', `<style>${cssContent}</style></head>`);
+      const assetsDir = path.join(clientBuildDir, 'assets');
+      const pageChunks = readdirSync(assetsDir)
+        .filter((f) => /^(.*Page|blog)-[\w-]+\.js$/.test(f))
+        .sort();
+      const modulepreloads = pageChunks
+        .map(
+          (f) =>
+            `    <link rel="modulepreload" crossorigin href="/assets/${f}">`
+        )
+        .join('\n');
+
+      html = html.replace(
+        /\n[ \t]*<\/head>/,
+        `\n${modulepreloads}\n    <style>${cssContent}</style>\n  </head>`
+      );
       html = html.replace('<!--ssr-styles-->', '');
 
       writeFileSync(htmlPath, html);
 
       const cssBasename = path.basename(cssFileName);
-      const assetsDir = path.join(clientBuildDir, 'assets');
       try {
         unlinkSync(path.join(assetsDir, cssBasename));
       } catch {

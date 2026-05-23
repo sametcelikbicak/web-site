@@ -5,9 +5,10 @@ import App from '@/App';
 import '@/i18n';
 
 export function render(url: string): string {
+  const { pathname } = new URL(url);
   return renderToString(
     <StrictMode>
-      <MemoryRouter initialEntries={[url]}>
+      <MemoryRouter initialEntries={[pathname]}>
         <App />
       </MemoryRouter>
     </StrictMode>

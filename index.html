@@ -7,6 +7,10 @@
     <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
     <meta name="color-scheme" content="dark light" />
 
+    <script>
+      !(()=> {try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch{}})();
+    </script>
+
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

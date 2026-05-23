@@ -37,7 +37,7 @@
     <link rel="describedby" type="text/plain" href="/llms.txt" />
     <link rel="service-doc" type="text/markdown" href="/docs/api.md" />
     <link rel="alternate" type="text/markdown" href="/index.md" />
-    <link href="/src/index.css" rel="stylesheet" />
+    <!--ssr-styles-->
 
     <title>
       Samet ÇELİKBIÇAK | Principal Software Specialist | Izmir, Turkey
@@ -117,11 +117,7 @@
         ]
       }
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-J5RCMGVLL3"
-    ></script>
+    <!-- Google tag (gtag.js) - deferred -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -129,13 +125,30 @@
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
       gtag('config', 'G-J5RCMGVLL3');
+
+      const loadGA = () => {
+        const s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J5RCMGVLL3';
+        s.async = true;
+        document.head.appendChild(s);
+      };
+
+      if (document.visibilityState === 'visible') {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGA, { timeout: 3000 });
+        } else {
+          setTimeout(loadGA, 2000);
+        }
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') loadGA();
+      }, { once: true });
     </script>
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"><!--ssr-outlet--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>

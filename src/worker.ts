@@ -1,3 +1,5 @@
+import { render } from './entry-server';
+
 type Env = {
   ASSETS: {
     fetch: (request: Request) => Promise<Response>;
@@ -104,6 +106,27 @@ export default {
           'x-markdown-tokens': String(markdownTokenCount(MARKDOWN_HOMEPAGE)),
         },
       });
+    }
+
+    // SSR for HTML routes (non-markdown)
+    if (isHtmlRoute(pathname)) {
+      const templateReq = new Request('https://placeholder/index.html');
+      const templateRes = await env.ASSETS.fetch(templateReq);
+
+      if (templateRes.ok) {
+        const template = await templateRes.text();
+        const appHtml = render(request.url);
+        const html = template.replace('<!--ssr-outlet-->', appHtml);
+
+        const headers = new Headers({
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'public, max-age=0, s-maxage=86400',
+          Link: LINK_HEADER,
+          Vary: 'Accept',
+        });
+
+        return new Response(html, { headers });
+      }
     }
 
     const response = await env.ASSETS.fetch(request);

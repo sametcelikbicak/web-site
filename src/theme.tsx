@@ -8,19 +8,18 @@ import {
 import { type Theme, ThemeContext } from '@/types/theme';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  // Respect OS preference on first load
-  const getInitialTheme = (): Theme => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('theme') as Theme | null;
-      if (stored === 'light' || stored === 'dark') return stored;
-      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        return 'light';
-      }
-    }
-    return 'dark';
-  };
+  // Always start with 'dark' so server and client produce matching HTML for hydration.
+  // The stored preference is read after hydration in useEffect.
+  const [theme, setTheme] = useState<Theme>('dark');
 
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  useEffect(() => {
+    const stored = localStorage.getItem('theme') as Theme | null;
+    if (stored === 'light' || stored === 'dark') {
+      setTheme(stored);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

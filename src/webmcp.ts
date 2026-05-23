@@ -95,6 +95,7 @@ const tools: WebMcpTool[] = [
 ];
 
 export const registerWebMcpTools = () => {
+  if (typeof window === 'undefined') return;
   const modelContext = (
     navigator as Navigator & {
       modelContext?: {

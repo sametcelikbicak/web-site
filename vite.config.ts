@@ -39,10 +39,10 @@ function inlineCssPlugin(): Plugin {
       html = html.replace(/<link[^>]*href=["'][^"']*\.css["'][^>]*\/?>/gi, '');
 
       const assetsDir = path.join(clientBuildDir, 'assets');
-      const pageChunks = readdirSync(assetsDir)
-        .filter((f) => /^(.*Page|blog)-[\w-]+\.js$/.test(f))
+      const initialChunks = readdirSync(assetsDir)
+        .filter((f) => /^(HomePage|router|i18n|icons)-[\w-]+\.js$/.test(f))
         .sort();
-      const modulepreloads = pageChunks
+      const modulepreloads = initialChunks
         .map(
           (f) =>
             `    <link rel="modulepreload" crossorigin href="/assets/${f}">`

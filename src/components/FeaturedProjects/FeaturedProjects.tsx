@@ -55,6 +55,7 @@ const FeaturedProjects = () => {
                   src={project.image}
                   alt={t(project.titleKey)}
                   className="project-image"
+                  loading="lazy"
                 />
               </div>
               <div className="project-content">

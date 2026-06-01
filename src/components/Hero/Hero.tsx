@@ -1,9 +1,10 @@
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Hero.css';
 
 const EXPERIENCE_START_YEAR = 2007;
 
-const Hero = () => {
+const Hero = ({ children }: { children?: ReactNode }) => {
   const { t } = useTranslation();
   const years = new Date().getFullYear() - EXPERIENCE_START_YEAR;
 
@@ -13,14 +14,15 @@ const Hero = () => {
         <div className="hero-content">
           <h1 className="hero-title">{t('hero.title')}</h1>
           <p className="hero-subtitle">{t('hero.subtitle', { years })}</p>
+          {children}
         </div>
         <div className="hero-image-wrapper">
           <img
             src="/sc_caricature.webp"
             alt="Samet Çelikbıçak"
             className="hero-image"
-            width={400}
-            height={400}
+            width={500}
+            height={750}
             loading="eager"
             fetchPriority="high"
           />

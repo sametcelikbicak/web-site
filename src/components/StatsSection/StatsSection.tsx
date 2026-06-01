@@ -16,17 +16,15 @@ const StatsSection = () => {
 
   return (
     <section className="stats-section">
-      <div className="page-container">
-        <div className="stats-grid">
-          {STATS.map((stat) => (
-            <div key={stat.key} className="stat-item">
-              <span className="stat-value">
-                {stat.key === 'experience' ? `${years}+` : stat.value}
-              </span>
-              <span className="stat-label">{t(`stats.${stat.key}`)}</span>
-            </div>
-          ))}
-        </div>
+      <div className="stats-grid">
+        {STATS.map((stat) => (
+          <div key={stat.key} className="stat-item">
+            <span className="stat-value">
+              {stat.key === 'experience' ? `${years}+` : stat.value}
+            </span>
+            <span className="stat-label">{t(`stats.${stat.key}`)}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,93 +1,158 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
-    <meta name="color-scheme" content="dark light" />
 
-    <script>
-      !(()=> {try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch{}})();
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
 
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+  <script>
+    !(() => { try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t) } catch { } })();
+  </script>
 
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/sc_caricature.webp" as="image" type="image/webp" fetchpriority="high" />
-    <link rel="preload" href="/sc.webp" as="image" type="image/webp" />
+  <style>
+    html {
+      background: #131313;
+      color-scheme: dark light
+    }
 
-    <!-- Google Fonts: Hanken Grotesk (display/body) + Geist (labels/code) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin>
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin>
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"></noscript>
+    body {
+      margin: 0;
+      background: #131313;
+      color: #e5e2e1;
+      font-family: system-ui, sans-serif
+    }
 
-    <link rel="icon" type="image/png" href="/sc.webp" />
+    .hero-section {
+      display: flex;
+      min-height: 60vh
+    }
+
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 0 1.5rem
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1
+    }
+
+    .hero-image-wrapper {
+      flex-shrink: 0;
+      width: 280px;
+      aspect-ratio: 2/3;
+      background: #2a2a2a;
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: flex-end
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit
+    }
+
+    @media(min-width:768px) {
+      .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch
+      }
+
+      .hero-image-wrapper {
+        width: 320px
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero-image-wrapper {
+        width: 360px
+      }
+    }
+
+    [data-theme="light"] {
+      background: #f8f9fa
+    }
+
+    [data-theme="light"] body {
+      background: #f8f9fa;
+      color: #1a1a2e
+    }
+  </style>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/sc_caricature.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="/sc.webp" as="image" type="image/webp" />
+
+  <!-- Google Fonts: Hanken Grotesk (display/body) + Geist (labels/code) -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap"
+    as="style" onload="this.rel='stylesheet'" crossorigin>
+  <noscript>
     <link
-      rel="api-catalog"
-      type="application/linkset+json"
-      href="/.well-known/api-catalog"
-    />
-    <link
-      rel="service-desc"
-      type="application/vnd.oai.openapi+json"
-      href="/openapi.json"
-    />
-    <link rel="describedby" type="text/plain" href="/llms.txt" />
-    <link rel="service-doc" type="text/markdown" href="/docs/api.md" />
-    <link rel="alternate" type="text/markdown" href="/index.md" />
-    <!--ssr-styles-->
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.rel='stylesheet'" crossorigin>
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet">
+  </noscript>
 
-    <title>
-      Samet ÇELİKBIÇAK | Principal Software Specialist | Izmir, Turkey
-    </title>
-    <meta
-      name="description"
-      content="Samet ÇELİKBIÇAK is a Principal Software Specialist from Izmir, Turkey. Experienced in Angular, TypeScript, HTML, CSS, JavaScript. Explore projects, blog posts, and achievements."
-    />
-    <meta
-      name="keywords"
-      content="Samet ÇELİKBIÇAK, samet çelikbıçak, SAMET ÇELİKBIÇAK, Samet Çelikbıçak, samet celikbicak, SAMET CELIKBICAK, Samet Celikbicak, sametcelikbicak, ÇELİKBIÇAK, celikbicak, Principal Software Specialist, Developer, Izmir, Turkey, Angular, TypeScript, JavaScript, HTML, CSS, Open Source, Projects, Blog, GitHub"
-    />
-    <meta name="author" content="Samet ÇELİKBIÇAK" />
+  <link rel="icon" type="image/png" href="/sc.webp" />
+  <link rel="api-catalog" type="application/linkset+json" href="/.well-known/api-catalog" />
+  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="/openapi.json" />
+  <link rel="describedby" type="text/plain" href="/llms.txt" />
+  <link rel="service-doc" type="text/markdown" href="/docs/api.md" />
+  <link rel="alternate" type="text/markdown" href="/index.md" />
+  <!--ssr-styles-->
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sametcelikbicak.com/" />
-    <meta
-      property="og:title"
-      content="Samet ÇELİKBIÇAK | Principal Software Specialist"
-    />
-    <meta
-      property="og:description"
-      content="Principal Software Specialist from Izmir, Turkey. Angular, TypeScript, JavaScript, HTML, CSS. Projects, blog posts, achievements."
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/5312741?v=4"
-    />
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://sametcelikbicak.com/" />
-    <meta
-      name="twitter:title"
-      content="Samet ÇELİKBIÇAK | Principal Software Specialist"
-    />
-    <meta
-      name="twitter:description"
-      content="Principal Software Specialist from Izmir, Turkey. Angular, TypeScript, JavaScript, HTML, CSS. Projects, blog posts, achievements."
-    />
-    <meta
-      name="twitter:image"
-      content="https://avatars.githubusercontent.com/u/5312741?v=4"
-    />
-    <!-- Structured Data JSON-LD -->
-    <script type="application/ld+json">
+  <title>
+    Samet ÇELİKBIÇAK | Principal Software Specialist | Izmir, Turkey
+  </title>
+  <meta name="description"
+    content="Samet ÇELİKBIÇAK is a Principal Software Specialist from Izmir, Turkey. Experienced in Angular, TypeScript, HTML, CSS, JavaScript. Explore projects, blog posts, and achievements." />
+  <meta name="keywords"
+    content="Samet ÇELİKBIÇAK, samet çelikbıçak, SAMET ÇELİKBIÇAK, Samet Çelikbıçak, samet celikbicak, SAMET CELIKBICAK, Samet Celikbicak, sametcelikbicak, ÇELİKBIÇAK, celikbicak, Principal Software Specialist, Developer, Izmir, Turkey, Angular, TypeScript, JavaScript, HTML, CSS, Open Source, Projects, Blog, GitHub" />
+  <meta name="author" content="Samet ÇELİKBIÇAK" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sametcelikbicak.com/" />
+  <meta property="og:title" content="Samet ÇELİKBIÇAK | Principal Software Specialist" />
+  <meta property="og:description"
+    content="Principal Software Specialist from Izmir, Turkey. Angular, TypeScript, JavaScript, HTML, CSS. Projects, blog posts, achievements." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/5312741?v=4" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://sametcelikbicak.com/" />
+  <meta name="twitter:title" content="Samet ÇELİKBIÇAK | Principal Software Specialist" />
+  <meta name="twitter:description"
+    content="Principal Software Specialist from Izmir, Turkey. Angular, TypeScript, JavaScript, HTML, CSS. Projects, blog posts, achievements." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/5312741?v=4" />
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -121,38 +186,39 @@
         ]
       }
     </script>
-    <!-- Google tag (gtag.js) - deferred -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        /* biome-ignore lint/complexity/noArguments: script has to be like that */
-        dataLayer.push(arguments);
+  <!-- Google tag (gtag.js) - deferred -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      /* biome-ignore lint/complexity/noArguments: script has to be like that */
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-J5RCMGVLL3');
+
+    const loadGA = () => {
+      const s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J5RCMGVLL3';
+      s.async = true;
+      document.head.appendChild(s);
+    };
+
+    if (document.visibilityState === 'visible') {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGA, { timeout: 3000 });
+      } else {
+        setTimeout(loadGA, 2000);
       }
-      gtag('js', new Date());
-      gtag('config', 'G-J5RCMGVLL3');
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') loadGA();
+    }, { once: true });
+  </script>
+</head>
 
-      const loadGA = () => {
-        const s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J5RCMGVLL3';
-        s.async = true;
-        document.head.appendChild(s);
-      };
+<body>
+  <div id="root"><!--ssr-outlet--></div>
+  <script type="module" src="/src/entry-client.tsx"></script>
+</body>
 
-      if (document.visibilityState === 'visible') {
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadGA, { timeout: 3000 });
-        } else {
-          setTimeout(loadGA, 2000);
-        }
-      }
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') loadGA();
-      }, { once: true });
-    </script>
-  </head>
-
-  <body>
-    <div id="root"><!--ssr-outlet--></div>
-    <script type="module" src="/src/entry-client.tsx"></script>
-  </body>
 </html>

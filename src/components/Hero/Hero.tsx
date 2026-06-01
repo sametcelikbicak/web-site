@@ -11,15 +11,10 @@ const Hero = () => {
     <section className="hero-section section-gap">
       <div className="page-container hero-container">
         <div className="hero-content">
-          <h1 className="hero-title animate-fade-in">{t('hero.title')}</h1>
-          <p
-            className="hero-subtitle animate-fade-in"
-            style={{ animationDelay: '100ms' }}
-          >
-            {t('hero.subtitle', { years })}
-          </p>
+          <h1 className="hero-title">{t('hero.title')}</h1>
+          <p className="hero-subtitle">{t('hero.subtitle', { years })}</p>
         </div>
-        <div className="hero-image-wrapper animate-fade-in">
+        <div className="hero-image-wrapper">
           <img
             src="/sc_caricature.webp"
             alt="Samet Çelikbıçak"

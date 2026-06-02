@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* ─── Fonts ─────────────────────────────────────────────────── */
-/* Hanken Grotesk & Geist loaded via index.html <link> tags */
-
 /* ─── Design Tokens — Dark (default) ────────────────────────── */
 :root {
   /* Surface / Background */
@@ -35,9 +32,9 @@
   --header-border: rgba(66, 71, 84, 0.6);
 
   /* ─── Typography ───────────────────────────────────────────── */
-  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-label: "Geist", "Hanken Grotesk", ui-monospace, monospace;
+  --font-display: ui-sans-serif, system-ui, sans-serif;
+  --font-body: ui-sans-serif, system-ui, sans-serif;
+  --font-label: ui-monospace, monospace;
 
   --text-display: clamp(2.5rem, 5vw, 4rem);
   /* 40–64px */

@@ -252,3 +252,26 @@ button {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
+
+/* ─── Hero layout — inlined so the HomePageSkeleton renders ──
+   the correct two-column layout before the lazy Hero.css loads ── */
+.hero-section {
+  display: flex;
+  min-height: 60vh;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+  }
+}

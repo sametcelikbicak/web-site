@@ -8,36 +8,17 @@
   <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
   <meta name="color-scheme" content="dark light" />
 
-    <script>
-      !(()=> {try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch{}})();
-    </script>
+  <script>
+    !(() => { try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t) } catch { } })();
+  </script>
 
-    <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preconnect" href="https://avatars.githubusercontent.com" />
 
   <!-- Preload critical assets -->
   <link rel="preload" href="/sc_caricature.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="preload" href="/sc.webp" as="image" type="image/webp" />
-
-  <!-- Google Fonts: Hanken Grotesk (display/body) + Geist (labels/code) -->
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap"
-    as="style" onload="this.rel='stylesheet'" crossorigin>
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist:wght@400;500;600&display=swap"
-      rel="stylesheet">
-  </noscript>
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    as="style" onload="this.rel='stylesheet'" crossorigin>
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet">
-  </noscript>
 
   <link rel="icon" type="image/png" href="/sc.webp" />
   <link rel="api-catalog" type="application/linkset+json" href="/.well-known/api-catalog" />

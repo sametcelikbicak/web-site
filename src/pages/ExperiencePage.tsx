@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaCode } from 'react-icons/fa';
 import useAnalytics from '@/hooks/useAnalytics';
 import './ExperiencePage.css';
 
@@ -10,37 +11,31 @@ const EXPERIENCES = [
     key: 'etiya',
     startDate: '02-2024',
     endDate: 'Present',
-    icon: 'code',
   },
   {
     key: 'virtudev',
     startDate: '06-2018',
     endDate: '01-2024',
-    icon: 'terminal',
   },
   {
     key: 'univera',
     startDate: '12-2015',
     endDate: '05-2018',
-    icon: 'code',
   },
   {
     key: 'agito',
     startDate: '09-2012',
     endDate: '09-2014',
-    icon: 'terminal',
   },
   {
     key: 'doganata',
     startDate: '03-2012',
     endDate: '08-2012',
-    icon: 'code',
   },
   {
     key: 'birim',
     startDate: '07-2007',
     endDate: '01-2012',
-    icon: 'terminal',
   },
 ];
 
@@ -110,8 +105,8 @@ const ExperiencePage = () => {
                     <div
                       className={`card-header ${!isEven ? 'header-right' : ''}`}
                     >
-                      <span className="material-symbols-outlined icon-primary">
-                        {exp.icon}
+                      <span className="icon-primary">
+                        <FaCode />
                       </span>
                       <span className="card-category">Tech Stack</span>
                     </div>

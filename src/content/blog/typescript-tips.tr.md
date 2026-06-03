@@ -1,13 +1,13 @@
 ---
 title: "Modern TypeScript İpuçları: Daha Temiz Kod"
-date: 
+date: "2026-06-05"
 slug: "modern-typescript-ipucu"
 description: "Gerçek dünya örnekleriyle modern, yeniden kullanılabilir ve type-safe TypeScript utility fonksiyonlarını öğrenin."
 tags: ["TypeScript", "JavaScript", "Yazılım", "Utility Functions", "Clean Code"]
 image: "/blog/typescript_tips_cover.webp"
 ---
 
-# TypeScript Yardımcı Fonksiyonları: Daha Temiz ve Yeniden Kullanılabilir Kod
+Merhaba,
 
 Projeler büyüdükçe aynı mantığın tekrar tekrar yazıldığı görülür. Küçük yardımcı fonksiyonlar sayesinde kod daha yeniden kullanılabilir, okunabilir ve sürdürülebilir hale gelir.
 

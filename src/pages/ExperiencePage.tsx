@@ -10,7 +10,7 @@ const EXPERIENCES = [
   {
     key: 'etiya',
     startDate: '02-2024',
-    endDate: 'Present',
+    endDate: '',
   },
   {
     key: 'virtudev',

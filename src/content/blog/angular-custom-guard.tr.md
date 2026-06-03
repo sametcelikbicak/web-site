@@ -1,6 +1,6 @@
 ---
 title: "Angular Custom Guard"
-date: "2022-04-10"
+date: "2022-03-19"
 description: "Angular uygulamalarında sayfa geçişlerini kontrol eden Guard yapısının (CanActivate ve CanDeactivate) nasıl kurulacağını ve login/profile senaryosu üzerinden kullanımını anlatıyorum."
 tags: ["Angular", "Guard", "Security", "Frontend"]
 image: "/blog/angular_guard_cover.webp"

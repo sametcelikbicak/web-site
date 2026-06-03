@@ -39,17 +39,22 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://sametcelikbicak.com/blog/modern-typescript-ipucu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sametcelikbicak.com/blog/html-css-typescript</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sametcelikbicak.com/blog/angular-absolute-path</loc>
+    <loc>https://sametcelikbicak.com/blog/angular-absolute-importpath</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sametcelikbicak.com/blog/macos-dock-spacer</loc>
+    <loc>https://sametcelikbicak.com/blog/macos-dock-icin-ayrac-ekleme</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -60,6 +65,96 @@
   </url>
   <url>
     <loc>https://sametcelikbicak.com/blog/angular-custom-guard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-custom-directive</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-custom-http-service-hazirlama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-custom-interceptor</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-custom-pipe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-extension-method-icinde-servis-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-i18n-icin-ngx-translate-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-ile-ngrx-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-ile-storage-servis-hazirlama-ve-kullanma</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-lazy-loading-modules</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-library-olusturma-ve-npm-uzerinde-yayinlama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/github-action-ile-readme-guncelleme</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/npm-paketi-olusturma</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/iterm2-zsh-ve-zsh-autosuggestions-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/terminal-ile-takma-ad-ve-fonksiyon-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/yazilimcilar-icin-faydali-web-siteleri</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-form-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-ile-ng-content-kullanimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sametcelikbicak.com/blog/angular-extension-method-kullanimi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

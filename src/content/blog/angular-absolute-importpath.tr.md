@@ -1,6 +1,6 @@
 ---
 title: "Angular Absolute Import/Path"
-date: "2022-10-21"
+date: "2022-08-06"
 description: "Angular projelerinde absolute import/path kullanımının avantajlarından ve tsconfig.json ile nasıl yapılandırılacağından bahsediyorum."
 tags: ["Angular", "TypeScript", "Clean Code", "Frontend"]
 image: "/blog/angular_absolute_path_cover.webp"

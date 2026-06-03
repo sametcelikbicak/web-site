@@ -1,6 +1,6 @@
 ---
 title: "Angular Custom Decorator"
-date: "2022-04-03"
+date: "2022-04-14"
 description: "Angular projelerinde işleri kolaylaştıran custom decorator'ların nasıl oluşturulacağını ve kullanılacağını pratik örneklerle anlatıyorum."
 tags: ["Angular", "TypeScript", "Decorator", "Frontend"]
 image: "/blog/angular_decorator_cover.webp"

@@ -1,6 +1,6 @@
 ---
 title: "HTML & CSS & TypeScript"
-date: "2022-10-13"
+date: "2022-10-23"
 description: "Web uygulaması için ihtiyacımız olan üç temel yapı olan HTML & CSS & JavaScript kullanımından ve TypeScript ile geliştirmeyi nasıl yapacağımızdan bahsediyorum."
 tags: ["HTML", "CSS", "TypeScript", "Frontend"]
 image: "/blog/html_css_ts_cover.webp"

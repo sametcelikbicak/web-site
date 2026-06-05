@@ -1,13 +1,13 @@
 ---
 title: "Modern TypeScript Tips: Cleaner Code"
-date: 
+date: "2026-06-05"
 slug: "modern-typescript-ipucu"
 description: "Learn how to build modern, reusable, and type-safe utility functions in TypeScript with real-world examples."
 tags: ["TypeScript", "JavaScript", "Programming", "Utility Functions", "Clean Code"]
 image: "/blog/typescript_tips_cover.webp"
 ---
 
-# TypeScript Utility Functions: Write Cleaner and Reusable Code
+Hello,
 
 As projects grow, repeated logic starts to spread across the codebase. Small utility functions solve this problem by making code reusable, predictable, and easier to maintain.
 

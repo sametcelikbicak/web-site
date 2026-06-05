@@ -56,7 +56,6 @@ const BlogPostPage = () => {
           )}
         </div>
         <h1 className="post-title">{post.title}</h1>
-        <p className="post-description">{post.description}</p>
       </header>
 
       <div className="post-content">

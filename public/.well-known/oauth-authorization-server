@@ -11,6 +11,7 @@
   "grant_types_supported": ["authorization_code"],
   "agent_auth": {
     "skill": "https://sametcelikbicak.com/auth.md",
+    "register_uri": "https://sametcelikbicak.com/auth.md",
     "identity_types_supported": ["anonymous"],
     "anonymous": {
       "credential_types_supported": ["none"],

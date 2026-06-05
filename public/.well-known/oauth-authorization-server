@@ -1,9 +1,20 @@
 {
   "issuer": "https://sametcelikbicak.com",
+  "resource": "https://sametcelikbicak.com/",
+  "authorization_servers": ["https://sametcelikbicak.com"],
+  "scopes_supported": ["public.read"],
+  "bearer_methods_supported": ["header"],
   "authorization_endpoint": "https://sametcelikbicak.com/docs/oauth.md#authorization",
   "token_endpoint": "https://sametcelikbicak.com/docs/oauth.md#token",
   "jwks_uri": "https://sametcelikbicak.com/.well-known/jwks.json",
   "response_types_supported": ["code"],
   "grant_types_supported": ["authorization_code"],
-  "scopes_supported": ["public.read"]
+  "agent_auth": {
+    "skill": "https://sametcelikbicak.com/auth.md",
+    "identity_types_supported": ["anonymous"],
+    "anonymous": {
+      "credential_types_supported": ["none"],
+      "claim_uri": "https://sametcelikbicak.com/docs/oauth.md"
+    }
+  }
 }

@@ -14,3 +14,10 @@ No authorization endpoint is currently active for third-party clients.
 ## Token
 
 No token endpoint is currently active for third-party clients.
+
+## Agent Registration
+
+Agents can discover registration instructions at `/auth.md`.
+See [auth.md](/auth.md) for the agentic registration flow.
+
+Anonymous registration is supported for public read-only access.

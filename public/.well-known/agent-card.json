@@ -1,35 +1,44 @@
 {
-  "agent": "sametcelikbicak.com",
+  "name": "Samet CELIKBICAK Portfolio",
+  "description": "Personal portfolio and professional profile site of Samet CELIKBICAK, Principal Software Specialist. Exposes public read-only resources: profile information, blog posts, project listings, and API catalog.",
   "version": "1.0.0",
-  "description": "Personal portfolio and professional profile site of Samet CELIKBICAK, Principal Software Specialist",
-  "protocols": {
-    "mcp": {
-      "endpoint": "https://sametcelikbicak.com/mcp",
-      "transport": "streamable-http",
-      "card": "https://sametcelikbicak.com/.well-known/mcp/server-card.json"
-    },
-    "a2a": {
-      "endpoint": "https://sametcelikbicak.com/",
-      "transport": "https"
-    }
+  "url": "https://sametcelikbicak.com/",
+  "documentationUrl": "https://sametcelikbicak.com/docs/agent-discovery.md",
+  "provider": {
+    "organization": "Samet CELIKBICAK",
+    "url": "https://sametcelikbicak.com/"
   },
+  "supportedInterfaces": [
+    {
+      "url": "https://sametcelikbicak.com/",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["application/json", "text/plain"],
   "skills": [
     {
-      "name": "profile-summary",
-      "type": "skill-md",
-      "url": "https://sametcelikbicak.com/.well-known/agent-skills/profile-summary/SKILL.md",
-      "description": "Public profile, project, and discovery guidance"
+      "id": "profile-summary",
+      "name": "Profile Summary",
+      "description": "Return a concise public profile summary for Samet CELIKBICAK.",
+      "tags": ["profile", "portfolio"],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/plain"]
+    },
+    {
+      "id": "list-projects",
+      "name": "List Projects",
+      "description": "Return public portfolio project names, descriptions, and URLs.",
+      "tags": ["projects", "portfolio"],
+      "inputModes": ["text/plain"],
+      "outputModes": ["application/json"]
     }
   ],
-  "resources": [
-    "https://sametcelikbicak.com/llms.txt",
-    "https://sametcelikbicak.com/index.md",
-    "https://sametcelikbicak.com/openapi.json",
-    "https://sametcelikbicak.com/.well-known/api-catalog"
-  ],
-  "discovery": {
-    "dns-aid": "https://sametcelikbicak.com/.well-known/agent-card.json",
-    "sitemap": "https://sametcelikbicak.com/sitemap.xml",
-    "robots": "https://sametcelikbicak.com/robots.txt"
-  }
+  "securitySchemes": {},
+  "securityRequirements": []
 }

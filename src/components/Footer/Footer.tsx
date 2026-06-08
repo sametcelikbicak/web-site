@@ -47,7 +47,7 @@ const Footer = () => {
               className="footer-social-link"
               onClick={() => trackButtonClick(name)}
             >
-              <Icon size={20} />
+              <Icon title={name} size={20} />
             </a>
           ))}
         </div>

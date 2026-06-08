@@ -105,6 +105,22 @@
   margin: 3rem 0;
 }
 
+/* YouTube Embed */
+.blog-post-page .post-content .youtube-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2.5rem 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.blog-post-page .post-content .youtube-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Code Blocks */
 .blog-post-page .post-content pre {
   background: var(--color-surface-low);

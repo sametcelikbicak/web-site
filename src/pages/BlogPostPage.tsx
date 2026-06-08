@@ -62,6 +62,31 @@ const BlogPostPage = () => {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}
+          components={{
+            a: ({ href, children }) => {
+              if (
+                href?.includes('youtube.com/watch') ||
+                href?.includes('youtu.be/')
+              ) {
+                const videoId = href.includes('youtube.com/watch')
+                  ? new URL(href).searchParams.get('v')
+                  : href.split('youtu.be/')[1]?.split('?')[0];
+                if (videoId) {
+                  return (
+                    <div className="youtube-embed">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  );
+                }
+              }
+              return <a href={href}>{children}</a>;
+            },
+          }}
         >
           {post.content}
         </ReactMarkdown>

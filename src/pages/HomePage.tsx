@@ -1,5 +1,4 @@
 import ExpertiseCards from '@/components/ExpertiseCards/ExpertiseCards';
-import FeaturedProjects from '@/components/FeaturedProjects/FeaturedProjects';
 import Hero from '@/components/Hero/Hero';
 import StatsSection from '@/components/StatsSection/StatsSection';
 import './HomePage.css';
@@ -12,9 +11,8 @@ const HomePage = () => {
           <StatsSection />
         </Hero>
       </div>
-      <ExpertiseCards />
       <hr className="divider" />
-      <FeaturedProjects />
+      <ExpertiseCards />
     </div>
   );
 };

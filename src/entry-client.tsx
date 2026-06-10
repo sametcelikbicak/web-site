@@ -3,9 +3,18 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import '@/index.css';
 import App from '@/App';
-import { registerWebMcpTools } from '@/webmcp';
 
-registerWebMcpTools();
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(
+    () => import('@/webmcp').then((m) => m.registerWebMcpTools()),
+    { timeout: 3000 }
+  );
+} else {
+  setTimeout(
+    () => import('@/webmcp').then((m) => m.registerWebMcpTools()),
+    2000
+  );
+}
 
 const rootEl = document.getElementById('root');
 if (!rootEl) throw new Error('Root element not found');

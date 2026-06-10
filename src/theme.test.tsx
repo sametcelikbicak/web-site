@@ -18,6 +18,7 @@ beforeAll(() => {
 
 beforeEach(() => {
   localStorage.clear();
+  document.documentElement.removeAttribute('data-theme');
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
     value: jest.fn().mockImplementation((query: string) => ({

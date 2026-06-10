@@ -84,11 +84,28 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          i18n: ['i18next', 'react-i18next'],
-          icons: ['react-icons'],
+        manualChunks(id) {
+          if (
+            id.includes('node_modules/react-dom') ||
+            id.includes('node_modules/react/')
+          ) {
+            return 'react-vendor';
+          }
+          if (
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/@remix-run')
+          ) {
+            return 'router';
+          }
+          if (
+            id.includes('node_modules/i18next') ||
+            id.includes('node_modules/react-i18next')
+          ) {
+            return 'i18n';
+          }
+          if (id.includes('node_modules/react-icons')) {
+            return 'icons';
+          }
         },
       },
     },

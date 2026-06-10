@@ -53,11 +53,11 @@ const Header = () => {
             navigate('/');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          aria-label="Go to home"
+          aria-label={t('header.name')}
         >
           <img
             src="/sc.webp"
-            alt="SC Logo"
+            alt=""
             width={36}
             height={36}
             onError={(e) => {

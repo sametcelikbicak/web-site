@@ -76,7 +76,7 @@
 .skeleton-image {
   flex-shrink: 0;
   width: 280px;
-  aspect-ratio: 2 / 3;
+  min-height: 420px;
   border-radius: var(--radius-2xl, 1.5rem);
 }
 

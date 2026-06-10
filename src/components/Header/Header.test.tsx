@@ -60,7 +60,7 @@ describe('Header', () => {
   describe('logo button', () => {
     it('navigates to home and scrolls to top when clicked', () => {
       renderHeader();
-      fireEvent.click(screen.getByLabelText('Go to home'));
+      fireEvent.click(screen.getByLabelText('header.name'));
       expect(mockNavigate).toHaveBeenCalledWith('/');
       expect(window.scrollTo).toHaveBeenCalledWith({
         top: 0,
@@ -166,7 +166,10 @@ describe('Header', () => {
   describe('image fallback', () => {
     it('shows fallback image on error', () => {
       renderHeader();
-      const img = screen.getByAltText('SC Logo');
+      const img = document.querySelector(
+        '.header-logo img'
+      ) as HTMLImageElement;
+      expect(img).toBeTruthy();
       fireEvent.error(img);
       expect(img.getAttribute('src')).toBe('/sc.png');
     });

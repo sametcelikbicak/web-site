@@ -8,9 +8,22 @@ import {
 import { type Theme, ThemeContext } from '@/types/theme';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  // Always start with 'dark' so server and client produce matching HTML for hydration.
-  // The stored preference is read after hydration in useEffect.
-  const [theme, setTheme] = useState<Theme>('dark');
+  const getInitialTheme = (): Theme => {
+    if (typeof document === 'undefined') return 'dark';
+    try {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') return stored;
+    } catch {
+      /* ignore */
+    }
+    const el = document.documentElement;
+    const attr = el.getAttribute('data-theme');
+    if (attr === 'light' || attr === 'dark') return attr;
+    if (window.matchMedia('(prefers-color-scheme: light)').matches)
+      return 'light';
+    return 'dark';
+  };
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     const stored = localStorage.getItem('theme') as Theme | null;

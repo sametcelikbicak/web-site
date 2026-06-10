@@ -1,4 +1,10 @@
-import { readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  unlinkSync,
+  writeFileSync,
+} from 'node:fs';
 import path from 'node:path';
 import { cloudflare } from '@cloudflare/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
@@ -34,11 +40,14 @@ function inlineCssPlugin(): Plugin {
       const clientBuildDir = path.resolve(__dirname, 'dist/client');
       const htmlPath = path.join(clientBuildDir, 'index.html');
 
+      if (!existsSync(htmlPath)) return;
+
       let html = readFileSync(htmlPath, 'utf-8');
 
       html = html.replace(/<link[^>]*href=["'][^"']*\.css["'][^>]*\/?>/gi, '');
 
       const assetsDir = path.join(clientBuildDir, 'assets');
+      if (!existsSync(assetsDir)) return;
       const initialChunks = readdirSync(assetsDir)
         .filter((f) => /^(HomePage|router|i18n|icons)-[\w-]+\.js$/.test(f))
         .sort();

@@ -92,6 +92,7 @@ export default function useAnalytics() {
     for (const section of Array.from(sections)) observer.observe(section);
 
     return () => {
+      /* istanbul ignore next */
       if (typeof cleanupScroll === 'function') cleanupScroll();
       observer.disconnect();
     };

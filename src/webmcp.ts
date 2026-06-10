@@ -95,6 +95,7 @@ const tools: WebMcpTool[] = [
 ];
 
 export const registerWebMcpTools = () => {
+  /* istanbul ignore if — SSR guard, can't test in JSDOM */
   if (typeof window === 'undefined') return;
   const modelContext = (
     navigator as Navigator & {

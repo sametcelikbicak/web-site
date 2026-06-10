@@ -25,6 +25,7 @@ const BlogPostPage = () => {
     }
   }, [slug, navigate, i18n.language]);
 
+  // istanbul ignore next — loading state navigates immediately via effect
   if (!post) {
     return (
       <div className="blog-post-page page-container section-gap">

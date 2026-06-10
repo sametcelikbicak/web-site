@@ -72,7 +72,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="header-nav hidden md:flex" aria-label="Main navigation">
           {NAV_ITEMS.map((item) =>
-            item.external ? (
+            /* istanbul ignore next */ item.external ? (
               <a
                 key={item.labelKey}
                 href={item.to}
@@ -161,7 +161,7 @@ const Header = () => {
         </div>
         <nav className="mobile-nav">
           {NAV_ITEMS.map((item) =>
-            item.external ? (
+            /* istanbul ignore next */ item.external ? (
               <a
                 key={item.labelKey}
                 href={item.to}

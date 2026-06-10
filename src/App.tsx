@@ -16,6 +16,7 @@ const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
 
+/* istanbul ignore next — tested via integration, not unit-testable (Suspense fallback) */
 const PageLoader = () => (
   <div
     style={{

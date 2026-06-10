@@ -133,6 +133,14 @@
     "pomodoro": {
       "title": "Pomodoro",
       "description": "A simple Pomodoro timer application to help you manage your time effectively using the Pomodoro Technique."
+    },
+    "coverage-guard": {
+      "title": "Coverage Guard",
+      "description": "Automates test coverage checks and ensures 100% coverage for JavaScript/TypeScript projects by generating missing tests."
+    },
+    "flaky-test-detector": {
+      "title": "Flaky Test Detector",
+      "description": "Detects and fixes flaky tests across various test runners, ensuring stable CI performance and reliable test outcomes."
     }
   },
   "blog": {

@@ -28,6 +28,18 @@ const PROJECTS = [
       'https://raw.githubusercontent.com/sametcelikbicak/pomodoro/5c03dca9b63b406c579978468adae42a07fc2dcf/public/pomodoro.svg',
     link: 'https://sametcelikbicak.github.io/pomodoro/',
   },
+  {
+    key: 'coverage-guard',
+    image:
+      'https://github.com/sametcelikbicak/coverage-guard/blob/main/assets/coverage-guard.png?raw=true',
+    link: 'https://agentskill.sh/@sametcelikbicak/coverage-guard',
+  },
+  {
+    key: 'flaky-test-detector',
+    image:
+      'https://github.com/sametcelikbicak/flaky-test-detector/blob/main/assets/flaky-test-detector.png?raw=true',
+    link: 'https://agentskill.sh/@sametcelikbicak/flaky-test-detector',
+  },
 ];
 
 const ProjectsPage = () => {

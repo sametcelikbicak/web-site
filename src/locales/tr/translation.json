@@ -133,6 +133,14 @@
     "pomodoro": {
       "title": "Pomodoro",
       "description": "Pomodoro Tekniği'ni kullanarak zamanınızı etkili bir şekilde yönetmenize yardımcı olan basit bir Pomodoro zamanlayıcı uygulaması."
+    },
+    "coverage-guard": {
+      "title": "Coverage Guard",
+      "description": "Test kapsamı kontrollerini otomatikleştirir ve eksik testleri oluşturarak JavaScript/TypeScript projeleri için %100 kapsama sağlar."
+    },
+    "flaky-test-detector": {
+      "title": "Flaky Test Detector",
+      "description": "Çeşitli test araçlarında kararsız testleri tespit eder ve düzeltir, böylece istikrarlı CI performansı ve güvenilir test sonuçları sağlar."
     }
   },
   "blog": {

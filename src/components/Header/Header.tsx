@@ -5,7 +5,6 @@ import ENIcon from '@/components/ENIcon/ENIcon';
 import MoonIcon from '@/components/MoonIcon/MoonIcon';
 import SunIcon from '@/components/SunIcon/SunIcon';
 import TRIcon from '@/components/TRIcon/TRIcon';
-import useAnalytics from '@/hooks/useAnalytics';
 import { useTheme } from '@/hooks/useTheme';
 import './Header.css';
 
@@ -35,7 +34,6 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
-  const { trackButtonClick } = useAnalytics();
 
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
@@ -79,7 +77,7 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link"
-                onClick={() => trackButtonClick(item.analyticsKey)}
+                onClick={() => {}}
               >
                 {t(item.labelKey)}
               </a>
@@ -88,7 +86,7 @@ const Header = () => {
                 key={item.labelKey}
                 to={item.to}
                 className={`nav-link${isActive(item.to) ? ' nav-link--active' : ''}`}
-                onClick={() => trackButtonClick(item.analyticsKey)}
+                onClick={() => {}}
               >
                 {t(item.labelKey)}
                 {isActive(item.to) && <span className="nav-active-dot" />}
@@ -105,7 +103,6 @@ const Header = () => {
             aria-label="Toggle theme"
             onClick={() => {
               toggleTheme();
-              trackButtonClick('theme-toggle');
             }}
           >
             {theme === 'light' ? <SunIcon /> : <MoonIcon />}
@@ -116,7 +113,6 @@ const Header = () => {
             aria-label="Toggle language"
             onClick={() => {
               toggleLanguage();
-              trackButtonClick('language-toggle');
             }}
           >
             {i18n.language === 'tr' ? <TRIcon /> : <ENIcon />}
@@ -170,7 +166,6 @@ const Header = () => {
                 className="mobile-nav-link"
                 onClick={() => {
                   setMenuOpen(false);
-                  trackButtonClick(item.analyticsKey);
                 }}
               >
                 {t(item.labelKey)}
@@ -182,7 +177,6 @@ const Header = () => {
                 className={`mobile-nav-link${isActive(item.to) ? ' mobile-nav-link--active' : ''}`}
                 onClick={() => {
                   setMenuOpen(false);
-                  trackButtonClick(item.analyticsKey);
                 }}
               >
                 {t(item.labelKey)}
@@ -198,7 +192,6 @@ const Header = () => {
             onClick={() => {
               toggleLanguage();
               setMenuOpen(false);
-              trackButtonClick('language-toggle');
             }}
             style={{ fontSize: '1.5rem' }}
           >
@@ -211,7 +204,6 @@ const Header = () => {
             onClick={() => {
               toggleTheme();
               setMenuOpen(false);
-              trackButtonClick('theme-toggle');
             }}
             style={{ fontSize: '1.25rem' }}
           >

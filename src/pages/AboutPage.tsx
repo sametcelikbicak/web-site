@@ -1,17 +1,10 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import useAnalytics from '@/hooks/useAnalytics';
 import './AboutPage.css';
 
 const AboutPage = () => {
   const { t } = useTranslation();
-  const { trackSectionView } = useAnalytics();
 
   const aboutText = t('about.description');
-
-  useEffect(() => {
-    trackSectionView('about_page');
-  }, [trackSectionView]);
 
   return (
     <div className="about-page page-container">

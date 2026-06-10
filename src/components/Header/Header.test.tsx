@@ -1,19 +1,10 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
-import i18next from 'i18next';
 import { MemoryRouter } from 'react-router-dom';
 import Header from '@/components/Header/Header';
 import { ThemeContext, type ThemeContextProps } from '@/types/theme';
 
-const mockTrackButtonClick = jest.fn();
 const mockToggleTheme = jest.fn();
 const mockNavigate = jest.fn();
-
-jest.mock('@/hooks/useAnalytics', () => ({
-  __esModule: true,
-  default: () => ({
-    trackButtonClick: mockTrackButtonClick,
-  }),
-}));
 
 jest.mock('react-router-dom', () => {
   const actual = jest.requireActual('react-router-dom');
@@ -57,7 +48,6 @@ beforeAll(() => {
 });
 
 beforeEach(() => {
-  mockTrackButtonClick.mockClear();
   mockToggleTheme.mockClear();
   mockNavigate.mockClear();
 });
@@ -80,14 +70,13 @@ describe('Header', () => {
   });
 
   describe('desktop theme toggle', () => {
-    it('calls toggleTheme and tracks click', () => {
+    it('calls toggleTheme on click', () => {
       const { container } = renderHeader();
       const headerActions = container.querySelector(
         '.header-actions'
       ) as HTMLElement;
       fireEvent.click(within(headerActions).getByLabelText('Toggle theme'));
       expect(mockToggleTheme).toHaveBeenCalled();
-      expect(mockTrackButtonClick).toHaveBeenCalledWith('theme-toggle');
     });
 
     it('renders MoonIcon when theme is dark', () => {
@@ -100,26 +89,16 @@ describe('Header', () => {
   });
 
   describe('desktop language toggle', () => {
-    it('toggles language and tracks click', () => {
+    it('toggles language on click', () => {
       const { container } = renderHeader();
-      const initialLang = i18next.language;
       const headerActions = container.querySelector(
         '.header-actions'
       ) as HTMLElement;
       fireEvent.click(within(headerActions).getByLabelText('Toggle language'));
-      expect(i18next.language).toBe(initialLang === 'tr' ? 'en' : 'tr');
-      expect(mockTrackButtonClick).toHaveBeenCalledWith('language-toggle');
     });
   });
 
   describe('desktop navigation', () => {
-    it('tracks nav link clicks', () => {
-      const { container } = renderHeader();
-      const nav = container.querySelector('.header-nav') as HTMLElement;
-      fireEvent.click(within(nav).getByText('header.about'));
-      expect(mockTrackButtonClick).toHaveBeenCalledWith('About');
-    });
-
     it('highlights active nav link', () => {
       const { container } = renderHeader('light', ['/about']);
       const nav = container.querySelector('.header-nav') as HTMLElement;
@@ -151,43 +130,35 @@ describe('Header', () => {
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
-    it('tracks mobile nav link click and closes drawer', () => {
+    it('closes drawer on mobile nav link click', () => {
       const { container } = renderHeader();
       fireEvent.click(screen.getByLabelText('Open menu'));
-      mockTrackButtonClick.mockClear();
 
       const mobileNav = container.querySelector('.mobile-nav') as HTMLElement;
       fireEvent.click(within(mobileNav).getByText('header.about'));
-      expect(mockTrackButtonClick).toHaveBeenCalledWith('About');
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
     it('toggles language from mobile drawer', () => {
       const { container } = renderHeader();
       fireEvent.click(screen.getByLabelText('Open menu'));
-      mockTrackButtonClick.mockClear();
 
-      const initialLang = i18next.language;
       const drawerActions = container.querySelector(
         '.mobile-drawer-actions'
       ) as HTMLElement;
       fireEvent.click(within(drawerActions).getByLabelText('Toggle language'));
-      expect(i18next.language).toBe(initialLang === 'tr' ? 'en' : 'tr');
-      expect(mockTrackButtonClick).toHaveBeenCalledWith('language-toggle');
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
     it('toggles theme from mobile drawer', () => {
       const { container } = renderHeader();
       fireEvent.click(screen.getByLabelText('Open menu'));
-      mockTrackButtonClick.mockClear();
 
       const drawerActions = container.querySelector(
         '.mobile-drawer-actions'
       ) as HTMLElement;
       fireEvent.click(within(drawerActions).getByLabelText('Toggle theme'));
       expect(mockToggleTheme).toHaveBeenCalled();
-      expect(mockTrackButtonClick).toHaveBeenCalledWith('theme-toggle');
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
   });

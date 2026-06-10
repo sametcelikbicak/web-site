@@ -6,7 +6,6 @@ import {
   SiX,
   SiYoutube,
 } from 'react-icons/si';
-import useAnalytics from '@/hooks/useAnalytics';
 import './Footer.css';
 
 const SOCIAL_LINKS = [
@@ -31,7 +30,6 @@ const SOCIAL_LINKS = [
 
 const Footer = () => {
   const { t } = useTranslation();
-  const { trackButtonClick } = useAnalytics();
 
   return (
     <footer className="site-footer">
@@ -45,7 +43,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label={name}
               className="footer-social-link"
-              onClick={() => trackButtonClick(name)}
+              onClick={() => {}}
             >
               <Icon title={name} size={20} />
             </a>

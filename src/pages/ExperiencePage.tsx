@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaCode } from 'react-icons/fa';
-import useAnalytics from '@/hooks/useAnalytics';
 import './ExperiencePage.css';
 
 const EXPERIENCE_START_YEAR = 2007;
@@ -41,11 +39,6 @@ const EXPERIENCES = [
 
 const ExperiencePage = () => {
   const { t } = useTranslation();
-  const { trackSectionView } = useAnalytics();
-
-  useEffect(() => {
-    trackSectionView('experience_page');
-  }, [trackSectionView]);
 
   const years = new Date().getFullYear() - EXPERIENCE_START_YEAR;
 

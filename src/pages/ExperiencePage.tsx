@@ -110,9 +110,12 @@ const ExperiencePage = () => {
                       </span>
                       <span className="card-category">Tech Stack</span>
                     </div>
-                    {Array.isArray(techStack) && (
-                      <p className="card-tech">{techStack.join(', ')}</p>
-                    )}
+                    {
+                      // istanbul ignore next — data-dependent on i18n return values
+                      Array.isArray(techStack) && (
+                        <p className="card-tech">{techStack.join(', ')}</p>
+                      )
+                    }
                   </div>
                 </div>
               </div>

@@ -12,7 +12,6 @@ The user-facing site is a single-page portfolio with anchored sections for profi
 - Responsive header with desktop navigation and mobile hamburger menu
 - Section anchor navigation for `about`, `experience`, `education`, `skills`, and `projects`
 - Lazy-loaded portfolio sections for improved initial loading
-- Google Analytics / gtag event tracking through `useAnalytics`
 - WebP images with PNG fallback handling
 - SEO metadata, Open Graph tags, Twitter card metadata, JSON-LD person schema, sitemap, and robots rules
 - Cloudflare Worker support for static asset serving, markdown content negotiation, content-type fixes, and discovery `Link` headers
@@ -145,16 +144,6 @@ Translations are initialized in `src/i18n.tsx`. Turkish is the fallback language
 - `src/locales/en/translation.json`
 
 The header language button switches between Turkish and English.
-
-## Analytics
-
-Google Analytics is loaded in `index.html`. The `useAnalytics` hook exposes:
-
-- `trackEvent`
-- `trackButtonClick`
-- `trackSectionView`
-
-The hook also initializes scroll-depth tracking at 25%, 50%, 75%, and 100%.
 
 ## Agent Discovery
 

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   SiAngular,
@@ -23,7 +22,6 @@ import {
   SiTypescript,
   SiYarn,
 } from 'react-icons/si';
-import useAnalytics from '@/hooks/useAnalytics';
 import './SkillsPage.css';
 
 const SKILL_CATEGORIES = [
@@ -67,11 +65,6 @@ const SKILL_CATEGORIES = [
 
 const SkillsPage = () => {
   const { t } = useTranslation();
-  const { trackSectionView } = useAnalytics();
-
-  useEffect(() => {
-    trackSectionView('skills_page');
-  }, [trackSectionView]);
 
   return (
     <div className="skills-page page-container section-gap">

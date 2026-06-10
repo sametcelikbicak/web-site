@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBuilding } from 'react-icons/fa';
-import useAnalytics from '@/hooks/useAnalytics';
 import './EducationPage.css';
 
 const EDUCATIONS = [
@@ -27,11 +25,6 @@ const EDUCATIONS = [
 
 const EducationPage = () => {
   const { t } = useTranslation();
-  const { trackSectionView } = useAnalytics();
-
-  useEffect(() => {
-    trackSectionView('education_page');
-  }, [trackSectionView]);
 
   return (
     <div className="education-page page-container">

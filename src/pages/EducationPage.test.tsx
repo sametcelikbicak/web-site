@@ -1,47 +1,12 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import EducationPage from '@/pages/EducationPage';
-
-const mockTrackSectionView = jest.fn();
-
-jest.mock('@/hooks/useAnalytics', () => ({
-  __esModule: true,
-  default: () => ({
-    trackSectionView: mockTrackSectionView,
-    trackEvent: jest.fn(),
-    trackButtonClick: jest.fn(),
-  }),
-}));
-
-beforeAll(() => {
-  class MockIntersectionObserver {
-    root = null;
-    rootMargin = '';
-    thresholds = [];
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-    takeRecords() {
-      return [];
-    }
-  }
-  global.IntersectionObserver =
-    MockIntersectionObserver as unknown as typeof IntersectionObserver;
-});
-
-beforeEach(() => {
-  jest.clearAllMocks();
-});
 
 describe('EducationPage', () => {
   it('renders title and subtitle', () => {
     render(<EducationPage />);
     expect(screen.getByText('education.title')).toBeInTheDocument();
     expect(screen.getByText('education.subtitle')).toBeInTheDocument();
-  });
-
-  it('tracks section view on mount', () => {
-    render(<EducationPage />);
-    expect(mockTrackSectionView).toHaveBeenCalledWith('education_page');
   });
 
   it('renders all education entries', () => {

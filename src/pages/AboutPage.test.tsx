@@ -3,17 +3,6 @@ import { render, screen } from '@testing-library/react';
 import i18next from 'i18next';
 import AboutPage from '@/pages/AboutPage';
 
-const mockTrackSectionView = jest.fn();
-
-jest.mock('@/hooks/useAnalytics', () => ({
-  __esModule: true,
-  default: () => ({
-    trackSectionView: mockTrackSectionView,
-    trackEvent: jest.fn(),
-    trackButtonClick: jest.fn(),
-  }),
-}));
-
 beforeAll(() => {
   class MockIntersectionObserver {
     root = null;
@@ -31,7 +20,6 @@ beforeAll(() => {
 });
 
 beforeEach(() => {
-  jest.clearAllMocks();
   i18next.addResource(
     'en',
     'translation',
@@ -47,11 +35,6 @@ describe('AboutPage', () => {
     render(<AboutPage />);
     expect(screen.getByText('About Me')).toBeInTheDocument();
     expect(screen.getByText('My Story')).toBeInTheDocument();
-  });
-
-  it('tracks section view on mount', () => {
-    render(<AboutPage />);
-    expect(mockTrackSectionView).toHaveBeenCalledWith('about_page');
   });
 
   it('renders non-empty description paragraphs', () => {

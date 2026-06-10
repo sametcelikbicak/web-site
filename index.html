@@ -13,7 +13,6 @@
   </script>
 
   <!-- Preconnect -->
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preconnect" href="https://avatars.githubusercontent.com" />
 
   <!-- Preload critical assets -->
@@ -86,34 +85,6 @@
         ]
       }
     </script>
-  <!-- Google tag (gtag.js) - deferred -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      /* biome-ignore lint/complexity/noArguments: script has to be like that */
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-J5RCMGVLL3');
-
-    const loadGA = () => {
-      const s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J5RCMGVLL3';
-      s.async = true;
-      document.head.appendChild(s);
-    };
-
-    if (document.visibilityState === 'visible') {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGA, { timeout: 3000 });
-      } else {
-        setTimeout(loadGA, 2000);
-      }
-    }
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') loadGA();
-    }, { once: true });
-  </script>
 </head>
 
 <body>

@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import useAnalytics from '@/hooks/useAnalytics';
 import './ProjectsPage.css';
 
 const PROJECTS = [
@@ -44,11 +42,6 @@ const PROJECTS = [
 
 const ProjectsPage = () => {
   const { t } = useTranslation();
-  const { trackSectionView, trackButtonClick } = useAnalytics();
-
-  useEffect(() => {
-    trackSectionView('projects_page');
-  }, [trackSectionView]);
 
   return (
     <div className="projects-page page-container section-gap">
@@ -65,7 +58,6 @@ const ProjectsPage = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="project-card card"
-            onClick={() => trackButtonClick(`Project: ${project.key}`)}
           >
             <div className="project-image-wrapper">
               <img

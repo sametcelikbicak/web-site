@@ -65,7 +65,6 @@ Biome can be configured to check for import style and enforce path alias usage. 
 
 ```typescript
 import Header from "@/components/Header/Header";
-import useAnalytics from "@/hooks/useAnalytics";
 import { Theme } from "@/types/theme";
 ```
 
@@ -73,7 +72,6 @@ import { Theme } from "@/types/theme";
 
 ```typescript
 import Header from "./components/Header/Header";
-import useAnalytics from "../../hooks/useAnalytics";
 import { Theme } from "../types/theme";
 ```
 

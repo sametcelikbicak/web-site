@@ -3,10 +3,34 @@ import './ProjectsPage.css';
 
 const PROJECTS = [
   {
-    key: 'enum2array',
+    key: 'rolecraft',
     image:
-      'https://raw.githubusercontent.com/sametcelikbicak/enum2array/81a91637434dc2d11eac821c589dea7a8a79d1e8/assets/enum2array.svg',
-    link: 'https://www.npmjs.com/package/enum2array',
+      'https://github.com/sametcelikbicak/rolecraft/blob/main/assets/rolecraft_logo.png?raw=true',
+    link: 'https://www.npmjs.com/package/rolecraft',
+  },
+  {
+    key: 'task-decomposer',
+    image:
+      'https://github.com/sametcelikbicak/task-decomposer/blob/main/assets/task-decomposer.png?raw=true',
+    link: 'https://agentskill.sh/@sametcelikbicak/task-decomposer',
+  },
+  {
+    key: 'flaky-test-detector',
+    image:
+      'https://github.com/sametcelikbicak/flaky-test-detector/blob/main/assets/flaky-test-detector.png?raw=true',
+    link: 'https://agentskill.sh/@sametcelikbicak/flaky-test-detector',
+  },
+  {
+    key: 'coverage-guard',
+    image:
+      'https://github.com/sametcelikbicak/coverage-guard/blob/main/assets/coverage-guard.png?raw=true',
+    link: 'https://agentskill.sh/@sametcelikbicak/coverage-guard',
+  },
+  {
+    key: 'pomodoro',
+    image:
+      'https://raw.githubusercontent.com/sametcelikbicak/pomodoro/5c03dca9b63b406c579978468adae42a07fc2dcf/public/pomodoro.svg',
+    link: 'https://sametcelikbicak.github.io/pomodoro/',
   },
   {
     key: 'tsci',
@@ -21,22 +45,10 @@ const PROJECTS = [
     link: 'https://www.npmjs.com/package/storage-function',
   },
   {
-    key: 'pomodoro',
+    key: 'enum2array',
     image:
-      'https://raw.githubusercontent.com/sametcelikbicak/pomodoro/5c03dca9b63b406c579978468adae42a07fc2dcf/public/pomodoro.svg',
-    link: 'https://sametcelikbicak.github.io/pomodoro/',
-  },
-  {
-    key: 'coverage-guard',
-    image:
-      'https://github.com/sametcelikbicak/coverage-guard/blob/main/assets/coverage-guard.png?raw=true',
-    link: 'https://agentskill.sh/@sametcelikbicak/coverage-guard',
-  },
-  {
-    key: 'flaky-test-detector',
-    image:
-      'https://github.com/sametcelikbicak/flaky-test-detector/blob/main/assets/flaky-test-detector.png?raw=true',
-    link: 'https://agentskill.sh/@sametcelikbicak/flaky-test-detector',
+      'https://raw.githubusercontent.com/sametcelikbicak/enum2array/81a91637434dc2d11eac821c589dea7a8a79d1e8/assets/enum2array.svg',
+    link: 'https://www.npmjs.com/package/enum2array',
   },
 ];
 

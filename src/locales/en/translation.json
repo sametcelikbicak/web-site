@@ -28,10 +28,6 @@
     "stack": "TECHNOLOGY STACK",
     "satisfaction": "CUSTOMER SATISFACTION"
   },
-  "featuredProjects": {
-    "label": "FEATURED PROJECTS",
-    "viewAll": "View All Projects"
-  },
   "about": {
     "title": "About",
     "subtitle": "My Journey",
@@ -141,6 +137,14 @@
     "flaky-test-detector": {
       "title": "Flaky Test Detector",
       "description": "Detects and fixes flaky tests across various test runners, ensuring stable CI performance and reliable test outcomes."
+    },
+    "task-decomposer": {
+      "title": "Task Decomposer",
+      "description": "An AI agent skill that helps developers decompose complex requests into structured, AI-friendly task sequences. Optimizes context window usage, manages multi-session workflows, and produces better results from fewer, more focused prompts."
+    },
+    "rolecraft": {
+      "title": "RoleCraft — Simple Skill Installer for AI",
+      "description": "Zero-dependency CLI to install AI agent skills as roles & behaviors from any source. No marketplace, no registry, no signup — just point it at a local folder or a GitHub repo and it works."
     }
   },
   "blog": {

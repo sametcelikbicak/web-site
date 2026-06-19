@@ -28,10 +28,6 @@
     "stack": "TEKNOLOJİ YIĞINI",
     "satisfaction": "MÜŞTERİ MEMNUNİYETİ"
   },
-  "featuredProjects": {
-    "label": "ÖNE ÇIKAN PROJELER",
-    "viewAll": "Tüm Projeleri Gör"
-  },
   "about": {
     "title": "Hakkımda",
     "subtitle": "Kariyer Yolculuğum",
@@ -141,6 +137,14 @@
     "flaky-test-detector": {
       "title": "Flaky Test Detector",
       "description": "Çeşitli test araçlarında kararsız testleri tespit eder ve düzeltir, böylece istikrarlı CI performansı ve güvenilir test sonuçları sağlar."
+    },
+    "task-decomposer": {
+      "title": "Task Decomposer",
+      "description": "Geliştiricilerin karmaşık istekleri yapılandırılmış, yapay zeka dostu görev dizilerine ayırmasına yardımcı olan bir yapay zeka ajanı becerisi. Bağlam penceresi kullanımını optimize eder, çok oturumlu iş akışlarını yönetir ve daha az sayıda, daha odaklı komutla daha iyi sonuçlar üretir."
+    },
+    "rolecraft": {
+      "title": "RoleCraft — Simple Skill Installer for AI",
+      "description": "Herhangi bir kaynaktan yapay zeka ajan becerilerini rol ve davranış olarak yüklemek için sıfır bağımlılığa sahip komut satırı aracı. Pazar yeri yok, kayıt defteri yok, üyelik yok — sadece yerel bir klasöre veya GitHub deposuna işaret edin ve çalışır."
     }
   },
   "blog": {

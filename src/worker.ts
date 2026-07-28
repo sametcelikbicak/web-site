@@ -78,6 +78,7 @@ const CONTENT_TYPES = new Map<string, string>([
   ['/auth.md', 'text/markdown; charset=utf-8'],
   ['/index.md', 'text/markdown; charset=utf-8'],
   ['/openapi.json', 'application/vnd.oai.openapi+json; charset=utf-8'],
+  ['/rss.xml', 'application/rss+xml; charset=utf-8'],
   ['/status/health.json', 'application/json; charset=utf-8'],
   ['/mcp', 'application/json; charset=utf-8'],
 ]);

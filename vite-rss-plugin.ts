@@ -6,7 +6,7 @@ import {
   writeFileSync,
 } from 'node:fs';
 import path from 'node:path';
-import type { Plugin } from 'vite';
+import type { Plugin, ResolvedConfig } from 'vite';
 
 interface BlogFrontmatter {
   title?: string;
@@ -23,7 +23,6 @@ interface ParsedPost {
   title: string;
   date: string;
   description: string;
-  lang: string;
   link: string;
 }
 
@@ -76,10 +75,10 @@ const parseYaml = (yamlBlock: string): BlogFrontmatter => {
 
 const escapeXml = (value: string): string =>
   value
-    .replace(/&/g, '&')
-    .replace(/</g, '<')
-    .replace(/>/g, '>')
-    .replace(/"/g, '"')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
 
 const buildRss = (posts: ParsedPost[]): string => {
@@ -113,50 +112,71 @@ ${items}
 `;
 };
 
+const loadPosts = (): ParsedPost[] => {
+  const root = process.cwd();
+  const blogDir = path.resolve(root, 'src/content/blog');
+
+  const files = readdirSync(blogDir).filter((f) => f.endsWith('.md'));
+
+  return files
+    .map((file) => {
+      const raw = readFileSync(path.join(blogDir, file), 'utf-8');
+      const { data } = parseFrontmatter(raw);
+
+      const fileLang = data.lang || file.split('.').reverse()[1] || 'tr';
+      const slug =
+        data.slug || file.replace(`.${fileLang}.md`, '').replace('.md', '');
+
+      return {
+        slug,
+        title: data.title || 'Untitled',
+        date: data.date || '',
+        description: data.description || '',
+        link: `/blog/${slug}`,
+      };
+    })
+    .filter((post) => post.date.trim() !== '')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+};
+
 export function rssFeedPlugin(): Plugin {
+  let config: ResolvedConfig;
+  let written = false;
+
   return {
     name: 'rss-feed',
     enforce: 'post',
 
+    configResolved(resolvedConfig) {
+      config = resolvedConfig;
+    },
+
     closeBundle() {
-      const blogDir = path.resolve(__dirname, 'src/content/blog');
-      const outDir = path.resolve(__dirname, 'dist');
-      const outFile = path.join(outDir, 'rss.xml');
+      if (written) return;
 
-      if (!existsSync(blogDir)) return;
-      if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
+      try {
+        const posts = loadPosts();
+        if (posts.length === 0) {
+          console.warn(
+            '[rss-feed] No blog posts found, skipping RSS generation'
+          );
+          return;
+        }
 
-      const files = readdirSync(blogDir).filter((f) => f.endsWith('.md'));
+        const rss = buildRss(posts);
+        const root = config.root || process.cwd();
+        const outFile = path.resolve(root, 'dist', 'rss.xml');
 
-      const posts: ParsedPost[] = files
-        .map((file) => {
-          const raw = readFileSync(path.join(blogDir, file), 'utf-8');
-          const { data } = parseFrontmatter(raw);
+        const dir = path.dirname(outFile);
+        if (!existsSync(dir)) {
+          mkdirSync(dir, { recursive: true });
+        }
 
-          const filename = file;
-          const fileLang =
-            data.lang || filename.split('.').reverse()[1] || 'tr';
-
-          const slug =
-            data.slug ||
-            filename.replace(`.${fileLang}.md`, '').replace('.md', '');
-
-          return {
-            slug,
-            title: data.title || 'Untitled',
-            date: data.date || '',
-            description: data.description || '',
-            lang: fileLang,
-            link: `/blog/${slug}`,
-          };
-        })
-        .filter((post) => post.date.trim() !== '')
-        .sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
-
-      const rss = buildRss(posts);
-      writeFileSync(outFile, rss, 'utf-8');
+        writeFileSync(outFile, rss, 'utf-8');
+        written = true;
+      } catch (err) {
+        console.error('[rss-feed] Failed to generate RSS:', err);
+      }
     },
   };
 }

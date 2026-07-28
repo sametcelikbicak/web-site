@@ -19,7 +19,7 @@ const blogFiles = import.meta.glob('../content/blog/*.md', {
 /**
  * Lightweight frontmatter parser for the browser
  */
-const parseFrontmatter = (fileContent: string) => {
+export const parseFrontmatter = (fileContent: string) => {
   const parts = fileContent.split('---');
 
   // A valid markdown with frontmatter should have at least 3 parts when split by ---

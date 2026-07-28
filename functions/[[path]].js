@@ -144,7 +144,10 @@ export const onRequest = async ({ env, request }) => {
   const headers = new Headers(response.headers);
 
   const contentType = CONTENT_TYPES.get(pathname);
-  if (contentType) headers.set('Content-Type', contentType);
+  const originalType = response.headers.get('Content-Type') || '';
+  if (contentType && !originalType.includes('text/html')) {
+    headers.set('Content-Type', contentType);
+  }
 
   if (isHtmlRoute(request)) {
     headers.set('Link', LINK_HEADER);

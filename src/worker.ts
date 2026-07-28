@@ -1,4 +1,5 @@
 import { render } from './entry-server';
+import { getRssXml } from './services/rss';
 
 type Env = {
   ASSETS: {
@@ -101,6 +102,16 @@ export default {
   async fetch(request: Request, env: Env) {
     const { pathname } = new URL(request.url);
 
+    if (pathname === '/rss.xml') {
+      const rss = getRssXml();
+      return new Response(rss, {
+        headers: {
+          'Content-Type': 'application/rss+xml; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+        },
+      });
+    }
+
     if (acceptsMarkdown(request) && isHtmlRoute(pathname)) {
       return new Response(MARKDOWN_HOMEPAGE, {
         headers: {
@@ -137,8 +148,11 @@ export default {
     const response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
     const contentType = CONTENT_TYPES.get(pathname);
+    const originalType = response.headers.get('Content-Type') || '';
 
-    if (contentType) headers.set('Content-Type', contentType);
+    if (contentType && !originalType.includes('text/html')) {
+      headers.set('Content-Type', contentType);
+    }
 
     if (isHtmlRoute(pathname)) {
       headers.set('Link', LINK_HEADER);

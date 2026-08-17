@@ -11,6 +11,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig, type Plugin } from 'vite';
 import { rssFeedPlugin } from './vite-rss-plugin';
+import { sitemapPlugin } from './vite-sitemap-plugin';
 
 const clientOnly = process.env.VITE_CLIENT_ONLY === 'true';
 
@@ -85,6 +86,7 @@ export default defineConfig({
     tailwindcss(),
     inlineCssPlugin(),
     rssFeedPlugin(),
+    sitemapPlugin(),
     ...(clientOnly ? [] : [cloudflare()]),
   ],
   resolve: {

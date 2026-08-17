@@ -1,5 +1,6 @@
 import { render } from './entry-server';
 import { getRssXml } from './services/rss';
+import { getSitemapXml } from './services/sitemap';
 
 type Env = {
   ASSETS: {
@@ -45,6 +46,10 @@ Until 2024, Samet worked as a Fullstack Developer. Since 2024, he has continued 
 - TSCI CLI: https://www.npmjs.com/package/tsci
 - Storage Function: https://www.npmjs.com/package/storage-function
 - Pomodoro: https://sametcelikbicak.github.io/pomodoro/
+- RoleCraft: https://www.npmjs.com/package/rolecraft
+- Task Decomposer: https://agentskill.sh/@sametcelikbicak/task-decomposer
+- Flaky Test Detector: https://agentskill.sh/@sametcelikbicak/flaky-test-detector
+- Coverage Guard: https://agentskill.sh/@sametcelikbicak/coverage-guard
 
 ## Agent Resources
 
@@ -107,6 +112,16 @@ export default {
       return new Response(rss, {
         headers: {
           'Content-Type': 'application/rss+xml; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+        },
+      });
+    }
+
+    if (pathname === '/sitemap.xml') {
+      const sitemap = getSitemapXml();
+      return new Response(sitemap, {
+        headers: {
+          'Content-Type': 'application/xml; charset=utf-8',
           'Cache-Control': 'public, max-age=3600',
         },
       });

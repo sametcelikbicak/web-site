@@ -13,8 +13,8 @@ The user-facing site is a single-page portfolio with anchored sections for profi
 - Section anchor navigation for `about`, `experience`, `education`, `skills`, and `projects`
 - Lazy-loaded portfolio sections for improved initial loading
 - WebP images with PNG fallback handling
-- SEO metadata, Open Graph tags, Twitter card metadata, JSON-LD person schema, sitemap, and robots rules
-- Cloudflare Worker support for static asset serving, markdown content negotiation, content-type fixes, and discovery `Link` headers
+- SEO metadata, Open Graph tags, Twitter card metadata, JSON-LD person schema, build-time generated sitemap and RSS feed, and robots rules
+- Cloudflare Worker support for static asset serving, markdown content negotiation, dynamic RSS and sitemap generation, content-type fixes, and discovery `Link` headers
 - Public AI/agent discovery files including `llms.txt`, OpenAPI metadata, MCP metadata, and `.well-known` resources
 - Jest and Testing Library tests for hooks and components
 - Biome formatting and linting, with Husky and lint-staged pre-commit checks
@@ -48,7 +48,6 @@ For the current structure, keeping it section-based is the cleaner choice. The a
 │   ├── llms.txt                 # LLM-oriented site summary
 │   ├── openapi.json             # Public discovery OpenAPI description
 │   ├── robots.txt               # Crawler rules
-│   ├── sitemap.xml              # Search sitemap
 │   ├── sc.png / sc.webp         # Logo/profile image assets
 │   └── sc_caricature.*          # Profile caricature assets
 ├── src/
@@ -65,6 +64,8 @@ For the current structure, keeping it section-based is the cleaner choice. The a
 │   └── worker.ts                # Cloudflare Worker entry point
 ├── index.html                   # HTML shell, SEO metadata, JSON-LD, analytics script
 ├── vite.config.ts               # Vite, React, Tailwind, Cloudflare plugin, and path alias config
+├── vite-rss-plugin.ts           # Build-time RSS feed generation
+├── vite-sitemap-plugin.ts       # Build-time sitemap generation
 ├── wrangler.jsonc               # Cloudflare deployment and asset binding config
 ├── jest.config.cjs              # Jest + ts-jest configuration
 ├── biome.json                   # Formatting and linting rules
@@ -122,6 +123,7 @@ Deployment is configured for Cloudflare through Wrangler.
 `wrangler.jsonc` uses `src/worker.ts` as the Worker entry point and binds built static assets from `./dist` through the `ASSETS` binding. The Worker runs before asset handling so it can:
 
 - return markdown for HTML routes when the request accepts `text/markdown`
+- serve dynamically generated `/rss.xml` and `/sitemap.xml`
 - attach discovery `Link` headers to HTML routes
 - set correct content types for `.well-known`, OpenAPI, MCP, markdown, and health resources
 - preserve single-page application fallback behavior

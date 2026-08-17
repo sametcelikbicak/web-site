@@ -66,6 +66,30 @@ A Pomodoro timer application for managing time with the Pomodoro Technique.
 
 URL: https://sametcelikbicak.github.io/pomodoro/
 
+### RoleCraft
+
+Zero-dependency CLI to install AI agent skills as roles & behaviors from any source. No marketplace, no registry, no signup — just point it at a local folder or a GitHub repo and it works.
+
+URL: https://www.npmjs.com/package/rolecraft
+
+### Task Decomposer
+
+An AI agent skill that helps developers decompose complex requests into structured, AI-friendly task sequences.
+
+URL: https://agentskill.sh/@sametcelikbicak/task-decomposer
+
+### Flaky Test Detector
+
+Detects and fixes flaky tests across various test runners, ensuring stable CI performance and reliable test outcomes.
+
+URL: https://agentskill.sh/@sametcelikbicak/flaky-test-detector
+
+### Coverage Guard
+
+Automates test coverage checks and ensures 100% coverage for JavaScript/TypeScript projects by generating missing tests.
+
+URL: https://agentskill.sh/@sametcelikbicak/coverage-guard
+
 ## Profiles
 
 - GitHub: https://github.com/sametcelikbicak

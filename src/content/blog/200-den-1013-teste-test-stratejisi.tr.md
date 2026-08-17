@@ -9,7 +9,7 @@ image: "/blog/200_den_1013_teste_test_stratejisi_cover.webp"
 
 Merhaba,
 
-RoleCraft v1'de yaklaşık 200 test vardı. v2.3'e geldiğimizde bu rakam **1013'e** çıktı. Bu yazıda bu süreci, hangi stratejileri uyguladığımı ve `node:test` modülünün pratikte nasıl göründüğünü anlatacağım.
+Bir önceki yazım olan [Sıfır Bağımlılıkla CLI Nasıl Yazılır? RoleCraft'ın Mimarisi](https://sametcelikbicak.com/blog/sifir-bagimlilikla-cli-nasil-yazilir) içeriğinden sonra RoleCraft v1'de yaklaşık 200 test vardı. v2.3'e geldiğimizde bu rakam **1013'e** çıktı. Bu yazıda bu süreci, hangi stratejileri uyguladığımı ve `node:test` modülünün pratikte nasıl göründüğünü anlatacağım.
 
 ## Neden 1013 Test?
 

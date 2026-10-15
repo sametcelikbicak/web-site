@@ -65,7 +65,11 @@ const parseYaml = (yamlBlock: string) => {
   return data;
 };
 
-export const getBlogPosts = (lang: string = 'tr'): BlogPost[] => {
+/**
+ * lang is optional. Omit it to get every language, which is what the RSS feed
+ * and the sitemap want before they collapse translations down to one entry.
+ */
+export const getBlogPosts = (lang?: string): BlogPost[] => {
   return Object.keys(blogFiles)
     .map((path) => {
       const rawContent = blogFiles[path];
@@ -89,13 +93,25 @@ export const getBlogPosts = (lang: string = 'tr'): BlogPost[] => {
         image: data.image as string,
       };
     })
-    .filter((post) => post.lang === lang)
+    .filter((post) => lang === undefined || post.lang === lang)
     .filter((post) => post.date && post.date.trim() !== '')
     .sort(
       (a, b) =>
         new Date(b.date as string).getTime() -
         new Date(a.date as string).getTime()
     );
+};
+
+/**
+ * One entry per slug, newest translation wins. Feeds and the sitemap must not
+ * emit the same /blog/<slug> twice when a post exists in several languages.
+ */
+export const getDistinctBlogPosts = (): BlogPost[] => {
+  const newestBySlug = new Map<string, BlogPost>();
+  for (const post of getBlogPosts()) {
+    if (!newestBySlug.has(post.slug)) newestBySlug.set(post.slug, post);
+  }
+  return [...newestBySlug.values()];
 };
 
 export const getBlogPostBySlug = (

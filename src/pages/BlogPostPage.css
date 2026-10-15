@@ -123,7 +123,12 @@
 
 /* Code Blocks */
 .blog-post-page .post-content pre {
-  background: var(--color-surface-low);
+  /* highlight.js ships the GitHub Dark palette unconditionally. Measured on the
+     light surface it put all 12 token colours below 4.5:1, worst 1.14:1, so the
+     block keeps a dark surface in both themes rather than restating 41 token
+     rules per theme. */
+  background: #0d1117;
+  color: #c9d1d9;
   border: 1px solid var(--color-ghost-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
@@ -188,4 +193,9 @@
   .blog-post-page .post-content {
     font-size: 1rem;
   }
+}
+
+/* The one GitHub Dark token below 4.5:1 on #0d1117 (4.08:1). */
+.blog-post-page .post-content pre .hljs-section {
+  color: #388bfd;
 }

@@ -63,9 +63,10 @@ Until 2024, Samet worked as a Fullstack Developer. Since 2024, he has continued 
 `;
 
 const LINK_HEADER =
-  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </docs/api.md>; rel="service-doc"; type="text/markdown", </status/health.json>; rel="status"; type="application/json", </llms.txt>; rel="describedby"; type="text/plain", </auth.md>; rel="describedby"; type="text/markdown", </index.md>; rel="alternate"; type="text/markdown", </.well-known/agent-card.json>; rel="agent-card"; type="application/json"';
+  '</.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json", </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </docs/api.md>; rel="service-doc"; type="text/markdown", </status/health.json>; rel="status"; type="application/json", </llms.txt>; rel="describedby"; type="text/plain", </auth.md>; rel="describedby"; type="text/markdown", </index.md>; rel="alternate"; type="text/markdown", </.well-known/agent-card.json>; rel="agent-card"; type="application/json"';
 
 const CONTENT_TYPES = new Map<string, string>([
+  ['/.well-known/ai-catalog.json', 'application/json; charset=utf-8'],
   ['/.well-known/api-catalog', 'application/linkset+json; charset=utf-8'],
   ['/.well-known/openid-configuration', 'application/json; charset=utf-8'],
   [
@@ -106,6 +107,19 @@ const isHtmlRoute = (pathname: string) =>
 export default {
   async fetch(request: Request, env: Env) {
     const { pathname } = new URL(request.url);
+
+    if (pathname === '/.well-known/ai-catalog.json') {
+      const response = await env.ASSETS.fetch(request);
+      const headers = new Headers(response.headers);
+      headers.set('Content-Type', 'application/json; charset=utf-8');
+      headers.set('Access-Control-Allow-Origin', '*');
+      headers.set('Cache-Control', 'public, max-age=3600');
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      });
+    }
 
     if (pathname === '/rss.xml') {
       const rss = getRssXml();

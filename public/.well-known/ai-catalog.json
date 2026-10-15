@@ -1,0 +1,69 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Samet CELIKBICAK Portfolio",
+    "identifier": "did:web:sametcelikbicak.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:sametcelikbicak.com:server:mcp",
+      "displayName": "MCP Server Card",
+      "description": "Model Context Protocol server card exposing read-only profile and project tools over streamable HTTP.",
+      "type": "application/mcp-server-card+json",
+      "url": "https://sametcelikbicak.com/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "get the public profile summary of Samet CELIKBICAK",
+        "list the published portfolio projects",
+        "who is the principal software specialist behind this site"
+      ]
+    },
+    {
+      "identifier": "urn:air:sametcelikbicak.com:agent:portfolio",
+      "displayName": "Portfolio Agent Card",
+      "description": "A2A agent card describing the public read-only portfolio resources: profile, blog posts, project listings.",
+      "type": "application/vnd.a2a.agent+json",
+      "url": "https://sametcelikbicak.com/.well-known/agent-card.json",
+      "representativeQueries": [
+        "what capabilities does this portfolio site expose",
+        "show the agent skills offered by this host",
+        "describe the interface bindings for the portfolio agent"
+      ]
+    },
+    {
+      "identifier": "urn:air:sametcelikbicak.com:skill:profile-summary",
+      "displayName": "Profile Summary Skill",
+      "description": "Agent skill that returns a concise public profile, project, and discovery guidance.",
+      "type": "text/markdown",
+      "url": "https://sametcelikbicak.com/.well-known/agent-skills/profile-summary/SKILL.md",
+      "representativeQueries": [
+        "summarize this developer's professional profile",
+        "which technologies does this developer use",
+        "where can I find this developer's projects"
+      ]
+    },
+    {
+      "identifier": "urn:air:sametcelikbicak.com:api:openapi",
+      "displayName": "OpenAPI Service Description",
+      "description": "OpenAPI description of the public read-only HTTP API.",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://sametcelikbicak.com/openapi.json",
+      "representativeQueries": [
+        "describe the public HTTP API endpoints of this site",
+        "what does GET /api/profile return",
+        "list the read-only routes declared in the OpenAPI spec"
+      ]
+    },
+    {
+      "identifier": "urn:air:sametcelikbicak.com:doc:api",
+      "displayName": "API Documentation (Markdown)",
+      "description": "Human and agent readable Markdown documentation for the public API.",
+      "type": "text/markdown",
+      "url": "https://sametcelikbicak.com/docs/api.md",
+      "representativeQueries": [
+        "how do I call the profile endpoint",
+        "what authentication does the API require",
+        "show me an example API request"
+      ]
+    }
+  ]
+}

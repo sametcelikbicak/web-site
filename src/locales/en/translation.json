@@ -1,7 +1,9 @@
 {
   "hero": {
     "title": "Shaping the Future with Code and Design.",
-    "subtitle": "Principal Software Specialist with over {{years}} years of experience building scalable systems and intuitive interfaces."
+    "subtitle": "Principal Software Specialist with over {{years}} years of experience building scalable systems and intuitive interfaces.",
+    "contact": "Get in touch",
+    "viewProjects": "View projects"
   },
   "expertise": {
     "label": "EXPERTISE",
@@ -164,5 +166,10 @@
   "backToTop": "Back to top",
   "a11y": {
     "skipToContent": "Skip to content"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for may have moved or never existed.",
+    "backHome": "Back to home"
   }
 }

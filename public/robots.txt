@@ -5,6 +5,11 @@
 
 User-agent: *
 Allow: /
+# Content Signals | Icerik Sinyalleri (contentsignals.org)
+# Not allowed for AI model training, allowed for search and AI input | Yapay zeka model egitimi icin kapali, arama ve yapay zeka girdisi icin acik
+Content-Signal: ai-train=no, search=yes, ai-input=no
+# ARD capability manifest | ARD yetenek bildirimi
+Agentmap: https://sametcelikbicak.com/.well-known/ai-catalog.json
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 Disallow: /wp-includes/
@@ -29,42 +34,55 @@ Allow: /
 
 User-agent: GPTBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: ChatGPT-User
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: OAI-SearchBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: ClaudeBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Claude-Web
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: PerplexityBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Applebot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Amazonbot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: DuckAssistBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: CCBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Google-Extended
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: anthropic-ai
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: cohere-ai
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 # Social Media and Advertising Bots | Sosyal Medya ve Reklam Botları
 User-agent: AdsBot-Google

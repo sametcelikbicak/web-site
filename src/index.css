@@ -87,7 +87,8 @@
   --color-text-subtle: #6b7280;
 
   --color-outline: #9ca3af;
-  --color-outline-variant: #d1d5db;
+  --color-outline-variant: #7d838f;
+  --color-tertiary: #9a3412;
   --color-ghost-border: rgba(0, 0, 0, 0.08);
   --color-ghost-border-hover: rgba(0, 0, 0, 0.16);
 
@@ -273,5 +274,24 @@ button {
     flex-direction: row;
     justify-content: space-between;
     flex: 1;
+  }
+}
+
+/* ─── Reduced Motion ───────────────────────────────────────────
+   Smooth scrolling, the infinite bounce on BackToTop, the skeleton
+   shimmer and the spinner all run forever. Users who ask for reduced
+   motion get none of it. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
 }

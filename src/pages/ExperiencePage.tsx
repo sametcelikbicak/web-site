@@ -80,7 +80,7 @@ const ExperiencePage = () => {
                   >
                     {exp.startDate} &mdash; {exp.endDate}
                   </span>
-                  <h3 className="company-name">{company}</h3>
+                  <h2 className="company-name">{company}</h2>
                   <p className="position-title">{position}</p>
                   <p className="experience-description">{desc}</p>
                 </div>

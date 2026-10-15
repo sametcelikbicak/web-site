@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ENIcon from '@/components/ENIcon/ENIcon';
@@ -34,6 +34,43 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  // While the drawer is open it covers the page, so Escape must close it, focus
+  // must stay inside it, and it must hand focus back to the button that opened
+  // it. Without these, tabbing walks into the page behind the overlay.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const drawer = drawerRef.current;
+    const focusable = drawer?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])'
+    );
+    focusable?.[0]?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        hamburgerRef.current?.focus();
+        return;
+      }
+      if (event.key !== 'Tab' || !focusable?.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
 
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
@@ -68,7 +105,10 @@ const Header = () => {
         </button>
 
         {/* Desktop Nav */}
-        <nav className="header-nav hidden md:flex" aria-label="Main navigation">
+        <nav
+          className="header-nav hidden md:flex"
+          aria-label={t('header.mainNav')}
+        >
           {NAV_ITEMS.map((item) =>
             /* istanbul ignore next */ item.external ? (
               <a
@@ -85,6 +125,7 @@ const Header = () => {
               <Link
                 key={item.labelKey}
                 to={item.to}
+                aria-current={isActive(item.to) ? 'page' : undefined}
                 className={`nav-link${isActive(item.to) ? ' nav-link--active' : ''}`}
                 onClick={() => {}}
               >
@@ -100,7 +141,7 @@ const Header = () => {
           <button
             type="button"
             className="icon-btn"
-            aria-label="Toggle theme"
+            aria-label={t('header.toggleTheme')}
             onClick={() => {
               toggleTheme();
             }}
@@ -110,7 +151,7 @@ const Header = () => {
           <button
             type="button"
             className="icon-btn"
-            aria-label="Toggle language"
+            aria-label={t('header.toggleLanguage')}
             onClick={() => {
               toggleLanguage();
             }}
@@ -122,9 +163,11 @@ const Header = () => {
         {/* Mobile hamburger */}
         <button
           type="button"
+          ref={hamburgerRef}
           className="hamburger-btn md:hidden"
-          aria-label="Open menu"
+          aria-label={t('header.openMenu')}
           aria-expanded={menuOpen}
+          aria-controls="mobile-drawer"
           onClick={() => setMenuOpen(true)}
         >
           <span className="hamburger-bar" />
@@ -142,6 +185,11 @@ const Header = () => {
         />
       )}
       <div
+        id="mobile-drawer"
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('header.menu')}
         className={`mobile-drawer md:hidden${menuOpen ? ' mobile-drawer--open' : ''}`}
       >
         <div className="mobile-drawer-header">
@@ -149,13 +197,13 @@ const Header = () => {
           <button
             type="button"
             className="icon-btn"
-            aria-label="Close menu"
+            aria-label={t('header.closeMenu')}
             onClick={() => setMenuOpen(false)}
           >
             ✕
           </button>
         </div>
-        <nav className="mobile-nav">
+        <nav className="mobile-nav" aria-label={t('header.mainNav')}>
           {NAV_ITEMS.map((item) =>
             /* istanbul ignore next */ item.external ? (
               <a
@@ -174,6 +222,7 @@ const Header = () => {
               <Link
                 key={item.labelKey}
                 to={item.to}
+                aria-current={isActive(item.to) ? 'page' : undefined}
                 className={`mobile-nav-link${isActive(item.to) ? ' mobile-nav-link--active' : ''}`}
                 onClick={() => {
                   setMenuOpen(false);
@@ -188,7 +237,7 @@ const Header = () => {
           <button
             type="button"
             className="icon-btn"
-            aria-label="Toggle language"
+            aria-label={t('header.toggleLanguage')}
             onClick={() => {
               toggleLanguage();
               setMenuOpen(false);
@@ -200,7 +249,7 @@ const Header = () => {
           <button
             type="button"
             className="icon-btn"
-            aria-label="Toggle theme"
+            aria-label={t('header.toggleTheme')}
             onClick={() => {
               toggleTheme();
               setMenuOpen(false);

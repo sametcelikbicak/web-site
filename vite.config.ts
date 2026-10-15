@@ -37,7 +37,7 @@ function inlineCssPlugin(): Plugin {
     closeBundle() {
       if (!cssContent || !cssFileName) return;
 
-      const clientBuildDir = path.resolve(__dirname, 'dist/client');
+      const clientBuildDir = path.resolve(import.meta.dirname, 'dist/client');
       const htmlPath = path.join(clientBuildDir, 'index.html');
 
       if (!existsSync(htmlPath)) return;
@@ -87,7 +87,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
   build: {

@@ -76,7 +76,7 @@ const SkillsPage = () => {
       <div className="skills-categories">
         {SKILL_CATEGORIES.map((cat) => (
           <div key={cat.category} className="skill-category">
-            <h3 className="category-title">{cat.category}</h3>
+            <h2 className="category-title">{cat.category}</h2>
             <div className="skills-grid">
               {cat.skills.map((skill) => {
                 const Icon = skill.icon;

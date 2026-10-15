@@ -41,7 +41,13 @@
     "about": "About",
     "experience": "Experience",
     "projects": "Projects",
-    "blog": "Blog"
+    "blog": "Blog",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Mobile menu",
+    "mainNav": "Main navigation",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Toggle language"
   },
   "skills": {
     "title": "Skills",
@@ -155,5 +161,8 @@
     "prev": "Previous",
     "next": "Next"
   },
-  "backToTop": "Back to top"
+  "backToTop": "Back to top",
+  "a11y": {
+    "skipToContent": "Skip to content"
+  }
 }

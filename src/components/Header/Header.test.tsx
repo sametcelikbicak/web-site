@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Header from '@/components/Header/Header';
@@ -75,7 +76,9 @@ describe('Header', () => {
       const headerActions = container.querySelector(
         '.header-actions'
       ) as HTMLElement;
-      fireEvent.click(within(headerActions).getByLabelText('Toggle theme'));
+      fireEvent.click(
+        within(headerActions).getByLabelText('header.toggleTheme')
+      );
       expect(mockToggleTheme).toHaveBeenCalled();
     });
 
@@ -94,7 +97,9 @@ describe('Header', () => {
       const headerActions = container.querySelector(
         '.header-actions'
       ) as HTMLElement;
-      fireEvent.click(within(headerActions).getByLabelText('Toggle language'));
+      fireEvent.click(
+        within(headerActions).getByLabelText('header.toggleLanguage')
+      );
     });
   });
 
@@ -112,16 +117,48 @@ describe('Header', () => {
       const { container } = renderHeader();
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
 
-      fireEvent.click(screen.getByLabelText('Open menu'));
+      fireEvent.click(screen.getByLabelText('header.openMenu'));
       expect(container.querySelector('.mobile-backdrop')).toBeTruthy();
 
-      fireEvent.click(screen.getByLabelText('Close menu'));
+      fireEvent.click(screen.getByLabelText('header.closeMenu'));
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
+    });
+
+    it('marks the drawer as a modal dialog wired to the button', () => {
+      renderHeader();
+      const button = screen.getByLabelText('header.openMenu');
+      expect(button).toHaveAttribute('aria-controls', 'mobile-drawer');
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+
+      fireEvent.click(button);
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+      const drawer = document.getElementById('mobile-drawer');
+      expect(drawer).toHaveAttribute('aria-modal', 'true');
+      expect(drawer).toHaveAttribute('role', 'dialog');
+    });
+
+    it('moves focus into the drawer and keeps it there', () => {
+      renderHeader();
+      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      const drawer = document.getElementById('mobile-drawer');
+      expect(drawer?.contains(document.activeElement)).toBe(true);
+    });
+
+    it('closes on Escape and returns focus to the button that opened it', () => {
+      const { container } = renderHeader();
+      const button = screen.getByLabelText('header.openMenu');
+      fireEvent.click(button);
+      expect(container.querySelector('.mobile-backdrop')).toBeTruthy();
+
+      fireEvent.keyDown(document, { key: 'Escape' });
+
+      expect(container.querySelector('.mobile-backdrop')).toBeNull();
+      expect(document.activeElement).toBe(button);
     });
 
     it('closes drawer when backdrop is clicked', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('Open menu'));
+      fireEvent.click(screen.getByLabelText('header.openMenu'));
       expect(container.querySelector('.mobile-backdrop')).toBeTruthy();
 
       fireEvent.click(
@@ -132,7 +169,7 @@ describe('Header', () => {
 
     it('closes drawer on mobile nav link click', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('Open menu'));
+      fireEvent.click(screen.getByLabelText('header.openMenu'));
 
       const mobileNav = container.querySelector('.mobile-nav') as HTMLElement;
       fireEvent.click(within(mobileNav).getByText('header.about'));
@@ -141,23 +178,27 @@ describe('Header', () => {
 
     it('toggles language from mobile drawer', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('Open menu'));
+      fireEvent.click(screen.getByLabelText('header.openMenu'));
 
       const drawerActions = container.querySelector(
         '.mobile-drawer-actions'
       ) as HTMLElement;
-      fireEvent.click(within(drawerActions).getByLabelText('Toggle language'));
+      fireEvent.click(
+        within(drawerActions).getByLabelText('header.toggleLanguage')
+      );
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
     it('toggles theme from mobile drawer', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('Open menu'));
+      fireEvent.click(screen.getByLabelText('header.openMenu'));
 
       const drawerActions = container.querySelector(
         '.mobile-drawer-actions'
       ) as HTMLElement;
-      fireEvent.click(within(drawerActions).getByLabelText('Toggle theme'));
+      fireEvent.click(
+        within(drawerActions).getByLabelText('header.toggleTheme')
+      );
       expect(mockToggleTheme).toHaveBeenCalled();
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });

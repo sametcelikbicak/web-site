@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import {
   SiAngular,
   SiBitbucket,
-  SiCss3,
+  SiCss,
   SiDocker,
   SiDotnet,
   SiGit,
@@ -35,7 +35,7 @@ const SKILL_CATEGORIES = [
       { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4' },
       { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-      { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
+      { name: 'CSS3', icon: SiCss, color: '#1572B6' },
     ],
   },
   {

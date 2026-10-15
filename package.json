@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "VITE_CLIENT_ONLY=true vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run check:agents",
+    "check:agents": "node scripts/check-agent-discovery.mjs",
     "test": "jest --passWithNoTests",
     "preview": "npm run build && wrangler dev",
     "format": "biome check --write",

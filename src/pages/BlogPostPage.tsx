@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useNavigate, useParams } from 'react-router-dom';
 import rehypeHighlight from 'rehype-highlight';
@@ -12,20 +12,20 @@ const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
-  const [post, setPost] = useState<BlogPost | null>(null);
+
+  // The posts come from import.meta.glob, so this is synchronous. Reading it in an
+  // effect left the server with no post and every /blog/<slug> rendered "not found"
+  // in the HTML that search engines and agents index.
+  const post: BlogPost | undefined = useMemo(
+    () => (slug ? getBlogPostBySlug(slug, i18n.language) : undefined),
+    [slug, i18n.language]
+  );
 
   useEffect(() => {
-    if (slug) {
-      const foundPost = getBlogPostBySlug(slug, i18n.language);
-      if (foundPost) {
-        setPost(foundPost);
-      } else {
-        navigate('/blog');
-      }
-    }
-  }, [slug, navigate, i18n.language]);
+    if (slug && !post) navigate('/blog', { replace: true });
+  }, [slug, post, navigate]);
 
-  // istanbul ignore next — loading state navigates immediately via effect
+  // istanbul ignore next — an unknown slug redirects to /blog in the effect above
   if (!post) {
     return (
       <div className="blog-post-page page-container section-gap">

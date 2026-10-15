@@ -87,7 +87,7 @@ describe('BlogPostPage', () => {
   it('navigates to /blog when post not found', () => {
     mockGetBlogPostBySlug.mockReturnValue(undefined);
     renderAtRoute('non-existent');
-    expect(mockNavigate).toHaveBeenCalledWith('/blog');
+    expect(mockNavigate).toHaveBeenCalledWith('/blog', { replace: true });
   });
 
   it('renders post title when found', () => {

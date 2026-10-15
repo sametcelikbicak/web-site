@@ -181,7 +181,7 @@ export default {
 
       if (templateRes.ok) {
         const template = await templateRes.text();
-        const appHtml = render(request.url);
+        const appHtml = await render(request.url);
         const html = template.replace('<!--ssr-outlet-->', appHtml);
 
         const headers = new Headers({

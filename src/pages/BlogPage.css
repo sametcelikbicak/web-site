@@ -93,7 +93,9 @@
 /* Grid View Style */
 .blog-page .blog-content.grid-view {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  /* Without min(), the 340px minimum overflows every phone narrower than 388px,
+     and the shell clips the overflow, so the right edge of the card is cut off. */
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   gap: 2.5rem;
 }
 

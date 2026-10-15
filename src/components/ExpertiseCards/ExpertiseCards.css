@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1.25rem;
-  border-radius: var(--radius-2xl, 1.5rem);
+  border-radius: var(--radius-2xl);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

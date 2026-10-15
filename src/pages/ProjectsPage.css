@@ -47,7 +47,7 @@
   flex-direction: column;
   overflow: hidden;
   text-decoration: none;
-  border-radius: var(--radius-2xl, 1.5rem);
+  border-radius: var(--radius-2xl);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

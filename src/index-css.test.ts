@@ -1,7 +1,15 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const css = readFileSync(join(process.cwd(), 'src/index.css'), 'utf8');
+const SRC = join(process.cwd(), 'src');
+const css = readFileSync(join(SRC, 'index.css'), 'utf8');
+
+const cssFiles = (dir: string): string[] =>
+  readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) return cssFiles(full);
+    return entry.name.endsWith('.css') ? [full] : [];
+  });
 
 const block = (selector: string): string => {
   const start = css.indexOf(selector);
@@ -61,5 +69,29 @@ describe('reduced motion', () => {
     const body = css.slice(at);
     expect(body).toContain('scroll-behavior: auto');
     expect(body).toContain('animation-iteration-count: 1');
+  });
+});
+
+describe('custom property references', () => {
+  const defined = new Set(
+    [...css.matchAll(/^\s*(--[a-z0-9-]+):/gm)].map((m) => m[1])
+  );
+
+  const files = cssFiles(SRC).filter((file) => !file.endsWith('index.css'));
+
+  it('finds stylesheets to check', () => {
+    expect(files.length).toBeGreaterThan(10);
+  });
+
+  it('never references an undefined custom property', () => {
+    // --radius-2xl was used by five stylesheets with a hard-coded 1.5rem
+    // fallback and was never declared anywhere.
+    const undefinedRefs = files.flatMap((file) =>
+      [...readFileSync(file, 'utf8').matchAll(/var\((--[a-z0-9-]+)\)/g)]
+        .map((m) => m[1])
+        .filter((name) => !defined.has(name))
+        .map((name) => `${file.slice(SRC.length)} -> ${name}`)
+    );
+    expect([...new Set(undefinedRefs)]).toEqual([]);
   });
 });

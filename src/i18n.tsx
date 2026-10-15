@@ -4,12 +4,35 @@ import en from '@/locales/en/translation.json';
 import tr from '@/locales/tr/translation.json';
 
 const FALLBACK_LANG = 'tr';
+const STORAGE_KEY = 'language';
+const SUPPORTED = ['tr', 'en'] as const;
+
+/**
+ * Without an explicit lng every reload fell back to Turkish, so a visitor who
+ * switched to English lost it on refresh. Preference first, then the browser
+ * language, then the fallback.
+ */
+const getInitialLanguage = (): string => {
+  if (typeof window === 'undefined') return FALLBACK_LANG;
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && (SUPPORTED as readonly string[]).includes(stored))
+      return stored;
+  } catch {
+    /* ignore */
+  }
+  const browser = window.navigator.language.slice(0, 2).toLowerCase();
+  return (SUPPORTED as readonly string[]).includes(browser)
+    ? browser
+    : FALLBACK_LANG;
+};
 
 i18n.use(initReactI18next).init({
   resources: {
     tr: { translation: tr },
     en: { translation: en },
   },
+  lng: getInitialLanguage(),
   fallbackLng: FALLBACK_LANG,
   interpolation: {
     escapeValue: false,
@@ -22,6 +45,11 @@ i18n.use(initReactI18next).init({
 const syncDocumentLanguage = (lng: string) => {
   if (typeof document !== 'undefined') {
     document.documentElement.lang = lng;
+  }
+  try {
+    localStorage.setItem(STORAGE_KEY, lng);
+  } catch {
+    /* private mode or storage disabled */
   }
 };
 

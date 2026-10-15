@@ -38,5 +38,5 @@
 
 .footer-copy {
   font-size: var(--text-xs);
-  color: var(--color-outline);
+  color: var(--color-text-subtle);
 }

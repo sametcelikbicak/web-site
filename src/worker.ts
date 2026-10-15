@@ -1,6 +1,27 @@
 import { render } from './entry-server';
-import { getRssXml } from './services/rss';
-import { getSitemapXml } from './services/sitemap';
+import { getDistinctBlogPosts } from './services/blog';
+import { buildRssXml } from './services/rss';
+import {
+  buildSitemapXml,
+  getSitemapEntries,
+  toSitemapEntries,
+} from './services/sitemap';
+
+const getRssXml = () =>
+  buildRssXml(
+    getDistinctBlogPosts().map((post) => ({
+      title: post.title,
+      date: post.date,
+      description: post.description,
+      link: `/blog/${post.slug}`,
+    }))
+  );
+
+const getSitemapXml = () =>
+  buildSitemapXml([
+    ...getSitemapEntries(),
+    ...toSitemapEntries(getDistinctBlogPosts()),
+  ]);
 
 type Env = {
   ASSETS: {

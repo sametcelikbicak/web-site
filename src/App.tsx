@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ThemeProvider } from '@/theme';
 import '@/i18n';
 import { Route, Routes } from 'react-router-dom';
@@ -48,6 +49,7 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
+  const { t } = useTranslation();
   return (
     <ThemeProvider>
       <div
@@ -59,8 +61,11 @@ const App = () => {
           overflowX: 'clip',
         }}
       >
+        <a className="skip-link" href="#main-content">
+          {t('a11y.skipToContent')}
+        </a>
         <Header />
-        <main style={{ flex: 1 }}>
+        <main id="main-content" tabIndex={-1} style={{ flex: 1 }}>
           <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
             <Routes>

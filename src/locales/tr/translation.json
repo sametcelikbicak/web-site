@@ -41,7 +41,13 @@
     "about": "Hakkımda",
     "experience": "Deneyim",
     "projects": "Projeler",
-    "blog": "Blog"
+    "blog": "Blog",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "menu": "Mobil menü",
+    "mainNav": "Ana gezinme",
+    "toggleTheme": "Temayı değiştir",
+    "toggleLanguage": "Dili değiştir"
   },
   "skills": {
     "title": "Yetenekler",
@@ -155,5 +161,8 @@
     "prev": "Önceki",
     "next": "Sonraki"
   },
-  "backToTop": "Başa dön"
+  "backToTop": "Başa dön",
+  "a11y": {
+    "skipToContent": "İçeriğe geç"
+  }
 }

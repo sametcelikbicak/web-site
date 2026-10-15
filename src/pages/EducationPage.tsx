@@ -57,7 +57,7 @@ const EducationPage = () => {
                       {edu.startDate} &mdash; {edu.endDate}
                     </span>
                   </div>
-                  <h3 className="entry-school">{school}</h3>
+                  <h2 className="entry-school">{school}</h2>
                   <p className="entry-division">{division}</p>
                   <p className="entry-grade">
                     <span className="grade-label">GPA:</span>{' '}

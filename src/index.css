@@ -295,3 +295,23 @@ button {
     scroll-behavior: auto;
   }
 }
+
+/* ─── Skip to content ─────────────────────────────────────────
+   Visually hidden until focused, then pinned to the top-left so a keyboard
+   user can jump past the header instead of tabbing through six nav links. */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0.5rem;
+  z-index: 400;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius);
+  background: var(--color-surface-highest);
+  color: var(--color-text);
+  font-size: var(--text-label);
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}

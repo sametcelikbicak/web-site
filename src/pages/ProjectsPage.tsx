@@ -80,9 +80,9 @@ const ProjectsPage = () => {
               />
             </div>
             <div className="project-content">
-              <h3 className="project-title">
+              <h2 className="project-title">
                 {t(`projects.${project.key}.title`)}
-              </h3>
+              </h2>
               <p className="project-desc">
                 {t(`projects.${project.key}.description`)}
               </p>

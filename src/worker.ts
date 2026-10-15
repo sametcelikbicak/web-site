@@ -88,6 +88,7 @@ const LINK_HEADER =
 
 const CONTENT_TYPES = new Map<string, string>([
   ['/.well-known/ai-catalog.json', 'application/json; charset=utf-8'],
+  ['/.well-known/poppy.json', 'application/json; charset=utf-8'],
   ['/.well-known/api-catalog', 'application/linkset+json; charset=utf-8'],
   ['/.well-known/openid-configuration', 'application/json; charset=utf-8'],
   [

@@ -1,30 +1,30 @@
 import { useTranslation } from 'react-i18next';
 import {
-  SiGithub,
-  SiLinkedin,
-  SiStackoverflow,
-  SiX,
-  SiYoutube,
-} from 'react-icons/si';
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaXTwitter,
+  FaYoutube,
+} from 'react-icons/fa6';
 import './Footer.css';
 
 const SOCIAL_LINKS = [
-  { name: 'GitHub', url: 'https://github.com/sametcelikbicak', icon: SiGithub },
+  { name: 'GitHub', url: 'https://github.com/sametcelikbicak', icon: FaGithub },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/sametcelikbicak/',
-    icon: SiLinkedin,
+    icon: FaLinkedin,
   },
-  { name: 'X', url: 'https://x.com/sametcelikbicak', icon: SiX },
+  { name: 'X', url: 'https://x.com/sametcelikbicak', icon: FaXTwitter },
   {
     name: 'YouTube',
     url: 'https://www.youtube.com/@sametcelikbicak',
-    icon: SiYoutube,
+    icon: FaYoutube,
   },
   {
     name: 'Stack Overflow',
     url: 'https://stackoverflow.com/users/10509056/samet-%c3%87el%c4%b0kbi%c3%87ak',
-    icon: SiStackoverflow,
+    icon: FaStackOverflow,
   },
 ];
 

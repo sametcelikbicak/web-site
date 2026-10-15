@@ -25,6 +25,7 @@ const REQUIRED = [
   '.well-known/agent-skills/profile-summary/SKILL.md',
   '.well-known/jwks.json',
   '.well-known/mcp/server-card.json',
+  '.well-known/poppy.json',
   '.well-known/oauth-authorization-server',
   '.well-known/oauth-protected-resource',
   '.well-known/openid-configuration',
@@ -68,6 +69,15 @@ for (const entry of catalog.entries) {
     `${id}: 2-5 representativeQueries required`
   );
 }
+
+const poppy = JSON.parse(read('.well-known/poppy.json'));
+assert.ok(poppy.protocol_version, 'poppy.json: protocol_version required');
+assert.ok(poppy.organization?.name, 'poppy.json: organization.name required');
+assert.equal(
+  poppy.organization?.domain,
+  ORIGIN,
+  'poppy.json: organization.domain must match the request hostname'
+);
 
 const robots = read('robots.txt');
 assert.match(

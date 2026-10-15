@@ -75,20 +75,20 @@
 /* ─── Image placeholder — mirrors .hero-image-wrapper ────────── */
 .skeleton-image {
   flex-shrink: 0;
-  width: 280px;
+  width: min(280px, 100%);
   min-height: 420px;
-  border-radius: var(--radius-2xl, 1.5rem);
+  border-radius: var(--radius-2xl);
 }
 
 @media (min-width: 768px) {
   .skeleton-image {
-    width: 320px;
+    width: min(320px, 100%);
   }
 }
 
 @media (min-width: 1024px) {
   .skeleton-image {
-    width: 360px;
+    width: min(360px, 100%);
   }
 }
 

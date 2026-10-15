@@ -126,6 +126,29 @@ const acceptsMarkdown = (request: Request) => {
 const isHtmlRoute = (pathname: string) =>
   pathname === '/' || pathname === '/index.html' || !pathname.includes('.');
 
+const APP_ROUTES = [
+  '/',
+  '/about',
+  '/experience',
+  '/education',
+  '/skills',
+  '/projects',
+  '/blog',
+];
+
+/** Assets are configured with not_found_handling: single-page-application, so an
+ *  unknown path would render the shell with a 200. Return a real 404 instead.
+ *  Blog slugs are checked against the posts because the route exists even when
+ *  the slug does not, and that is the soft 404 search engines penalise. */
+const isKnownRoute = (pathname: string) => {
+  const path = pathname.replace(/\/$/, '') || '/';
+  if (APP_ROUTES.includes(path)) return true;
+  if (!path.startsWith('/blog/')) return false;
+
+  const slug = decodeURIComponent(path.slice('/blog/'.length));
+  return getDistinctBlogPosts().some((post) => post.slug === slug);
+};
+
 export default {
   async fetch(request: Request, env: Env) {
     const { pathname } = new URL(request.url);
@@ -192,7 +215,10 @@ export default {
           Vary: 'Accept',
         });
 
-        return new Response(html, { headers });
+        return new Response(html, {
+          status: isKnownRoute(pathname) ? 200 : 404,
+          headers,
+        });
       }
     }
 

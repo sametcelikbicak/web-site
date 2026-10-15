@@ -1,5 +1,9 @@
 {
   "extends": "./tsconfig.app.json",
+  // jest.setup.ts lives outside src, so the inherited include left it out of the
+  // program and the jest-dom matcher types only reached test files that happened
+  // to import it themselves.
+  "include": ["src", "jest.setup.ts"],
   "compilerOptions": {
     "resolveJsonModule": true,
     "esModuleInterop": true,

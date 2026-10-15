@@ -1,7 +1,9 @@
 {
   "hero": {
-    "title": "Geleceği Kod ve Tasarımla Şekillendiriyoruz.",
-    "subtitle": "Ölçeklenebilir sistemler ve sezgisel arayüzler oluşturmada {{years}} yılı aşkın deneyime sahip Principal Software Specialist."
+    "title": "Geleceği Kod ve Tasarımla Şekillendiriyorum.",
+    "subtitle": "Ölçeklenebilir sistemler ve sezgisel arayüzler oluşturmada {{years}} yılı aşkın deneyime sahip Principal Software Specialist.",
+    "contact": "İletişim",
+    "viewProjects": "Projeleri gör"
   },
   "expertise": {
     "label": "UZMANLIK ALANLARI",
@@ -164,5 +166,10 @@
   "backToTop": "Başa dön",
   "a11y": {
     "skipToContent": "İçeriğe geç"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "text": "Aradığınız sayfa taşınmış veya hiç var olmamış olabilir.",
+    "backHome": "Ana sayfaya dön"
   }
 }

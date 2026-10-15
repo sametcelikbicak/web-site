@@ -16,6 +16,7 @@ const SkillsPage = lazy(() => import('@/pages/SkillsPage'));
 const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 /* istanbul ignore next — tested via integration, not unit-testable (Suspense fallback) */
 const PageLoader = () => (
@@ -84,6 +85,7 @@ const App = () => {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </main>

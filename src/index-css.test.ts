@@ -95,3 +95,54 @@ describe('custom property references', () => {
     expect([...new Set(undefinedRefs)]).toEqual([]);
   });
 });
+
+describe('blog code block contrast', () => {
+  const postCss = readFileSync(join(SRC, 'pages/BlogPostPage.css'), 'utf8');
+  const vendor = readFileSync(
+    join(process.cwd(), 'node_modules/highlight.js/styles/github-dark.css'),
+    'utf8'
+  );
+
+  const luminance = (hex: string) => {
+    const pairs = hex.slice(1).match(/../g) ?? [];
+    const parts = pairs.map((pair) => {
+      const value = Number.parseInt(pair, 16) / 255;
+      return value <= 0.03928
+        ? value / 12.92
+        : ((value + 0.055) / 1.055) ** 2.4;
+    });
+    return 0.2126 * parts[0] + 0.7152 * parts[1] + 0.0722 * parts[2];
+  };
+
+  const ratio = (a: string, b: string) => {
+    const [x, y] = [luminance(a), luminance(b)];
+    return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+  };
+
+  it('renders code blocks on a surface the vendor palette passes on', () => {
+    const background: string | undefined = postCss.match(
+      /post-content pre\s*\{[^}]*background:\s*(#[0-9a-f]{6})/i
+    )?.[1];
+    expect(background).toBe('#0d1117');
+
+    const body = vendor.slice(vendor.indexOf('.hljs {'));
+    const tokens = new Set(
+      [...body.matchAll(/(?:^|[;{])\s*color:\s*(#[0-9a-f]{6})/gim)].map((m) =>
+        m[1].toLowerCase()
+      )
+    );
+    // Overridden locally because the vendor value sits at 4.08:1.
+    tokens.delete('#1f6feb');
+    tokens.add('#388bfd');
+
+    const measured: [string, number][] = [...tokens].map((token) => [
+      token,
+      ratio(token, background as string),
+    ]);
+    const failing = measured
+      .filter(([, value]) => value < 4.5)
+      .map(([token, value]) => `${token} ${value.toFixed(2)}:1`);
+
+    expect(failing).toEqual([]);
+  });
+});

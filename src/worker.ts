@@ -1,4 +1,5 @@
 import { render } from './entry-server';
+import { parseLanguageCookie } from './i18n';
 import { getDistinctBlogPosts } from './services/blog';
 import { buildRssXml } from './services/rss';
 import {
@@ -204,12 +205,16 @@ export default {
       const templateRes = await env.ASSETS.fetch(templateReq);
 
       if (templateRes.ok) {
+        const cookie = request.headers.get('Cookie');
+        const lang = parseLanguageCookie(cookie);
         const template = await templateRes.text();
-        const appHtml = await render(
-          request.url,
-          request.headers.get('Cookie')
-        );
-        const html = template.replace('<!--ssr-outlet-->', appHtml);
+        const appHtml = await render(request.url, cookie);
+        const html = template
+          .replace('<!--ssr-outlet-->', appHtml)
+          // i18n.tsx sets this on document, which does not exist during the edge
+          // render, so the served HTML kept lang="tr" for English visitors until
+          // hydration corrected it. Crawlers and agents read the attribute.
+          .replace('<html lang="tr">', `<html lang="${lang}">`);
 
         const headers = new Headers({
           'Content-Type': 'text/html; charset=utf-8',

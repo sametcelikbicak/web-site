@@ -1,0 +1,51 @@
+.error-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  text-align: center;
+  min-height: 100vh;
+  padding: var(--space-lg);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.error-fallback-code {
+  font-family: var(--font-label);
+  font-size: var(--text-display);
+  color: var(--color-primary);
+  line-height: 1;
+  margin: 0;
+}
+
+.error-fallback-title {
+  font-size: var(--text-h1);
+}
+
+.error-fallback-text {
+  color: var(--color-text-subtle);
+  max-width: 34rem;
+  margin: 0;
+}
+
+/* --color-bg, not #fff: white on the primary is 3.68:1 in dark mode, which
+   fails AA for body text. --color-bg clears 4.5:1 in both themes (5.05 dark,
+   4.9 light). NotFoundPage still hardcodes #fff here — same bug, separate PR. */
+.error-fallback-retry {
+  padding: var(--space-sm) var(--space-xl);
+  min-height: 44px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.error-fallback-retry:hover {
+  opacity: 0.9;
+}

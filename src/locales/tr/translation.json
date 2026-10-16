@@ -184,5 +184,10 @@
       "trOnlyNote": "Bu yazılar yalnızca Türkçe olarak yayımlandı.",
       "enShortNote": "İngilizce içerik yakında."
     }
+  },
+  "errorBoundary": {
+    "title": "Bir şeyler ters gitti",
+    "text": "Sayfa yüklenirken beklenmedik bir hata oluştu.",
+    "retry": "Tekrar dene"
   }
 }

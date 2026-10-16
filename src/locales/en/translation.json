@@ -184,5 +184,10 @@
       "trOnlyNote": "These posts are published in Turkish only.",
       "enShortNote": "More English posts coming soon."
     }
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "text": "An unexpected error occurred while loading this page.",
+    "retry": "Try again"
   }
 }

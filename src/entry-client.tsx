@@ -3,6 +3,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import '@/index.css';
 import App from '@/App';
+import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
 
 if ('requestIdleCallback' in window) {
   requestIdleCallback(
@@ -24,7 +25,9 @@ if (rootEl.hasChildNodes()) {
     rootEl,
     <StrictMode>
       <BrowserRouter>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </BrowserRouter>
     </StrictMode>
   );
@@ -32,7 +35,9 @@ if (rootEl.hasChildNodes()) {
   createRoot(rootEl).render(
     <StrictMode>
       <BrowserRouter>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </BrowserRouter>
     </StrictMode>
   );

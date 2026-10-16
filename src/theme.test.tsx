@@ -82,3 +82,47 @@ describe('ThemeProvider', () => {
     expect(result.current.theme).toBe('dark');
   });
 });
+
+describe('ThemeProvider when localStorage throws', () => {
+  // Safari private mode and "block all cookies" throw on access, not just on
+  // write. The theme still has to apply, it just cannot be persisted.
+  afterEach(() => jest.restoreAllMocks());
+
+  it('still applies the theme when setItem throws', () => {
+    jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('QuotaExceededError');
+    });
+    renderWithProvider(<div data-testid="child" />);
+    expect(screen.getByTestId('child')).toBeInTheDocument();
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+  });
+
+  it('still toggles the theme when setItem throws', () => {
+    jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('QuotaExceededError');
+    });
+    const { result } = renderHook(() => useTheme(), {
+      wrapper: ({ children }) => <ThemeProvider>{children}</ThemeProvider>,
+    });
+    act(() => {
+      result.current.toggleTheme();
+    });
+    expect(result.current.theme).toBe('light');
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+  });
+
+  it('falls back to the system preference when getItem throws', () => {
+    window.matchMedia = jest.fn().mockImplementation((query: string) => ({
+      matches: true,
+      media: query,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    })) as unknown as (query: string) => MediaQueryList;
+    jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('SecurityError');
+    });
+    renderWithProvider(<div data-testid="child" />);
+    expect(screen.getByTestId('child')).toBeInTheDocument();
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+  });
+});

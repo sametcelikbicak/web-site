@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--space-lg);
   text-align: center;
   min-height: 60vh;
 }
@@ -25,8 +25,8 @@
 }
 
 .not-found-link {
-  margin-top: 0.5rem;
-  padding: 0.625rem 1.25rem;
+  margin-top: var(--space-xs);
+  padding: var(--space-sm) var(--space-xl);
   border-radius: var(--radius);
   background: var(--color-primary);
   color: #fff;

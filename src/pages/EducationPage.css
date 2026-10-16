@@ -30,7 +30,7 @@
 .education-list {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--space-5xl);
 }
 
 /* ─── Row ─────────────────────────────────────────────────────── */
@@ -44,7 +44,7 @@
 
 /* ─── Entry ───────────────────────────────────────────────────── */
 .education-entry {
-  padding: 1.5rem;
+  padding: var(--space-2xl);
   background: var(--color-surface-mid);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-xl);
@@ -61,8 +61,8 @@
 .entry-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .entry-icon {
@@ -76,7 +76,7 @@
   font-weight: 500;
   color: var(--color-primary);
   background: rgba(59, 130, 246, 0.15);
-  padding: 0.25rem 0.75rem;
+  padding: var(--space-3xs) var(--space-md);
   border-radius: var(--radius-full);
 }
 
@@ -85,14 +85,14 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-xs);
 }
 
 .entry-division {
   font-size: 1rem;
   font-weight: 500;
   color: var(--color-text-muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-md);
 }
 
 .entry-grade {
@@ -104,7 +104,7 @@
 .grade-label {
   color: var(--color-primary);
   font-weight: 700;
-  margin-right: 0.5rem;
+  margin-right: var(--space-xs);
 }
 
 /* ─── Side Positioning ────────────────────────────────────────── */
@@ -148,7 +148,7 @@
 @media (max-width: 767px) {
   .education-row {
     flex-direction: column;
-    padding-left: 1.5rem;
+    padding-left: var(--space-2xl);
   }
 
   .education-entry {

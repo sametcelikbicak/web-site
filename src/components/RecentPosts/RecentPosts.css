@@ -6,13 +6,13 @@
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem 1.5rem;
-  margin-bottom: 2rem;
+  gap: var(--space-lg) var(--space-2xl);
+  margin-bottom: var(--space-3xl);
 }
 
 @media (min-width: 768px) {
   .recent-posts-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-4xl);
   }
 }
 
@@ -37,7 +37,7 @@
 .recent-posts-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: var(--space-2xl);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -46,7 +46,7 @@
 @media (min-width: 768px) {
   .recent-posts-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: var(--space-2xl);
   }
 }
 
@@ -68,14 +68,14 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: var(--space-2xl);
   border-radius: var(--radius-xl);
 }
 
 /* 0.02em, not the 0.05em some labels use: tighter tracking keeps Turkish
    diacritics intact, and it matches .chip directly below. */
 .recent-post-link .post-meta {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-md);
   font-family: var(--font-label);
   font-size: var(--text-label);
   font-weight: 500;
@@ -85,7 +85,7 @@
 }
 
 .recent-post-link .post-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-md);
   font-family: var(--font-display);
   font-size: var(--text-h2);
   font-weight: 700;
@@ -102,7 +102,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-lg);
   font-family: var(--font-body);
   font-size: var(--text-body);
   line-height: 1.7;
@@ -112,7 +112,7 @@
 .recent-post-link .post-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-xs);
   margin-top: auto;
   list-style: none;
   margin-block: 0;
@@ -120,7 +120,7 @@
 }
 
 .recent-posts-note {
-  margin-top: 1.5rem;
+  margin-top: var(--space-2xl);
   font-size: var(--text-xs);
   color: var(--color-text-subtle);
 }

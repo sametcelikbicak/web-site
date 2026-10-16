@@ -14,7 +14,7 @@ describe('Footer', () => {
   it('exposes a site map so every page is reachable from every page', () => {
     renderFooter();
     const nav = screen.getByRole('navigation', {
-      name: 'footer.siteNavigation',
+      name: 'Site navigation',
     });
     const links = within(nav).getAllByRole('link');
 
@@ -32,7 +32,7 @@ describe('Footer', () => {
   it('lists the site map as a list, not a bare run of anchors', () => {
     renderFooter();
     const nav = screen.getByRole('navigation', {
-      name: 'footer.siteNavigation',
+      name: 'Site navigation',
     });
     expect(within(nav).getByRole('list')).toBeInTheDocument();
     expect(within(nav).getAllByRole('listitem')).toHaveLength(7);
@@ -41,6 +41,8 @@ describe('Footer', () => {
   it('keeps the social links and the copyright', () => {
     renderFooter();
     expect(screen.getByRole('link', { name: 'GitHub' })).toBeInTheDocument();
-    expect(screen.getByText(/footer.copyright/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Samet ÇELİKBIÇAK\. All rights res/)
+    ).toBeInTheDocument();
   });
 });

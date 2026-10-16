@@ -5,8 +5,10 @@ import ProjectsPage from '@/pages/ProjectsPage';
 describe('ProjectsPage', () => {
   it('renders title and subtitle', () => {
     render(<ProjectsPage />);
-    expect(screen.getByText('projects.title')).toBeInTheDocument();
-    expect(screen.getByText('projects.subtitle')).toBeInTheDocument();
+    expect(screen.getByText('Projects')).toBeInTheDocument();
+    expect(
+      screen.getByText(/My contributions to the open-sou/)
+    ).toBeInTheDocument();
   });
 
   it('renders all 6 project cards', () => {
@@ -22,6 +24,8 @@ describe('ProjectsPage', () => {
 
   it('renders project descriptions from translation', () => {
     render(<ProjectsPage />);
-    expect(screen.getByText('projects.subtitle')).toBeInTheDocument();
+    expect(
+      screen.getByText(/My contributions to the open-sou/)
+    ).toBeInTheDocument();
   });
 });

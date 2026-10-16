@@ -5,8 +5,10 @@ import EducationPage from '@/pages/EducationPage';
 describe('EducationPage', () => {
   it('renders title and subtitle', () => {
     render(<EducationPage />);
-    expect(screen.getByText('education.title')).toBeInTheDocument();
-    expect(screen.getByText('education.subtitle')).toBeInTheDocument();
+    expect(screen.getByText('Education')).toBeInTheDocument();
+    expect(
+      screen.getByText(/My academic background and the e/)
+    ).toBeInTheDocument();
   });
 
   it('renders all education entries', () => {

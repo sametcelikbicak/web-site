@@ -14,19 +14,26 @@ const renderHero = (children?: React.ReactNode) =>
 describe('Hero', () => {
   it('offers a contact action and a projects link', () => {
     renderHero();
-    expect(screen.getByRole('link', { name: 'hero.contact' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Get in touch' })).toHaveAttribute(
       'href',
       'mailto:sametcelikbicak@outlook.com'
     );
-    expect(
-      screen.getByRole('link', { name: 'hero.viewProjects' })
-    ).toHaveAttribute('href', '/projects');
+    expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute(
+      'href',
+      '/projects'
+    );
   });
 
   it('renders title and subtitle', () => {
     renderHero();
-    expect(screen.getByText('hero.title')).toBeInTheDocument();
-    expect(screen.getByText('hero.subtitle')).toBeInTheDocument();
+    expect(
+      screen.getByText('Shaping the Future with Code and Design.')
+    ).toBeInTheDocument();
+    // {{years}} interpolation splits the sentence across text nodes, so match on
+    // the full element text rather than the first fragment.
+    expect(
+      screen.getByText(/Principal Software Specialist with over \d+ years/)
+    ).toBeInTheDocument();
   });
 
   it('renders the caricature image', () => {
@@ -52,7 +59,11 @@ describe('Hero', () => {
     renderHero();
     const currentYear = new Date().getFullYear();
     const expectedYears = currentYear - 2007;
-    expect(screen.getByText('hero.subtitle')).toBeInTheDocument();
+    // {{years}} interpolation splits the sentence across text nodes, so match on
+    // the full element text rather than the first fragment.
+    expect(
+      screen.getByText(/Principal Software Specialist with over \d+ years/)
+    ).toBeInTheDocument();
     expect(expectedYears).toBeGreaterThan(0);
   });
 });

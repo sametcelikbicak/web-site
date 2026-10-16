@@ -4,7 +4,7 @@ import ExpertiseCards from '@/components/ExpertiseCards/ExpertiseCards';
 describe('ExpertiseCards', () => {
   it('renders section label', () => {
     render(<ExpertiseCards />);
-    expect(screen.getByText('expertise.label')).toBeInTheDocument();
+    expect(screen.getByText('EXPERTISE')).toBeInTheDocument();
   });
 
   it('renders 4 expertise cards', () => {
@@ -14,17 +14,17 @@ describe('ExpertiseCards', () => {
 
   it('renders expertise titles from translation keys', () => {
     render(<ExpertiseCards />);
-    expect(screen.getByText('expertise.frontend.title')).toBeInTheDocument();
-    expect(
-      screen.getByText('expertise.architecture.title')
-    ).toBeInTheDocument();
-    expect(screen.getByText('expertise.performance.title')).toBeInTheDocument();
-    expect(screen.getByText('expertise.leadership.title')).toBeInTheDocument();
+    expect(screen.getByText('Frontend & UI')).toBeInTheDocument();
+    expect(screen.getByText('System Architecture')).toBeInTheDocument();
+    expect(screen.getByText('Performance Optimization')).toBeInTheDocument();
+    expect(screen.getByText('Technical Leadership')).toBeInTheDocument();
   });
 
   it('renders expertise descriptions from translation keys', () => {
     render(<ExpertiseCards />);
-    expect(screen.getByText('expertise.frontend.desc')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Crafting responsive, accessible,/)
+    ).toBeInTheDocument();
   });
 
   it('has section-gap class on the section', () => {

@@ -107,14 +107,14 @@ describe('BlogPostPage', () => {
     mockGetBlogPostBySlug.mockReturnValue(createPost());
     renderAtRoute('test-post');
     expect(
-      screen.getByText("Blog'a Dön", { exact: false })
+      screen.getByText('Back to Blog', { exact: false })
     ).toBeInTheDocument();
   });
 
   it('navigates back from post view', () => {
     mockGetBlogPostBySlug.mockReturnValue(createPost());
     renderAtRoute('test-post');
-    fireEvent.click(screen.getByText("Blog'a Dön", { exact: false }));
+    fireEvent.click(screen.getByText('Back to Blog', { exact: false }));
     expect(mockNavigate).toHaveBeenCalledWith('/blog');
   });
 

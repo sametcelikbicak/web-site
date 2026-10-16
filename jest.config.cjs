@@ -24,6 +24,12 @@ module.exports = {
     '!src/**/*.spec.*',
     '!src/main.tsx',
     '!src/entry-client.tsx',
+    // worker.ts needs the Cloudflare ASSETS binding and the workerd runtime.
+    // services/blog.ts opens with import.meta.glob, which ts-jest cannot parse
+    // at all, so even collecting coverage from it fails. Both exclusions now
+    // cover only the thin wrapper layer: the parsing and assembly logic that
+    // used to hide behind them lives in frontmatter.ts and posts.ts, and both
+    // are measured — posts.ts at 100%.
     '!src/worker.ts',
     '!src/services/blog.ts',
   ],

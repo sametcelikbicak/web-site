@@ -6,7 +6,21 @@ import {
   FaXTwitter,
   FaYoutube,
 } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 import './Footer.css';
+
+// Mirrors the header's NAV_ITEMS (Header.tsx:18-29) with the home route added,
+// so the page map follows the order the site already teaches rather than
+// introducing a second ordering to learn. /blog/:slug is content, not navigation.
+const NAV_ITEMS = [
+  { to: '/', labelKey: 'footer.nav.home' },
+  { to: '/about', labelKey: 'header.about' },
+  { to: '/experience', labelKey: 'header.experience' },
+  { to: '/education', labelKey: 'education.title' },
+  { to: '/skills', labelKey: 'skills.title' },
+  { to: '/projects', labelKey: 'header.projects' },
+  { to: '/blog', labelKey: 'header.blog' },
+];
 
 const SOCIAL_LINKS = [
   { name: 'GitHub', url: 'https://github.com/sametcelikbicak', icon: FaGithub },
@@ -34,6 +48,17 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="footer-inner page-container">
+        <nav className="footer-nav" aria-label={t('footer.siteNavigation')}>
+          <ul className="footer-nav-list">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="footer-nav-link">
+                  {t(item.labelKey)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <div className="footer-social">
           {SOCIAL_LINKS.map(({ name, url, icon: Icon }) => (
             <a

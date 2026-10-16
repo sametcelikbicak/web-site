@@ -36,7 +36,11 @@
     "description": "I have been working in the software industry since 2007. During this time, I have held positions as Software Developer, Senior Software Developer, and Team Lead.\n\nI possess extensive experience in software development. I have developed web (frontend & backend) and Android (Xamarin) applications using object-oriented programming, software design patterns, principles, methodologies, and various development tools. I leverage my technical and analytical skills to solve problems both independently and as part of a team.\n\nUntil 2024, I worked as a Fullstack Developer, and since then, I have continued my career as a Principal Software Specialist, focusing on Frontend development. Throughout my career, I have been working with technologies such as Angular, TypeScript, HTML, CSS, JavaScript, and React."
   },
   "footer": {
-    "copyright": "Samet ÇELİKBIÇAK. All rights reserved."
+    "copyright": "Samet ÇELİKBIÇAK. All rights reserved.",
+    "siteNavigation": "Site navigation",
+    "nav": {
+      "home": "Home"
+    }
   },
   "header": {
     "name": "Samet ÇELİKBIÇAK",
@@ -49,7 +53,8 @@
     "menu": "Mobile menu",
     "mainNav": "Main navigation",
     "toggleTheme": "Toggle theme",
-    "toggleLanguage": "Toggle language"
+    "toggleLanguage": "Toggle language",
+    "mobileNav": "Mobile navigation"
   },
   "skills": {
     "title": "Skills",
@@ -171,5 +176,13 @@
     "title": "Page not found",
     "text": "The page you are looking for may have moved or never existed.",
     "backHome": "Back to home"
+  },
+  "home": {
+    "recentPosts": {
+      "title": "LATEST POSTS",
+      "viewAll": "All posts",
+      "trOnlyNote": "These posts are published in Turkish only.",
+      "enShortNote": "More English posts coming soon."
+    }
   }
 }

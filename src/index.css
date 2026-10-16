@@ -85,7 +85,9 @@
 
   --color-text: #1a1a2e;
   --color-text-muted: #374151;
-  --color-text-subtle: #6b7280;
+  /* 6b7280 measured 4.35:1 on the background, 3.71:1 on --color-surface-high
+     (which is the .chip background) and 3.24:1 on --color-surface-highest. */
+  --color-text-subtle: #545d6b;
 
   --color-outline: #9ca3af;
   --color-outline-variant: #7d838f;

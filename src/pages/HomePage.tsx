@@ -1,5 +1,6 @@
 import ExpertiseCards from '@/components/ExpertiseCards/ExpertiseCards';
 import Hero from '@/components/Hero/Hero';
+import RecentPosts from '@/components/RecentPosts/RecentPosts';
 import StatsSection from '@/components/StatsSection/StatsSection';
 import './HomePage.css';
 
@@ -13,6 +14,8 @@ const HomePage = () => {
       </div>
       <hr className="divider" />
       <ExpertiseCards />
+      <hr className="divider" />
+      <RecentPosts />
     </div>
   );
 };

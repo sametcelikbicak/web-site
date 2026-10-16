@@ -28,37 +28,37 @@ const SKILL_CATEGORIES = [
   {
     category: 'Frontend & UI',
     skills: [
-      { name: 'Angular', icon: SiAngular, color: '#DD0031' },
-      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-      { name: 'React', icon: SiReact, color: '#61DAFB' },
-      { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
-      { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-      { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4' },
-      { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-      { name: 'CSS3', icon: SiCss, color: '#1572B6' },
+      { name: 'Angular', icon: SiAngular },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'React', icon: SiReact },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'Tailwind', icon: SiTailwindcss },
+      { name: 'HTML5', icon: SiHtml5 },
+      { name: 'CSS3', icon: SiCss },
     ],
   },
   {
     category: 'Backend & APIs',
     skills: [
-      { name: 'NodeJS', icon: SiNodedotjs, color: '#339933' },
-      { name: 'NestJS', icon: SiNestjs, color: '#E0234E' },
-      { name: 'C#', icon: SiSharp, color: '#239120' },
-      { name: '.Net', icon: SiDotnet, color: '#512BD4' },
+      { name: 'NodeJS', icon: SiNodedotjs },
+      { name: 'NestJS', icon: SiNestjs },
+      { name: 'C#', icon: SiSharp },
+      { name: '.Net', icon: SiDotnet },
     ],
   },
   {
     category: 'Tools & DevOps',
     skills: [
-      { name: 'Git', icon: SiGit, color: '#F05032' },
-      { name: 'Docker', icon: SiDocker, color: '#2496ED' },
-      { name: 'Turborepo', icon: SiTurborepo, color: '#EF4444' },
-      { name: 'GitHub', icon: SiGithub, color: '#181717' },
-      { name: 'GitLab', icon: SiGitlab, color: '#FC6D26' },
-      { name: 'Bitbucket', icon: SiBitbucket, color: '#0052CC' },
-      { name: 'NPM', icon: SiNpm, color: '#CB3837' },
-      { name: 'Yarn', icon: SiYarn, color: '#2C8EBB' },
-      { name: 'PNPM', icon: SiPnpm, color: '#F69220' },
+      { name: 'Git', icon: SiGit },
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Turborepo', icon: SiTurborepo },
+      { name: 'GitHub', icon: SiGithub },
+      { name: 'GitLab', icon: SiGitlab },
+      { name: 'Bitbucket', icon: SiBitbucket },
+      { name: 'NPM', icon: SiNpm },
+      { name: 'Yarn', icon: SiYarn },
+      { name: 'PNPM', icon: SiPnpm },
     ],
   },
 ];
@@ -82,12 +82,7 @@ const SkillsPage = () => {
                 const Icon = skill.icon;
                 return (
                   <div key={skill.name} className="skill-card card">
-                    <div
-                      className="skill-icon-wrapper"
-                      style={
-                        { '--hover-color': skill.color } as React.CSSProperties
-                      }
-                    >
+                    <div className="skill-icon-wrapper">
                       <Icon className="skill-icon" />
                     </div>
                     <span className="skill-name">{skill.name}</span>

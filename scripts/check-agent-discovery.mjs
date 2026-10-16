@@ -79,6 +79,25 @@ assert.equal(
   'poppy.json: organization.domain must match the request hostname'
 );
 
+// The site has no authorization server. Advertising one would send agents to
+// endpoints that do not exist: the token endpoint 404s, the JWKS is empty, and
+// docs/oauth.md says so in prose. The readiness scanner only validates `issuer`,
+// so nothing catches the contradiction.
+const OAUTH_CLAIMS = ['authorization_endpoint', 'token_endpoint', 'jwks_uri'];
+for (const file of [
+  '.well-known/openid-configuration',
+  '.well-known/oauth-authorization-server',
+  '.well-known/oauth-protected-resource',
+]) {
+  const doc = JSON.parse(read(file));
+  const claimed = OAUTH_CLAIMS.filter((key) => key in doc);
+  assert.deepEqual(
+    claimed,
+    [],
+    `${file} advertises ${claimed.join(', ')} but this site issues no tokens`
+  );
+}
+
 const robots = read('robots.txt');
 assert.match(
   robots,

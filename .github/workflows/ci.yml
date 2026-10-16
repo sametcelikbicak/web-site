@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # A typo in a lockfile should not run the rest of the pipeline.
+      - run: npm ci
+
+      # biome check, not `npm run format`. The write variant would make the job
+      # pass by rewriting the files instead of reporting them.
+      - name: Lint
+        run: npx biome check .
+
+      - name: Typecheck
+        run: npx tsc -b
+
+      - name: Test
+        run: npm test
+
+      # Runs the agent discovery gate last, so a missing discovery file or a
+      # malformed ai-catalog fails here rather than in production.
+      - name: Build
+        run: npm run build

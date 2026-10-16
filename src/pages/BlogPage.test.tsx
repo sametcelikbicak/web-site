@@ -36,7 +36,7 @@ const mockPosts = Array.from({ length: 8 }, (_, i) => ({
 }));
 
 describe('BlogPage', () => {
-  it('renders title and subtitle with default values', () => {
+  it('renders the title and subtitle from the English bundle', () => {
     mockGetBlogPosts.mockReturnValue([]);
     render(
       <BrowserRouter>
@@ -46,7 +46,7 @@ describe('BlogPage', () => {
     expect(screen.getByText('Blog')).toBeInTheDocument();
     expect(
       screen.getByText(
-        'Teknoloji, tasarım ve yazılım geliştirme üzerine düşüncelerim.'
+        'My thoughts on technology, design, and software development.'
       )
     ).toBeInTheDocument();
   });
@@ -93,8 +93,8 @@ describe('BlogPage', () => {
         <BlogPage />
       </BrowserRouter>
     );
-    expect(screen.getByText('Önceki', { exact: false })).toBeInTheDocument();
-    expect(screen.getByText('Sonraki', { exact: false })).toBeInTheDocument();
+    expect(screen.getByText('Previous', { exact: false })).toBeInTheDocument();
+    expect(screen.getByText('Next', { exact: false })).toBeInTheDocument();
   });
 
   it('disables prev button on first page', () => {
@@ -104,7 +104,7 @@ describe('BlogPage', () => {
         <BlogPage />
       </BrowserRouter>
     );
-    expect(screen.getByText('Önceki', { exact: false })).toBeDisabled();
+    expect(screen.getByText('Previous', { exact: false })).toBeDisabled();
   });
 
   it('navigates to next page', () => {
@@ -114,7 +114,7 @@ describe('BlogPage', () => {
         <BlogPage />
       </BrowserRouter>
     );
-    fireEvent.click(screen.getByText('Sonraki', { exact: false }));
+    fireEvent.click(screen.getByText('Next', { exact: false }));
     const page2Posts = screen.getAllByText(/Post \d+/);
     expect(page2Posts).toHaveLength(2);
   });
@@ -126,8 +126,8 @@ describe('BlogPage', () => {
         <BlogPage />
       </BrowserRouter>
     );
-    fireEvent.click(screen.getByText('Sonraki', { exact: false }));
-    fireEvent.click(screen.getByText('Önceki', { exact: false }));
+    fireEvent.click(screen.getByText('Next', { exact: false }));
+    fireEvent.click(screen.getByText('Previous', { exact: false }));
     const page1Posts = screen.getAllByText(/Post \d+/);
     expect(page1Posts).toHaveLength(6);
   });
@@ -164,7 +164,7 @@ describe('BlogPage', () => {
       </BrowserRouter>
     );
     fireEvent.click(screen.getByText('2'));
-    expect(screen.getByText('Sonraki', { exact: false })).toBeDisabled();
+    expect(screen.getByText('Next', { exact: false })).toBeDisabled();
   });
 
   it('does not render pagination when posts fit on one page', () => {
@@ -175,10 +175,10 @@ describe('BlogPage', () => {
       </BrowserRouter>
     );
     expect(
-      screen.queryByText('Önceki', { exact: false })
+      screen.queryByText('Previous', { exact: false })
     ).not.toBeInTheDocument();
     expect(
-      screen.queryByText('Sonraki', { exact: false })
+      screen.queryByText('Next', { exact: false })
     ).not.toBeInTheDocument();
   });
 

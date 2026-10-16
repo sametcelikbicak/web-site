@@ -23,9 +23,9 @@ describe('StatsSection', () => {
 
   it('renders labels from translation keys', () => {
     render(<StatsSection />);
-    expect(screen.getByText('stats.experience')).toBeInTheDocument();
-    expect(screen.getByText('stats.projects')).toBeInTheDocument();
-    expect(screen.getByText('stats.stack')).toBeInTheDocument();
-    expect(screen.getByText('stats.satisfaction')).toBeInTheDocument();
+    expect(screen.getByText('YEARS OF EXPERIENCE')).toBeInTheDocument();
+    expect(screen.getByText('COMPLETED PROJECTS')).toBeInTheDocument();
+    expect(screen.getByText('TECHNOLOGY STACK')).toBeInTheDocument();
+    expect(screen.getByText('CUSTOMER SATISFACTION')).toBeInTheDocument();
   });
 });

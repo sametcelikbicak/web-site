@@ -5,8 +5,10 @@ import SkillsPage from '@/pages/SkillsPage';
 describe('SkillsPage', () => {
   it('renders title and subtitle', () => {
     render(<SkillsPage />);
-    expect(screen.getByText('skills.title')).toBeInTheDocument();
-    expect(screen.getByText('skills.subtitle')).toBeInTheDocument();
+    expect(screen.getByText('Skills')).toBeInTheDocument();
+    expect(
+      screen.getByText(/My technical skills include mode/)
+    ).toBeInTheDocument();
   });
 
   it('renders 3 skill categories', () => {

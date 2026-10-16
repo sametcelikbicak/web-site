@@ -61,7 +61,7 @@ describe('Header', () => {
   describe('logo button', () => {
     it('navigates to home and scrolls to top when clicked', () => {
       renderHeader();
-      fireEvent.click(screen.getByLabelText('header.name'));
+      fireEvent.click(screen.getByLabelText('Samet ÇELİKBIÇAK'));
       expect(mockNavigate).toHaveBeenCalledWith('/');
       expect(window.scrollTo).toHaveBeenCalledWith({
         top: 0,
@@ -76,9 +76,7 @@ describe('Header', () => {
       const headerActions = container.querySelector(
         '.header-actions'
       ) as HTMLElement;
-      fireEvent.click(
-        within(headerActions).getByLabelText('header.toggleTheme')
-      );
+      fireEvent.click(within(headerActions).getByLabelText('Toggle theme'));
       expect(mockToggleTheme).toHaveBeenCalled();
     });
 
@@ -97,9 +95,7 @@ describe('Header', () => {
       const headerActions = container.querySelector(
         '.header-actions'
       ) as HTMLElement;
-      fireEvent.click(
-        within(headerActions).getByLabelText('header.toggleLanguage')
-      );
+      fireEvent.click(within(headerActions).getByLabelText('Toggle language'));
     });
   });
 
@@ -107,7 +103,7 @@ describe('Header', () => {
     it('highlights active nav link', () => {
       const { container } = renderHeader('light', ['/about']);
       const nav = container.querySelector('.header-nav') as HTMLElement;
-      const aboutLink = within(nav).getByText('header.about').closest('a');
+      const aboutLink = within(nav).getByText('About').closest('a');
       expect(aboutLink?.className).toContain('nav-link--active');
     });
   });
@@ -117,16 +113,16 @@ describe('Header', () => {
       const { container } = renderHeader();
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
 
-      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      fireEvent.click(screen.getByLabelText('Open menu'));
       expect(container.querySelector('.mobile-backdrop')).toBeTruthy();
 
-      fireEvent.click(screen.getByLabelText('header.closeMenu'));
+      fireEvent.click(screen.getByLabelText('Close menu'));
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
     it('marks the drawer as a modal dialog wired to the button', () => {
       renderHeader();
-      const button = screen.getByLabelText('header.openMenu');
+      const button = screen.getByLabelText('Open menu');
       expect(button).toHaveAttribute('aria-controls', 'mobile-drawer');
       expect(button).toHaveAttribute('aria-expanded', 'false');
 
@@ -139,14 +135,14 @@ describe('Header', () => {
 
     it('moves focus into the drawer and keeps it there', () => {
       renderHeader();
-      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      fireEvent.click(screen.getByLabelText('Open menu'));
       const drawer = document.getElementById('mobile-drawer');
       expect(drawer?.contains(document.activeElement)).toBe(true);
     });
 
     it('closes on Escape and returns focus to the button that opened it', () => {
       const { container } = renderHeader();
-      const button = screen.getByLabelText('header.openMenu');
+      const button = screen.getByLabelText('Open menu');
       fireEvent.click(button);
       expect(container.querySelector('.mobile-backdrop')).toBeTruthy();
 
@@ -158,7 +154,7 @@ describe('Header', () => {
 
     it('closes drawer when backdrop is clicked', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      fireEvent.click(screen.getByLabelText('Open menu'));
       expect(container.querySelector('.mobile-backdrop')).toBeTruthy();
 
       fireEvent.click(
@@ -169,36 +165,32 @@ describe('Header', () => {
 
     it('closes drawer on mobile nav link click', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      fireEvent.click(screen.getByLabelText('Open menu'));
 
       const mobileNav = container.querySelector('.mobile-nav') as HTMLElement;
-      fireEvent.click(within(mobileNav).getByText('header.about'));
+      fireEvent.click(within(mobileNav).getByText('About'));
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
     it('toggles language from mobile drawer', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      fireEvent.click(screen.getByLabelText('Open menu'));
 
       const drawerActions = container.querySelector(
         '.mobile-drawer-actions'
       ) as HTMLElement;
-      fireEvent.click(
-        within(drawerActions).getByLabelText('header.toggleLanguage')
-      );
+      fireEvent.click(within(drawerActions).getByLabelText('Toggle language'));
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });
 
     it('toggles theme from mobile drawer', () => {
       const { container } = renderHeader();
-      fireEvent.click(screen.getByLabelText('header.openMenu'));
+      fireEvent.click(screen.getByLabelText('Open menu'));
 
       const drawerActions = container.querySelector(
         '.mobile-drawer-actions'
       ) as HTMLElement;
-      fireEvent.click(
-        within(drawerActions).getByLabelText('header.toggleTheme')
-      );
+      fireEvent.click(within(drawerActions).getByLabelText('Toggle theme'));
       expect(mockToggleTheme).toHaveBeenCalled();
       expect(container.querySelector('.mobile-backdrop')).toBeNull();
     });

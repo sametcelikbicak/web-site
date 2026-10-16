@@ -5,8 +5,10 @@ import ExperiencePage from '@/pages/ExperiencePage';
 describe('ExperiencePage', () => {
   it('renders title and subtitle', () => {
     render(<ExperiencePage />);
-    expect(screen.getByText('experience.title')).toBeInTheDocument();
-    expect(screen.getByText('experience.subtitle')).toBeInTheDocument();
+    expect(screen.getByText('Experience')).toBeInTheDocument();
+    expect(
+      screen.getByText(/My professional journey spans over \d+ years/)
+    ).toBeInTheDocument();
   });
 
   it('renders all experience entries', () => {

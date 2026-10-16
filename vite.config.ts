@@ -13,10 +13,16 @@ import { defineConfig, type Plugin } from 'vite';
 
 const clientOnly = process.env.VITE_CLIENT_ONLY === 'true';
 
-function inlineCssPlugin(): Plugin {
-  let cssContent = '';
-  let cssFileName = '';
+// Module scope, not function scope. @cloudflare/vite-plugin runs two builds and
+// each gets its own plugin instance, so state captured inside the factory was
+// invisible to whichever instance closed last. closeBundle then either had the
+// CSS but no index.html yet, or an index.html but no CSS, and the stylesheet
+// silently stopped being inlined — a blocking request on the critical path that
+// came and went depending on the order two builds happened to run in.
+let cssContent = '';
+let cssFileName = '';
 
+function inlineCssPlugin(): Plugin {
   return {
     name: 'inline-css',
     enforce: 'post',

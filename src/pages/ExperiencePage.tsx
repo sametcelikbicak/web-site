@@ -46,10 +46,8 @@ const ExperiencePage = () => {
     <div className="experience-page page-container">
       {/* Experience Hero */}
       <div className="experience-hero">
-        <h1 className="experience-title">{t('experience.title')}</h1>
-        <p className="experience-subtitle">
-          {t('experience.subtitle', { years })}
-        </p>
+        <h1 className="page-title">{t('experience.title')}</h1>
+        <p className="page-subtitle">{t('experience.subtitle', { years })}</p>
       </div>
 
       {/* Timeline Section */}

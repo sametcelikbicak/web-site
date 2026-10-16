@@ -29,8 +29,8 @@ const EducationPage = () => {
   return (
     <div className="education-page page-container">
       <div className="education-hero">
-        <h1 className="education-title">{t('education.title')}</h1>
-        <p className="education-subtitle">{t('education.subtitle')}</p>
+        <h1 className="page-title">{t('education.title')}</h1>
+        <p className="page-subtitle">{t('education.subtitle')}</p>
       </div>
 
       <div className="timeline-container">

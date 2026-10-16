@@ -6,7 +6,7 @@
 .hero-container {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--space-5xl);
   align-items: center;
   width: 100%;
 }
@@ -22,7 +22,7 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-2xl);
   flex: 1;
 }
 
@@ -85,15 +85,15 @@
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
 }
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem;
+  padding: var(--space-sm) var(--space-xl);
   border-radius: var(--radius);
   border: 1px solid var(--color-outline-variant);
   font-family: var(--font-body);

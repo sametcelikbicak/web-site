@@ -12,7 +12,7 @@
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--space-3xl);
   height: 64px;
 }
 
@@ -20,7 +20,7 @@
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: var(--space-sm);
   background: none;
   border: none;
   cursor: pointer;
@@ -48,7 +48,7 @@
 .header-nav {
   display: none;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--space-3xs);
   flex: 1;
 }
 
@@ -63,7 +63,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.375rem 0.75rem;
+  padding: var(--space-2xs) var(--space-md);
   font-family: var(--font-body);
   font-size: var(--text-label);
   font-weight: 500;
@@ -100,7 +100,7 @@
 .header-actions {
   display: none;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--space-3xs);
   margin-left: auto;
 }
 
@@ -142,7 +142,7 @@
   /* 44px is the minimum comfortable touch target (WCAG 2.5.5) */
   width: 44px;
   height: 44px;
-  padding: 0.375rem;
+  padding: var(--space-2xs);
   background: none;
   border: none;
   cursor: pointer;
@@ -192,11 +192,11 @@
   height: 100vh;
   background: var(--color-surface-low);
   border-left: 1px solid var(--color-ghost-border);
-  padding: 1.5rem;
+  padding: var(--space-2xl);
   z-index: 300;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-2xl);
   transform: translateX(100%);
   transition:
     transform var(--transition-base),
@@ -226,13 +226,13 @@
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--space-3xs);
   flex: 1;
 }
 
 .mobile-nav-link {
   display: block;
-  padding: 0.75rem 0.875rem;
+  padding: var(--space-md) 0.875rem;
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 500;
@@ -256,7 +256,7 @@
 
 .mobile-drawer-actions {
   display: flex;
-  gap: 0.5rem;
-  padding-top: 1rem;
+  gap: var(--space-xs);
+  padding-top: var(--space-lg);
   border-top: 1px solid var(--color-ghost-border);
 }

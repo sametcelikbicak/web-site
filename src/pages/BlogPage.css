@@ -7,9 +7,9 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: var(--section-gap);
-  gap: 2rem;
+  gap: var(--space-3xl);
   border-bottom: 1px solid var(--color-ghost-border);
-  padding-bottom: 2rem;
+  padding-bottom: var(--space-3xl);
 }
 
 .blog-page .blog-header-content {
@@ -20,7 +20,7 @@
   font-family: var(--font-display);
   font-size: var(--text-display);
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-lg);
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
@@ -36,7 +36,7 @@
 .blog-page .blog-view-toggle {
   display: flex;
   background: var(--color-surface-low);
-  padding: 0.25rem;
+  padding: var(--space-3xs);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-outline-variant);
 }
@@ -70,12 +70,12 @@
 .blog-page .blog-content.list-view {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--space-6xl);
 }
 
 .blog-page .list-view .blog-item {
   border-bottom: 1px solid var(--color-ghost-border);
-  padding-bottom: 4rem;
+  padding-bottom: var(--space-6xl);
 }
 
 .blog-page .list-view .blog-item:last-child {
@@ -85,7 +85,7 @@
 .blog-page .list-view .blog-item-link {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: 2.5rem;
+  gap: var(--space-4xl);
   text-decoration: none;
   align-items: center;
 }
@@ -96,7 +96,7 @@
   /* Without min(), the 340px minimum overflows every phone narrower than 388px,
      and the shell clips the overflow, so the right edge of the card is cut off. */
   grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
-  gap: 2.5rem;
+  gap: var(--space-4xl);
 }
 
 .blog-page .grid-view .blog-item {
@@ -129,7 +129,7 @@
 }
 
 .blog-page .grid-view .post-content-wrapper {
-  padding: 2rem;
+  padding: var(--space-3xl);
 }
 
 /* Post Images */
@@ -180,8 +180,8 @@
 .blog-page .post-meta {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
   font-family: var(--font-label);
   font-size: var(--text-label);
   color: var(--color-text-subtle);
@@ -194,7 +194,7 @@
   font-family: var(--font-display);
   font-size: var(--text-h1);
   font-weight: 700;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--space-xl);
   line-height: 1.2;
   color: var(--color-text);
   transition: color var(--transition-fast);
@@ -209,7 +209,7 @@
   font-size: var(--text-body);
   color: var(--color-text-muted);
   line-height: 1.7;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-3xl);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -219,7 +219,7 @@
 .blog-page .post-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--space-md);
   margin-top: auto;
 }
 
@@ -227,22 +227,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin-top: 6rem;
-  padding-top: 3rem;
+  gap: var(--space-3xl);
+  margin-top: var(--space-8xl);
+  padding-top: var(--space-5xl);
   border-top: 1px solid var(--color-ghost-border);
 }
 
 .blog-page .pagination-numbers {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-xs);
 }
 
 .blog-page .pagination-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-2xl);
   background: var(--color-surface-mid);
   color: var(--color-text-muted);
   border: 1px solid var(--color-outline-variant);
@@ -303,12 +303,12 @@
   .blog-page .blog-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: var(--space-3xl);
   }
 
   .blog-page .list-view .blog-item-link {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--space-2xl);
   }
 
   .blog-page .grid-view {
@@ -320,12 +320,12 @@
   }
 
   .blog-page .post-meta {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-lg);
   }
 
   .blog-page .pagination {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--space-2xl);
   }
 
   .blog-page .pagination-btn {

@@ -12,8 +12,8 @@
 
   .home-hero-stats .hero-section {
     flex: 1;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
   }
 
   .hero-content .stats-section {

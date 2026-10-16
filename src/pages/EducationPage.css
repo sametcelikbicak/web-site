@@ -89,7 +89,7 @@
 }
 
 .entry-division {
-  font-size: 1rem;
+  font-size: var(--text-body);
   font-weight: 500;
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);

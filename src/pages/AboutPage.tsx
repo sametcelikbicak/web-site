@@ -9,8 +9,8 @@ const AboutPage = () => {
   return (
     <div className="about-page page-container">
       <div className="about-header">
-        <h1 className="about-title">{t('about.title')}</h1>
-        <p className="about-subtitle">
+        <h1 className="page-title">{t('about.title')}</h1>
+        <p className="page-subtitle">
           {t('about.subtitle', {
             defaultValue:
               'Yazılım dünyasındaki 15 yılı aşkın profesyonel serüvenim.',

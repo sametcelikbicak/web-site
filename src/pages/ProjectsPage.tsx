@@ -58,8 +58,8 @@ const ProjectsPage = () => {
   return (
     <div className="projects-page page-container section-gap">
       <div className="projects-header">
-        <h1 className="projects-title">{t('projects.title')}</h1>
-        <p className="projects-subtitle">{t('projects.subtitle')}</p>
+        <h1 className="page-title">{t('projects.title')}</h1>
+        <p className="page-subtitle">{t('projects.subtitle')}</p>
       </div>
 
       <div className="projects-grid">

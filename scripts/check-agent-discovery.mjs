@@ -32,6 +32,17 @@ const REQUIRED = [
 ];
 
 const read = (path) => readFileSync(join(DIST, path), 'utf8');
+// The build inlines the stylesheet into index.html. That used to depend on the
+// order two Vite builds happened to close in, and when it failed nothing said so:
+// the HTML just grew a <link rel="stylesheet"> and the page took an extra
+// render-blocking request on the critical path.
+const indexHtml = read('index.html');
+if (/<link[^>]*rel=["']stylesheet["']/i.test(indexHtml)) {
+  throw new Error(
+    'index.html links an external stylesheet; the build should inline it'
+  );
+}
+
 const missing = REQUIRED.filter((path) => !existsSync(join(DIST, path)));
 assert.deepEqual(
   missing,

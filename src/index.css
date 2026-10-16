@@ -54,6 +54,7 @@
   /* ─── Spacing ──────────────────────────────────────────────── */
   --max-width: 1200px;
   --section-gap: 2rem;
+  --space-page-header: 5rem;
   --gutter: 1.5rem;
   --gutter-lg: 4rem;
 
@@ -224,6 +225,35 @@ button {
 }
 
 /* Section headers */
+/* Page header block. Five pages carried a byte-identical copy of these rules
+   under their own prefix (about-title, skills-title, projects-title,
+   education-title, experience-title and the matching subtitles), so a
+   typographic change had to be made five times and nothing kept them in step.
+   BlogPage, BlogPostPage and NotFoundPage set their own and are untouched. */
+.page-title {
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.page-subtitle {
+  max-width: 42rem;
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.about-header,
+.education-hero,
+.experience-hero,
+.projects-header,
+.skills-header {
+  margin-bottom: var(--space-page-header);
+}
+
 .section-label {
   font-family: var(--font-label);
   font-size: var(--text-label);

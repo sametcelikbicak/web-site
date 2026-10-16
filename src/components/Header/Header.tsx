@@ -203,7 +203,7 @@ const Header = () => {
             ✕
           </button>
         </div>
-        <nav className="mobile-nav" aria-label={t('header.mainNav')}>
+        <nav className="mobile-nav" aria-label={t('header.mobileNav')}>
           {NAV_ITEMS.map((item) =>
             /* istanbul ignore next */ item.external ? (
               <a

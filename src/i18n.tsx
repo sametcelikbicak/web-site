@@ -4,28 +4,34 @@ import en from '@/locales/en/translation.json';
 import tr from '@/locales/tr/translation.json';
 
 const FALLBACK_LANG = 'tr';
-const STORAGE_KEY = 'language';
+const COOKIE_NAME = 'lang';
 const SUPPORTED = ['tr', 'en'] as const;
 
-/**
- * Without an explicit lng every reload fell back to Turkish, so a visitor who
- * switched to English lost it on refresh. Preference first, then the browser
- * language, then the fallback.
- */
-const getInitialLanguage = (): string => {
-  if (typeof window === 'undefined') return FALLBACK_LANG;
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && (SUPPORTED as readonly string[]).includes(stored))
-      return stored;
-  } catch {
-    /* ignore */
-  }
-  const browser = window.navigator.language.slice(0, 2).toLowerCase();
-  return (SUPPORTED as readonly string[]).includes(browser)
-    ? browser
-    : FALLBACK_LANG;
+const isSupported = (value: string | undefined | null): value is string =>
+  SUPPORTED.includes(value as (typeof SUPPORTED)[number]);
+
+export const parseLanguageCookie = (cookieHeader: string | null): string => {
+  const raw = (cookieHeader || '')
+    .split(';')
+    .map((part) => part.trim().split('='))
+    .find(([name]) => name === COOKIE_NAME)?.[1]
+    ?.replace(/^"|"$/g, '');
+
+  return isSupported(raw) ? raw : FALLBACK_LANG;
 };
+
+/**
+ * A cookie, not localStorage. The edge render happens on a machine that cannot
+ * see localStorage, so any client-only preference makes the server emit one
+ * language and the client another — React then throws a hydration mismatch and
+ * throws the whole tree away. localStorage and navigator.language both caused
+ * exactly that; the cookie is the only storage both sides read, so both resolve
+ * to the same value or both fall back.
+ */
+const getInitialLanguage = (): string =>
+  typeof document === 'undefined'
+    ? FALLBACK_LANG
+    : parseLanguageCookie(document.cookie);
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -46,10 +52,18 @@ const syncDocumentLanguage = (lng: string) => {
   if (typeof document !== 'undefined') {
     document.documentElement.lang = lng;
   }
+  // Constrain the value before it reaches document.cookie: whatever i18next
+  // reports, only the two languages this bundle actually ships get written.
+  const safe = isSupported(lng) ? lng : FALLBACK_LANG;
   try {
-    localStorage.setItem(STORAGE_KEY, lng);
+    const secure =
+      typeof location !== 'undefined' && location.protocol === 'https:'
+        ? '; secure'
+        : '';
+    // biome-ignore lint/suspicious/noDocumentCookie: value constrained to SUPPORTED; a cookie is the only storage the edge and the browser both read
+    document.cookie = `${COOKIE_NAME}=${safe}; path=/; max-age=31536000; samesite=lax${secure}`;
   } catch {
-    /* private mode or storage disabled */
+    /* cookies disabled */
   }
 };
 

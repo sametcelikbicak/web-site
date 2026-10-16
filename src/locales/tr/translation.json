@@ -36,7 +36,11 @@
     "description": "2007 yılından beri yazılım sektöründe çalışmaktayım. Bu süre içerisinde Software Developer, Senior Software Developer ve Team Lead pozisyonlarında görev aldım.\n\nYazılım geliştirme konusunda geniş deneyime sahibim. Nesne yönelimli programlama, yazılım desenleri, prensipleri, metodolojileri ve çeşitli geliştirme araçları ile web (ön yüz & arka yüz) ve Android (Xamarin) uygulamaları geliştirdim. Teknik ve analitik becerilerimi hem bağımsız hem de ekip olarak problem çözmede kullanıyorum.\n\n2024 yılına kadar Fullstack Developer olarak çalıştım, 2024 sonrasında ise Principal Software Specialist olarak Frontend alanında kariyerime devam ediyorum. Kariyerimde Angular, TypeScript, HTML, CSS, JavaScript ve React teknolojileriyle çalışmalarımı sürdürmekteyim."
   },
   "footer": {
-    "copyright": "Samet ÇELİKBIÇAK. Tüm hakları saklıdır."
+    "copyright": "Samet ÇELİKBIÇAK. Tüm hakları saklıdır.",
+    "siteNavigation": "Site gezinmesi",
+    "nav": {
+      "home": "Ana Sayfa"
+    }
   },
   "header": {
     "name": "Samet ÇELİKBIÇAK",
@@ -49,7 +53,8 @@
     "menu": "Mobil menü",
     "mainNav": "Ana gezinme",
     "toggleTheme": "Temayı değiştir",
-    "toggleLanguage": "Dili değiştir"
+    "toggleLanguage": "Dili değiştir",
+    "mobileNav": "Mobil gezinme"
   },
   "skills": {
     "title": "Yetenekler",
@@ -171,5 +176,13 @@
     "title": "Sayfa bulunamadı",
     "text": "Aradığınız sayfa taşınmış veya hiç var olmamış olabilir.",
     "backHome": "Ana sayfaya dön"
+  },
+  "home": {
+    "recentPosts": {
+      "title": "SON YAZILAR",
+      "viewAll": "Tüm yazılar",
+      "trOnlyNote": "Bu yazılar yalnızca Türkçe olarak yayımlandı.",
+      "enShortNote": "İngilizce içerik yakında."
+    }
   }
 }

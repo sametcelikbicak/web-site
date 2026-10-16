@@ -12,17 +12,22 @@ jest.mock('@/components/StatsSection/StatsSection', () => () => (
 jest.mock('@/components/ExpertiseCards/ExpertiseCards', () => () => (
   <div data-testid="expertise" />
 ));
+jest.mock('@/components/RecentPosts/RecentPosts', () => () => (
+  <div data-testid="recent-posts" />
+));
 
 describe('HomePage', () => {
-  it('renders hero, stats, and expertise', () => {
+  it('renders hero, stats, expertise and recent posts', () => {
     render(<HomePage />);
     expect(screen.getByTestId('hero')).toBeInTheDocument();
     expect(screen.getByTestId('stats')).toBeInTheDocument();
     expect(screen.getByTestId('expertise')).toBeInTheDocument();
+    expect(screen.getByTestId('recent-posts')).toBeInTheDocument();
   });
 
-  it('renders divider', () => {
+  it('separates the three sections with dividers', () => {
     const { container } = render(<HomePage />);
-    expect(container.querySelector('.divider')).toBeInTheDocument();
+    // Two dividers: one before ExpertiseCards, one before RecentPosts.
+    expect(container.querySelectorAll('.divider')).toHaveLength(2);
   });
 });

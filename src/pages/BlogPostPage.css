@@ -51,7 +51,7 @@
 /* Content Typography */
 .blog-post-page .post-content {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: var(--text-body-lg);
   line-height: 1.8;
   color: var(--color-text);
 }
@@ -187,11 +187,11 @@
   }
 
   .blog-post-page .post-description {
-    font-size: 1.125rem;
+    font-size: var(--text-body-lg);
   }
 
   .blog-post-page .post-content {
-    font-size: 1rem;
+    font-size: var(--text-body);
   }
 }
 

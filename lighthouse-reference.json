@@ -1,0 +1,48 @@
+{
+  "note": "3-run median baseline (2026-10-17, pre-fix). Re-scan after deploy and replace.",
+  "runs": [
+    {
+      "file": "lighthouse-baseline.json",
+      "performance": 54,
+      "accessibility": 96,
+      "seo": 92,
+      "bestPractices": 100,
+      "fcp": 3.7458375,
+      "lcp": 4.44815,
+      "tbt": 304.5,
+      "cls": 0.2964856263402247
+    },
+    {
+      "file": "lighthouse-2.json",
+      "performance": 55.00000000000001,
+      "accessibility": 96,
+      "seo": 92,
+      "bestPractices": 100,
+      "fcp": 2.5734920000000003,
+      "lcp": 2.7463359999999994,
+      "tbt": 1057.7999999999995,
+      "cls": 0.2908145786683493
+    },
+    {
+      "file": "lighthouse-3.json",
+      "performance": 68,
+      "accessibility": 96,
+      "seo": 92,
+      "bestPractices": 100,
+      "fcp": 2.623905999999999,
+      "lcp": 2.8243519999999998,
+      "tbt": 1071.4320000000007,
+      "cls": 0
+    }
+  ],
+  "median": {
+    "performance": 55.00000000000001,
+    "accessibility": 96,
+    "seo": 92,
+    "bestPractices": 100,
+    "fcp": 2.623905999999999,
+    "lcp": 2.8243519999999998,
+    "tbt": 1057.7999999999995,
+    "cls": 0.2908145786683493
+  }
+}

@@ -34,6 +34,13 @@ jobs:
       - name: Test
         run: npm test
 
+      # Dependabot reports on a schedule but does not block a merge. This gate
+      # makes a high or critical vulnerability fail the pipeline instead.
+      # Moderate findings (20, all in the jest tree) are tracked separately —
+      # fixing them means a jest major bump, which is not a mechanical change.
+      - name: Audit
+        run: npm audit --audit-level=high
+
       # Runs the agent discovery gate last, so a missing discovery file or a
       # malformed ai-catalog fails here rather than in production.
       - name: Build

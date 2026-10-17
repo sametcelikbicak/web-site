@@ -6,9 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 import BackToTop from '@/components/BackToTop/BackToTop';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
-import HomePageSkeleton from '@/components/HomePageSkeleton/HomePageSkeleton';
+import HomePage from '@/pages/HomePage';
 
-const HomePage = lazy(() => import('@/pages/HomePage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ExperiencePage = lazy(() => import('@/pages/ExperiencePage'));
 const EducationPage = lazy(() => import('@/pages/EducationPage'));
@@ -70,14 +69,7 @@ const App = () => {
           <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <Suspense fallback={<HomePageSkeleton />}>
-                    <HomePage />
-                  </Suspense>
-                }
-              />
+              <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/experience" element={<ExperiencePage />} />
               <Route path="/education" element={<EducationPage />} />

@@ -12,7 +12,6 @@ interface NavItem {
   to: string;
   labelKey: string;
   analyticsKey: string;
-  external?: boolean;
 }
 
 const NAV_ITEMS: NavItem[] = [
@@ -109,31 +108,18 @@ const Header = () => {
           className="header-nav hidden md:flex"
           aria-label={t('header.mainNav')}
         >
-          {NAV_ITEMS.map((item) =>
-            /* istanbul ignore next */ item.external ? (
-              <a
-                key={item.labelKey}
-                href={item.to}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-link"
-                onClick={() => {}}
-              >
-                {t(item.labelKey)}
-              </a>
-            ) : (
-              <Link
-                key={item.labelKey}
-                to={item.to}
-                aria-current={isActive(item.to) ? 'page' : undefined}
-                className={`nav-link${isActive(item.to) ? ' nav-link--active' : ''}`}
-                onClick={() => {}}
-              >
-                {t(item.labelKey)}
-                {isActive(item.to) && <span className="nav-active-dot" />}
-              </Link>
-            )
-          )}
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.labelKey}
+              to={item.to}
+              aria-current={isActive(item.to) ? 'page' : undefined}
+              className={`nav-link${isActive(item.to) ? ' nav-link--active' : ''}`}
+              onClick={() => {}}
+            >
+              {t(item.labelKey)}
+              {isActive(item.to) && <span className="nav-active-dot" />}
+            </Link>
+          ))}
         </nav>
 
         {/* Desktop Actions */}
@@ -204,34 +190,19 @@ const Header = () => {
           </button>
         </div>
         <nav className="mobile-nav" aria-label={t('header.mobileNav')}>
-          {NAV_ITEMS.map((item) =>
-            /* istanbul ignore next */ item.external ? (
-              <a
-                key={item.labelKey}
-                href={item.to}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile-nav-link"
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
-              >
-                {t(item.labelKey)}
-              </a>
-            ) : (
-              <Link
-                key={item.labelKey}
-                to={item.to}
-                aria-current={isActive(item.to) ? 'page' : undefined}
-                className={`mobile-nav-link${isActive(item.to) ? ' mobile-nav-link--active' : ''}`}
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
-              >
-                {t(item.labelKey)}
-              </Link>
-            )
-          )}
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.labelKey}
+              to={item.to}
+              aria-current={isActive(item.to) ? 'page' : undefined}
+              className={`mobile-nav-link${isActive(item.to) ? ' mobile-nav-link--active' : ''}`}
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              {t(item.labelKey)}
+            </Link>
+          ))}
         </nav>
         <div className="mobile-drawer-actions">
           <button

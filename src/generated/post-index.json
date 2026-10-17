@@ -1,0 +1,254 @@
+[
+  {
+    "slug": "ai-agent-package-manager-nasil-calisir",
+    "date": "2026-08-17",
+    "title": "AI Agent Package Manager Nasıl Çalışır? RoleCraft'ın Mimarisi",
+    "description": "86+ AI agent'ı destekleyen bir package manager nasıl inşa edilir? Agent tespiti, güvenlik skorlaması, MCP yönetimi ve rollback mekanizması.",
+    "tags": ["AI", "CLI", "Node.js", "MCP", "Yazılım Mimarisi"],
+    "lang": "tr",
+    "image": "/blog/ai_agent_package_manager_cover.webp"
+  },
+  {
+    "slug": "200den-1013-teste-test-stratejisi",
+    "date": "2026-08-06",
+    "title": "200'den 1013 Teste: RoleCraft'ta Test Stratejisi",
+    "description": "RoleCraft'ı ~200 testten 1013'e nasıl çıkardım? node:test ile test yazmanın incelikleri, dış bağımlılık izolasyonu ve CI entegrasyonu.",
+    "tags": ["Node.js", "Test", "node:test", "CI/CD", "Yazılım Kalitesi"],
+    "lang": "tr",
+    "image": "/blog/200_den_1013_teste_test_stratejisi_cover.webp"
+  },
+  {
+    "slug": "sifir-bagimlilikla-cli-nasil-yazilir",
+    "date": "2026-07-31",
+    "title": "Sıfır Bağımlılıkla CLI Nasıl Yazılır? RoleCraft'ın Mimarisi",
+    "description": "Hiç runtime dependency kullanmadan, sadece Node.js built-in modülleriyle production-ready bir CLI nasıl yazılır? RoleCraft'ı inşa ederken öğrendiklerim.",
+    "tags": ["Node.js", "CLI", "JavaScript", "Açık Kaynak", "Yazılım Mimarisi"],
+    "lang": "tr",
+    "image": "/blog/sifir_bagimlilikla_cli_cover.webp"
+  },
+  {
+    "slug": "ucretsiz-ai-ekibi-olusturma",
+    "date": "2026-06-08",
+    "title": "Ücretsiz AI ekibi oluşturma",
+    "description": "Hiçbir maliyet olmadan kendi AI ekibinizi nasıl oluşturabileceğinizi anlattığım videonun özeti.",
+    "tags": ["AI", "Yapay Zeka", "Araçlar", "Verimlilik"],
+    "lang": "tr",
+    "image": "/blog/free_ai_team_cover.webp"
+  },
+  {
+    "slug": "modern-typescript-ipucu",
+    "date": "2026-06-05",
+    "title": "Modern TypeScript Tips: Cleaner Code",
+    "description": "Learn how to build modern, reusable, and type-safe utility functions in TypeScript with real-world examples.",
+    "tags": ["TypeScript", "JavaScript", "Programming", "Utility Functions", "Clean Code"],
+    "lang": "en",
+    "image": "/blog/typescript_tips_cover.webp"
+  },
+  {
+    "slug": "html-css-typescript",
+    "date": "2022-10-23",
+    "title": "HTML & CSS & TypeScript",
+    "description": "Web uygulaması için ihtiyacımız olan üç temel yapı olan HTML & CSS & JavaScript kullanımından ve TypeScript ile geliştirmeyi nasıl yapacağımızdan bahsediyorum.",
+    "tags": ["HTML", "CSS", "TypeScript", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/html_css_ts_cover.webp"
+  },
+  {
+    "slug": "angular-absolute-importpath",
+    "date": "2022-08-06",
+    "title": "Angular Absolute Import/Path",
+    "description": "Angular projelerinde absolute import/path kullanımının avantajlarından ve tsconfig.json ile nasıl yapılandırılacağından bahsediyorum.",
+    "tags": ["Angular", "TypeScript", "Clean Code", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_absolute_path_cover.webp"
+  },
+  {
+    "slug": "macos-dock-icin-ayrac-ekleme",
+    "date": "2022-05-29",
+    "title": "macOS Dock İçin Ayraç Ekleme",
+    "description": "macOS Dock üzerinde uygulamaları ve dokümanları daha iyi organize etmek için nasıl özel ayraçlar (spacer) ekleyebileceğinizi anlatıyorum.",
+    "tags": ["macOS", "Dock", "Customization", "Tutorial"],
+    "lang": "tr",
+    "image": "/blog/macos_dock_cover.webp"
+  },
+  {
+    "slug": "angular-custom-decorator",
+    "date": "2022-04-14",
+    "title": "Angular Custom Decorator",
+    "description": "Angular projelerinde işleri kolaylaştıran custom decorator'ların nasıl oluşturulacağını ve kullanılacağını pratik örneklerle anlatıyorum.",
+    "tags": ["Angular", "TypeScript", "Decorator", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_decorator_cover.webp"
+  },
+  {
+    "slug": "angular-custom-guard",
+    "date": "2022-03-19",
+    "title": "Angular Custom Guard",
+    "description": "Angular uygulamalarında sayfa geçişlerini kontrol eden Guard yapısının (CanActivate ve CanDeactivate) nasıl kurulacağını ve login/profile senaryosu üzerinden kullanımını anlatıyorum.",
+    "tags": ["Angular", "Guard", "Security", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_guard_cover.webp"
+  },
+  {
+    "slug": "angular-form-kullanimi",
+    "date": "2022-02-09",
+    "title": "Angular form kullanımı",
+    "description": "Angular projelerinde form kullanımı, Reactive Forms ve validasyon işlemleri ile kolay kullanıcı arayüzü yönetimi.",
+    "tags": ["Angular", "Reactive Forms", "Forms", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_form_usage_cover.webp"
+  },
+  {
+    "slug": "angular-ile-ng-content-kullanimi",
+    "date": "2021-12-18",
+    "title": "Angular ile ng-content kullanımı",
+    "description": "Angular'da ng-content kullanımı ile esnek ve yeniden kullanılabilir bileşenler (components) nasıl oluşturulur.",
+    "tags": ["Angular", "ng-content", "Component", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_ng_content_cover.webp"
+  },
+  {
+    "slug": "angular-ile-ngrx-kullanimi",
+    "date": "2021-12-09",
+    "title": "Angular ile NGRX kullanımı",
+    "description": "Angular projelerinde NgRx kullanarak State Management işlemleri nasıl yapılır? Action, Reducer ve Selector tanımları.",
+    "tags": ["Angular", "NgRx", "State Management", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_ngrx_usage_cover.webp"
+  },
+  {
+    "slug": "terminal-ile-takma-ad-ve-fonksiyon-kullanimi",
+    "date": "2021-11-20",
+    "title": "Terminal ile takma ad ve fonksiyon kullanımı",
+    "description": "Terminal kullanımınızı hızlandıracak alias (takma ad) ve fonksiyon tanımlamaları, gizli dosyaları gösterme ve git kısayolları.",
+    "tags": ["Terminal", "macOS", "Bash", "Zsh", "Git"],
+    "lang": "tr",
+    "image": "/blog/terminal_alias_and_function_cover.webp"
+  },
+  {
+    "slug": "angular-library-olusturma-ve-npm-uzerinde-yayinlama",
+    "date": "2021-09-25",
+    "title": "Angular library oluşturma ve Npm üzerinde yayınlama",
+    "description": "Angular ile custom library (kütüphane) nasıl oluşturulur ve oluşturulan library npm üzerinde nasıl yayınlanır adım adım anlatımı.",
+    "tags": ["Angular", "npm", "Library", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_npm_library_cover.webp"
+  },
+  {
+    "slug": "angular-custom-interceptor",
+    "date": "2021-08-30",
+    "title": "Angular custom interceptor",
+    "description": "Angular'da interceptor nasıl tanımlanır, trafik yönetimi, loglama ve isteklere custom header ekleme işlemleri nasıl yapılır.",
+    "tags": ["Angular", "TypeScript", "Interceptor", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_custom_interceptor_cover.webp"
+  },
+  {
+    "slug": "angular-custom-pipe",
+    "date": "2021-08-06",
+    "title": "Angular custom pipe",
+    "description": "Angular'da custom bir pipe nasıl tanımlanır ve kullanılır, moment.js paketi ile tarih formatlama örneği.",
+    "tags": ["Angular", "TypeScript", "Pipe", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_custom_pipe_cover.webp"
+  },
+  {
+    "slug": "yazilimcilar-icin-faydali-web-siteleri",
+    "date": "2021-07-25",
+    "title": "Yazılımcılar için faydalı web siteleri",
+    "description": "Yazılımcılar için faydalı web siteleri",
+    "tags": ["Web", "Resources", "Developer"],
+    "lang": "tr",
+    "image": "/blog/useful_websites_cover.webp"
+  },
+  {
+    "slug": "angular-ile-storage-servis-hazirlama-ve-kullanma",
+    "date": "2021-06-20",
+    "title": "Angular ile Storage Servis hazırlama ve kullanma",
+    "description": "Angular ile Storage Servis hazırlama ve kullanma",
+    "tags": ["Angular", "Storage", "Service", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_storage_service_cover.webp"
+  },
+  {
+    "slug": "iterm2-zsh-ve-zsh-autosuggestions-kullanimi",
+    "date": "2021-05-15",
+    "title": "iTerm2, zsh ve zsh-autosuggestions kullanımı",
+    "description": "iTerm2, zsh ve zsh-autosuggestions kullanımı",
+    "tags": ["Terminal", "macOS", "zsh", "iTerm2"],
+    "lang": "tr",
+    "image": "/blog/iterm2_zsh_cover.webp"
+  },
+  {
+    "slug": "github-action-ile-readme-guncelleme",
+    "date": "2021-04-10",
+    "title": "GitHub Action ile README güncelleme",
+    "description": "GitHub Action ile README güncelleme",
+    "tags": ["GitHub Action", "README", "Tools"],
+    "lang": "tr",
+    "image": "/blog/github_action_readme_cover.webp"
+  },
+  {
+    "slug": "angular-i18n-icin-ngx-translate-kullanimi",
+    "date": "2021-03-08",
+    "title": "Angular i18n için ngx-translate kullanımı",
+    "description": "Angular projelerinde çoklu dil desteği (i18n) sağlamak için ngx-translate paketinin kurulumu ve kullanımı.",
+    "tags": ["Angular", "i18n", "ngx-translate", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_i18n_cover.webp"
+  },
+  {
+    "slug": "angular-custom-directive",
+    "date": "2021-02-20",
+    "title": "Angular custom directive",
+    "description": "Angular'da custom directive nasıl tanımlanır? Kullanıcı yetki kontrolünü yapan bir directive örneği.",
+    "tags": ["Angular", "Directive", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_custom_directive_cover.webp"
+  },
+  {
+    "slug": "angular-custom-http-service-hazirlama",
+    "date": "2021-01-31",
+    "title": "Angular custom http service hazırlama",
+    "description": "Angular ortamında custom bir http servisi hazırlama, CRUD operasyonlarını tek bir noktadan yönetme ve temiz kod yazma pratikleri.",
+    "tags": ["Angular", "HTTP", "Service", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_custom_http_service_cover.webp"
+  },
+  {
+    "slug": "npm-paketi-olusturma",
+    "date": "2021-01-22",
+    "title": "Npm paketi oluşturma",
+    "description": "Kendi NPM paketinizi nasıl hazırlayıp yayınlayacağınızı anlatan adım adım TypeScript paketi oluşturma rehberi.",
+    "tags": ["NPM", "TypeScript", "JavaScript", "Package"],
+    "lang": "tr",
+    "image": "/blog/npm_paketi_olusturma_cover.webp"
+  },
+  {
+    "slug": "angular-extension-method-icinde-servis-kullanimi",
+    "date": "2021-01-18",
+    "title": "Angular extension method içinde servis kullanımı",
+    "description": "Angular extension methodlarında servisleri (service locator pattern ile) nasıl kullanabileceğinizi öğrenin.",
+    "tags": ["Angular", "TypeScript", "Service", "Extension Method", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_extension_method_service_cover.webp"
+  },
+  {
+    "slug": "angular-lazy-loading-modules",
+    "date": "2021-01-15",
+    "title": "Angular lazy loading modules",
+    "description": "Angular içinde lazy loading modules özelliği nasıl kullanılır ve uygulama performansı nasıl artırılır.",
+    "tags": ["Angular", "Lazy Loading", "Frontend", "Modules"],
+    "lang": "tr",
+    "image": "/blog/angular_lazy_loading_cover.webp"
+  },
+  {
+    "slug": "angular-extension-method-kullanimi",
+    "date": "2021-01-02",
+    "title": "Angular Extension Method Kullanımı",
+    "description": "Angular projelerinde string, number, date ve boolean tipleri için extension method nasıl oluşturulur ve kullanılır, pratik örneklerle anlatıyorum.",
+    "tags": ["Angular", "TypeScript", "Extension Method", "Frontend"],
+    "lang": "tr",
+    "image": "/blog/angular_extension_method_cover.webp"
+  }
+]

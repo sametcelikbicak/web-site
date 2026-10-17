@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { getBlogPosts } from '@/services/blog';
+import { getPostSummaries } from '@/services/post-index';
 import './RecentPosts.css';
 
 const MAX_POSTS = 4;
@@ -11,7 +11,7 @@ const RecentPosts = () => {
   // Language-scoped on purpose. Linking an English visitor to a Turkish-only
   // slug gets them bounced: BlogPostPage resolves with the current language and
   // redirects to /blog when it misses.
-  const posts = getBlogPosts(i18n.language).slice(0, MAX_POSTS);
+  const posts = getPostSummaries(i18n.language).slice(0, MAX_POSTS);
 
   return (
     <section className="recent-posts-section section-gap">

@@ -1,64 +1,62 @@
 import { useTranslation } from 'react-i18next';
-import {
-  SiAngular,
-  SiBitbucket,
-  SiCss,
-  SiDocker,
-  SiDotnet,
-  SiGit,
-  SiGithub,
-  SiGitlab,
-  SiHtml5,
-  SiJavascript,
-  SiNestjs,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiNpm,
-  SiPnpm,
-  SiReact,
-  SiSharp,
-  SiTailwindcss,
-  SiTurborepo,
-  SiTypescript,
-  SiYarn,
-} from 'react-icons/si';
 import './SkillsPage.css';
+import AngularIcon from '@/components/Icons/AngularIcon';
+import BitbucketIcon from '@/components/Icons/BitbucketIcon';
+import CssIcon from '@/components/Icons/CssIcon';
+import DockerIcon from '@/components/Icons/DockerIcon';
+import DotnetIcon from '@/components/Icons/DotnetIcon';
+import GithubIcon from '@/components/Icons/GithubIcon';
+import GitIcon from '@/components/Icons/GitIcon';
+import GitlabIcon from '@/components/Icons/GitlabIcon';
+import Html5Icon from '@/components/Icons/Html5Icon';
+import JavascriptIcon from '@/components/Icons/JavascriptIcon';
+import NestjsIcon from '@/components/Icons/NestjsIcon';
+import NextdotjsIcon from '@/components/Icons/NextdotjsIcon';
+import NodedotjsIcon from '@/components/Icons/NodedotjsIcon';
+import NpmIcon from '@/components/Icons/NpmIcon';
+import PnpmIcon from '@/components/Icons/PnpmIcon';
+import ReactIcon from '@/components/Icons/ReactIcon';
+import SharpIcon from '@/components/Icons/SharpIcon';
+import TailwindcssIcon from '@/components/Icons/TailwindcssIcon';
+import TurborepoIcon from '@/components/Icons/TurborepoIcon';
+import TypescriptIcon from '@/components/Icons/TypescriptIcon';
+import YarnIcon from '@/components/Icons/YarnIcon';
 
 const SKILL_CATEGORIES = [
   {
     category: 'Frontend & UI',
     skills: [
-      { name: 'Angular', icon: SiAngular },
-      { name: 'TypeScript', icon: SiTypescript },
-      { name: 'React', icon: SiReact },
-      { name: 'Next.js', icon: SiNextdotjs },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'Tailwind', icon: SiTailwindcss },
-      { name: 'HTML5', icon: SiHtml5 },
-      { name: 'CSS3', icon: SiCss },
+      { name: 'Angular', icon: AngularIcon },
+      { name: 'TypeScript', icon: TypescriptIcon },
+      { name: 'React', icon: ReactIcon },
+      { name: 'Next.js', icon: NextdotjsIcon },
+      { name: 'JavaScript', icon: JavascriptIcon },
+      { name: 'Tailwind', icon: TailwindcssIcon },
+      { name: 'HTML5', icon: Html5Icon },
+      { name: 'CSS3', icon: CssIcon },
     ],
   },
   {
     category: 'Backend & APIs',
     skills: [
-      { name: 'NodeJS', icon: SiNodedotjs },
-      { name: 'NestJS', icon: SiNestjs },
-      { name: 'C#', icon: SiSharp },
-      { name: '.Net', icon: SiDotnet },
+      { name: 'NodeJS', icon: NodedotjsIcon },
+      { name: 'NestJS', icon: NestjsIcon },
+      { name: 'C#', icon: SharpIcon },
+      { name: '.Net', icon: DotnetIcon },
     ],
   },
   {
     category: 'Tools & DevOps',
     skills: [
-      { name: 'Git', icon: SiGit },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Turborepo', icon: SiTurborepo },
-      { name: 'GitHub', icon: SiGithub },
-      { name: 'GitLab', icon: SiGitlab },
-      { name: 'Bitbucket', icon: SiBitbucket },
-      { name: 'NPM', icon: SiNpm },
-      { name: 'Yarn', icon: SiYarn },
-      { name: 'PNPM', icon: SiPnpm },
+      { name: 'Git', icon: GitIcon },
+      { name: 'Docker', icon: DockerIcon },
+      { name: 'Turborepo', icon: TurborepoIcon },
+      { name: 'GitHub', icon: GithubIcon },
+      { name: 'GitLab', icon: GitlabIcon },
+      { name: 'Bitbucket', icon: BitbucketIcon },
+      { name: 'NPM', icon: NpmIcon },
+      { name: 'Yarn', icon: YarnIcon },
+      { name: 'PNPM', icon: PnpmIcon },
     ],
   },
 ];

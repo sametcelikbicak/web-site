@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HiOutlineViewGrid, HiOutlineViewList } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { getPostSummaries } from '@/services/post-index';
 import './BlogPage.css';
+import ViewGridIcon from '@/components/Icons/ViewGridIcon';
+import ViewListIcon from '@/components/Icons/ViewListIcon';
 
 const BlogPage = () => {
   const { t, i18n } = useTranslation();
@@ -44,7 +45,7 @@ const BlogPage = () => {
             onClick={() => setViewType('list')}
             aria-label="List view"
           >
-            <HiOutlineViewList />
+            <ViewListIcon />
           </button>
           <button
             type="button"
@@ -52,7 +53,7 @@ const BlogPage = () => {
             onClick={() => setViewType('grid')}
             aria-label="Grid view"
           >
-            <HiOutlineViewGrid />
+            <ViewGridIcon />
           </button>
         </div>
       </div>

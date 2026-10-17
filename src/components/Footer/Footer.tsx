@@ -1,12 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import {
-  FaGithub,
-  FaLinkedin,
-  FaStackOverflow,
-  FaXTwitter,
-  FaYoutube,
-} from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import GithubIcon from '@/components/Icons/GithubIcon';
+import LinkedinIcon from '@/components/Icons/LinkedinIcon';
+import StackOverflowIcon from '@/components/Icons/StackOverflowIcon';
+import XIcon from '@/components/Icons/XIcon';
+import YoutubeIcon from '@/components/Icons/YoutubeIcon';
 import './Footer.css';
 
 // Mirrors the header's NAV_ITEMS (Header.tsx:18-29) with the home route added,
@@ -23,22 +21,26 @@ const NAV_ITEMS = [
 ];
 
 const SOCIAL_LINKS = [
-  { name: 'GitHub', url: 'https://github.com/sametcelikbicak', icon: FaGithub },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/sametcelikbicak',
+    icon: GithubIcon,
+  },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/sametcelikbicak/',
-    icon: FaLinkedin,
+    icon: LinkedinIcon,
   },
-  { name: 'X', url: 'https://x.com/sametcelikbicak', icon: FaXTwitter },
+  { name: 'X', url: 'https://x.com/sametcelikbicak', icon: XIcon },
   {
     name: 'YouTube',
     url: 'https://www.youtube.com/@sametcelikbicak',
-    icon: FaYoutube,
+    icon: YoutubeIcon,
   },
   {
     name: 'Stack Overflow',
     url: 'https://stackoverflow.com/users/10509056/samet-%c3%87el%c4%b0kbi%c3%87ak',
-    icon: FaStackOverflow,
+    icon: StackOverflowIcon,
   },
 ];
 
@@ -70,7 +72,7 @@ const Footer = () => {
               className="footer-social-link"
               onClick={() => {}}
             >
-              <Icon title={name} size={20} />
+              <Icon width={20} height={20} />
             </a>
           ))}
         </div>

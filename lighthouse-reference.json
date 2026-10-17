@@ -1,41 +1,55 @@
 {
-  "note": "Reference after PR #110 (robots.txt) + PR #111 (hero skeleton swap). 3-run median, production URL. Re-scan after any perf change and replace.",
+  "note": "Reference after PR #113. 3-run median. TBT is NOT trustworthy on this machine - see tbt_caveat.",
   "runs": [
     {
-      "run": 0,
+      "run": 1,
+      "performance": 83,
+      "accessibility": 96,
+      "seo": 100,
+      "bestPractices": 100,
+      "fcp": 2.7335510000000003,
+      "lcp": 2.7335510000000003,
+      "speedIndex": 2.871717073874617,
+      "tbt": 366.5364999999995,
+      "cls": 0.005671047671875395
+    },
+    {
+      "run": 2,
+      "performance": 64,
+      "accessibility": 96,
+      "seo": 100,
+      "bestPractices": 100,
+      "fcp": 2.53134,
+      "lcp": 2.8646640000000003,
+      "speedIndex": 2.7523914459874628,
+      "tbt": 1833.344000000001,
+      "cls": 0.005671047671875395
+    },
+    {
+      "run": 3,
       "performance": 68,
       "accessibility": 96,
       "seo": 100,
       "bestPractices": 100,
-      "fcp": 3.6117100000000004,
-      "lcp": 3.907320000000001,
-      "tbt": 474.19500000000016,
-      "cls": 0.005671047671875395
-    },
-    {
-      "run": 1,
-      "performance": 75,
-      "accessibility": 96,
-      "seo": 100,
-      "bestPractices": 100,
-      "fcp": 2.883796,
-      "lcp": 3.049214,
-      "tbt": 562.4305000000004,
-      "cls": 0
-    },
-    {
-      "run": 2,
-      "performance": 79,
-      "accessibility": 96,
-      "seo": 100,
-      "bestPractices": 100,
-      "fcp": 2.728439,
-      "lcp": 2.9874389999999997,
-      "tbt": 448,
+      "fcp": 3.0026279999999996,
+      "lcp": 3.002628,
+      "speedIndex": 3.0026279999999996,
+      "tbt": 890,
       "cls": 0.005671047671875395
     }
   ],
   "median": {
+    "performance": 68,
+    "accessibility": 96,
+    "seo": 100,
+    "bestPractices": 100,
+    "fcp": 2.7335510000000003,
+    "lcp": 2.8646640000000003,
+    "speedIndex": 2.871717073874617,
+    "tbt": 890,
+    "cls": 0.005671047671875395
+  },
+  "previous_median": {
     "performance": 75,
     "accessibility": 96,
     "seo": 100,
@@ -45,21 +59,12 @@
     "tbt": 474.19500000000016,
     "cls": 0.005671047671875395
   },
-  "previous_median": {
-    "performance": 55.00000000000001,
-    "accessibility": 96,
-    "seo": 92,
-    "bestPractices": 100,
-    "fcp": 2.623905999999999,
-    "lcp": 2.8243519999999998,
-    "tbt": 1057.7999999999995,
-    "cls": 0.2908145786683493
-  },
+  "tbt_caveat": "TBT spread 367/1833/890ms = 400% on identical code. Machine load average was 3.6 on 4 cores during the run, which shows up as ~1.1s unattributed long tasks. FCP/LCP/SI spread only 9-19% and are the metrics to trust here. Measure TBT on a quiet runner, not this box.",
   "targets": {
-    "cls": "<0.1 (good <0.1)",
-    "tbt": "<200ms",
+    "cls": "<0.1",
     "fcp": "<1.8s",
-    "lcp": "<2.5s"
+    "lcp": "<2.5s",
+    "tbt": "<200ms (needs a quiet runner)"
   },
-  "open_gap": "TBT 474ms and LCP 3.05s are still over target. Main-thread is React + i18n; blog chunk is 62KB."
+  "open_gap": "LCP 2.87s vs 2.5s target. Critical path is still react-vendor 206KB + i18n 55KB + router 38KB + icons 33KB."
 }

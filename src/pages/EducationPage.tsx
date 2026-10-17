@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { FaBuilding } from 'react-icons/fa';
 import './EducationPage.css';
+import BuildingIcon from '@/components/Icons/BuildingIcon';
 
 const EDUCATIONS = [
   {
@@ -51,7 +51,7 @@ const EducationPage = () => {
                 <div className="education-entry">
                   <div className="entry-header">
                     <span className="entry-icon">
-                      <FaBuilding />
+                      <BuildingIcon />
                     </span>
                     <span className="entry-date">
                       {edu.startDate} &mdash; {edu.endDate}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { FaCode } from 'react-icons/fa';
 import './ExperiencePage.css';
+import CodeIcon from '@/components/Icons/CodeIcon';
 
 const EXPERIENCE_START_YEAR = 2007;
 
@@ -97,7 +97,7 @@ const ExperiencePage = () => {
                       className={`card-header ${!isEven ? 'header-right' : ''}`}
                     >
                       <span className="icon-primary">
-                        <FaCode />
+                        <CodeIcon />
                       </span>
                       <span className="card-category">Tech Stack</span>
                     </div>

@@ -304,8 +304,10 @@ button {
   outline-offset: 3px;
 }
 
-/* ─── Hero layout — inlined so the HomePageSkeleton renders ──
-   the correct two-column layout before the lazy Hero.css loads ── */
+/* ─── Hero layout ──────────────────────────────────────────────
+   Was inlined here so HomePageSkeleton could mirror the hero before
+   HomePage's chunk loaded. HomePage is a static import now, so the hero
+   ships in the first paint and this copy only had to stay in sync with it. */
 .hero-section {
   display: flex;
   min-height: 60vh;

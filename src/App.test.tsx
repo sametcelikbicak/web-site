@@ -73,9 +73,13 @@ describe('App', () => {
     expect(screen.getByTestId('back-to-top')).toBeInTheDocument();
   });
 
-  it('renders home page by default', async () => {
+  // Synchronous on purpose. HomePage is a static import, so the hero is in the
+  // first paint — a React.lazy HomePage would render a Suspense fallback first
+  // and swap in the real content, which is what produced CLS 0.29. `findBy*`
+  // would pass either way and guard nothing.
+  it('renders home page in the first commit, not after a Suspense swap', () => {
     renderApp('/');
-    expect(await screen.findByTestId('home-page')).toBeInTheDocument();
+    expect(screen.getByTestId('home-page')).toBeInTheDocument();
   });
 
   it('renders about page for /about', async () => {

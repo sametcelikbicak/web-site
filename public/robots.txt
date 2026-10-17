@@ -9,7 +9,9 @@ Allow: /
 # Not allowed for AI model training, allowed for search and AI input | Yapay zeka model egitimi icin kapali, arama ve yapay zeka girdisi icin acik
 Content-Signal: ai-train=no, search=yes, ai-input=no
 # ARD capability manifest | ARD yetenek bildirimi
-Agentmap: https://sametcelikbicak.com/.well-known/ai-catalog.json
+# Published via <link rel="ai-catalog"> and the Link header, not here:
+# "Agentmap" is not a robots.txt directive and Google rejects it as unknown.
+# https://sametcelikbicak.com/.well-known/ai-catalog.json
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 Disallow: /wp-includes/

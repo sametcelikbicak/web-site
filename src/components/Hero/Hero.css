@@ -48,9 +48,13 @@
   display: flex;
   align-items: flex-end;
   width: min(280px, 100%);
-  min-height: 420px;
+  /* aspect-ratio reserves the image's space before it loads. min-height alone
+     left the wrapper at 420px while the image rendered at 480-540px, which is
+     what produced the 0.29 CLS. */
+  aspect-ratio: 2 / 3;
   background: var(--color-surface-high);
   border-radius: var(--radius-2xl);
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {

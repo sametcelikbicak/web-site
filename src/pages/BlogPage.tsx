@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HiOutlineViewGrid, HiOutlineViewList } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
-import { getBlogPosts } from '@/services/blog';
+import { getPostSummaries } from '@/services/post-index';
 import './BlogPage.css';
 
 const BlogPage = () => {
@@ -11,7 +11,7 @@ const BlogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
-  const allPosts = getBlogPosts(i18n.language);
+  const allPosts = getPostSummaries(i18n.language);
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
 
   const indexOfLastPost = currentPage * postsPerPage;

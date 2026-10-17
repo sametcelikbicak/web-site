@@ -2,13 +2,14 @@ import '@testing-library/jest-dom';
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import RecentPosts from '@/components/RecentPosts/RecentPosts';
-import type { BlogPost } from '@/services/blog';
+import type { PostSummary } from '@/services/post-index';
 
-const mockGetBlogPosts = jest.fn();
+const mockGetPostSummaries = jest.fn();
 const language = 'tr';
 
-jest.mock('@/services/blog', () => ({
-  getBlogPosts: (...args: unknown[]) => mockGetBlogPosts(...args),
+// RecentPosts reads the generated metadata index, not services/blog.
+jest.mock('@/services/post-index', () => ({
+  getPostSummaries: (...args: unknown[]) => mockGetPostSummaries(...args),
 }));
 
 jest.mock('react-i18next', () => ({
@@ -18,12 +19,12 @@ jest.mock('react-i18next', () => ({
   }),
 }));
 
-const post = (slug: string, date: string): BlogPost => ({
+const post = (slug: string, date: string): PostSummary => ({
   slug,
   title: `Title ${slug}`,
   date,
   description: `Description ${slug}`,
-  content: '',
+  image: null,
   tags: ['TypeScript', 'Angular', 'React'],
   lang: language,
 });
@@ -36,8 +37,8 @@ const renderSection = () =>
   );
 
 beforeEach(() => {
-  mockGetBlogPosts.mockReset();
-  mockGetBlogPosts.mockReturnValue([
+  mockGetPostSummaries.mockReset();
+  mockGetPostSummaries.mockReturnValue([
     post('a', '2024-01-01'),
     post('b', '2024-02-01'),
     post('c', '2024-03-01'),
@@ -61,7 +62,7 @@ describe('RecentPosts', () => {
   });
 
   it('always renders the heading, so the outline does not change with language', () => {
-    mockGetBlogPosts.mockReturnValue([]);
+    mockGetPostSummaries.mockReturnValue([]);
     renderSection();
     expect(
       screen.getByRole('heading', { name: 'home.recentPosts.title' })
@@ -70,8 +71,8 @@ describe('RecentPosts', () => {
 
   it('notes the shortfall instead of padding with another language', () => {
     // English currently has one post; the section must say so rather than
-    // linking a Turkish-only slug that BlogPostPage would redirect away.
-    mockGetBlogPosts.mockReturnValue([post('solo', '2026-06-05')]);
+    // linking a Turkish-only slug that PostSummaryPage would redirect away.
+    mockGetPostSummaries.mockReturnValue([post('solo', '2026-06-05')]);
     renderSection();
     expect(screen.getByText('home.recentPosts.trOnlyNote')).toBeInTheDocument();
   });

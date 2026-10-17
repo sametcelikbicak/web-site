@@ -32,3 +32,9 @@ dist-ssr
 
 # Coverage
 coverage
+# Lighthouse diagnostic output. The tracked baseline is lighthouse-reference.json
+# (3-run median) — a single raw run is 600 KB, not comparable run to run, and
+# would be re-tracked every time performance gets investigated.
+*-debug.json
+lh-post-*.json
+post-[0-9].json

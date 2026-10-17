@@ -5,8 +5,11 @@ import BlogPage from '@/pages/BlogPage';
 
 const mockGetBlogPosts = jest.fn();
 
-jest.mock('@/services/blog', () => ({
-  getBlogPosts: (...args: unknown[]) => mockGetBlogPosts(...args),
+// BlogPage reads the generated metadata index, not services/blog — importing
+// the eager markdown glob from a listing page is the 247 KB entry chunk this
+// split removed.
+jest.mock('@/services/post-index', () => ({
+  getPostSummaries: (...args: unknown[]) => mockGetBlogPosts(...args),
 }));
 
 jest.mock('react-router-dom', () => {

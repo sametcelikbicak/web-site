@@ -102,6 +102,16 @@ const BlogPage = () => {
         ))}
       </div>
 
+      {/* Show the note whenever posts in the active language are fewer than one
+          page — Turkish visitors always see one English post, so the note would
+          only confuse them. */}
+      {allPosts.length < postsPerPage && (
+        <p className="blog-language-note">
+          {i18n.language === 'en'
+            ? t('home.recentPosts.enShortNote')
+            : t('home.recentPosts.trOnlyNote')}
+        </p>
+      )}
       {totalPages > 1 && (
         <div className="pagination">
           <button

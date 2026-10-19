@@ -29,7 +29,12 @@
   padding: var(--space-sm) var(--space-xl);
   border-radius: var(--radius);
   background: var(--color-primary);
-  color: #fff;
+  /* Was #fff: 3.68:1 on the dark theme's primary (#3b82f6), below AA. --color-bg
+     measures 5.05:1 in dark and 5.17:1 in light, so it clears AA in both —
+     it is #131313 on dark and #f8f9fa on light, which is exactly the contrast
+     flip primary needs. Same value the ErrorBoundary fallback uses
+     (PR #106), applied to the one place it had been missed. */
+  color: var(--color-bg);
   font-weight: 500;
   transition: opacity var(--transition-fast);
 }

@@ -115,13 +115,17 @@
   color: var(--color-primary);
 }
 
+/* --color-bg rather than #fff: on the dark theme primary is #3b82f6 and white
+   only reaches 3.68:1, below AA. --color-bg is #131313 on dark and #f8f9fa on
+   light — 5.05:1 and 5.17:1, the same fix as .not-found-link and
+   .error-fallback-retry. All primary-filled surfaces now read the same. */
 .hero-cta--primary {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-bg);
 }
 
 .hero-cta--primary:hover {
-  color: #fff;
+  color: var(--color-bg);
   opacity: 0.9;
 }

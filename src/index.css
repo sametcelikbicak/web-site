@@ -273,11 +273,12 @@ button {
 
 .section-label {
   font-family: var(--font-label);
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: var(--text-h2);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-text);
+  line-height: 1.2;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────── */

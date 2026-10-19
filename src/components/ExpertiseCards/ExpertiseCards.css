@@ -60,7 +60,7 @@
 
 .expertise-card:hover .expertise-icon-wrapper {
   background: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-bg);
   border-color: var(--color-primary);
 }
 

@@ -223,6 +223,13 @@
   margin-top: auto;
 }
 
+.blog-page .blog-language-note {
+  margin-top: var(--space-2xl);
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+  max-width: 46rem;
+}
+
 .blog-page .pagination {
   display: flex;
   justify-content: center;

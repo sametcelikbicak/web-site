@@ -45,5 +45,10 @@
     "typescript": "^5.9.3",
     "vite": "^8.0.16",
     "wrangler": "^4.131.0"
+  },
+  "overrides": {
+    "@istanbuljs/load-nyc-config": {
+      "js-yaml": "^4.1.0"
+    }
   }
 }

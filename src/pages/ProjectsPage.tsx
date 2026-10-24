@@ -3,51 +3,73 @@ import './ProjectsPage.css';
 
 const PROJECTS = [
   {
+    key: 'opencode-team',
+    image: '/projects/opencode-team.webp',
+    width: 1200,
+    height: 600,
+    link: 'https://github.com/sametcelikbicak/opencode-team',
+  },
+  {
+    key: 'vidfix',
+    image: '/projects/vidfix.webp',
+    width: 640,
+    height: 640,
+    link: 'https://github.com/sametcelikbicak/vidfix',
+  },
+  {
     key: 'rolecraft',
-    image:
-      'https://github.com/sametcelikbicak/rolecraft/blob/main/assets/rolecraft_logo.png?raw=true',
-    link: 'https://www.npmjs.com/package/rolecraft',
+    image: '/projects/rolecraft.webp',
+    width: 640,
+    height: 640,
+    link: 'https://rolecraft-sh.github.io/rolecraft/',
   },
   {
     key: 'task-decomposer',
-    image:
-      'https://github.com/sametcelikbicak/task-decomposer/blob/main/assets/task-decomposer.png?raw=true',
+    image: '/projects/task-decomposer.webp',
+    width: 640,
+    height: 640,
     link: 'https://agentskill.sh/@sametcelikbicak/task-decomposer',
   },
   {
     key: 'flaky-test-detector',
-    image:
-      'https://github.com/sametcelikbicak/flaky-test-detector/blob/main/assets/flaky-test-detector.png?raw=true',
+    image: '/projects/flaky-test-detector.webp',
+    width: 640,
+    height: 640,
     link: 'https://agentskill.sh/@sametcelikbicak/flaky-test-detector',
   },
   {
     key: 'coverage-guard',
-    image:
-      'https://github.com/sametcelikbicak/coverage-guard/blob/main/assets/coverage-guard.png?raw=true',
+    image: '/projects/coverage-guard.webp',
+    width: 640,
+    height: 640,
     link: 'https://agentskill.sh/@sametcelikbicak/coverage-guard',
   },
   {
     key: 'pomodoro',
-    image:
-      'https://raw.githubusercontent.com/sametcelikbicak/pomodoro/5c03dca9b63b406c579978468adae42a07fc2dcf/public/pomodoro.svg',
+    image: '/projects/pomodoro.svg',
+    width: 128,
+    height: 128,
     link: 'https://sametcelikbicak.github.io/pomodoro/',
   },
   {
     key: 'tsci',
-    image:
-      'https://raw.githubusercontent.com/sametcelikbicak/tsci/refs/heads/main/assets/tsci.jpeg',
+    image: '/projects/tsci.webp',
+    width: 640,
+    height: 640,
     link: 'https://www.npmjs.com/package/tsci',
   },
   {
     key: 'storage-function',
-    image:
-      'https://raw.githubusercontent.com/sametcelikbicak/storage-function/0b679da3eac7a09d471b4eaa3b741a978cba74a8/assets/storage-function.svg',
+    image: '/projects/storage-function.svg',
+    width: 250,
+    height: 250,
     link: 'https://www.npmjs.com/package/storage-function',
   },
   {
     key: 'enum2array',
-    image:
-      'https://raw.githubusercontent.com/sametcelikbicak/enum2array/81a91637434dc2d11eac821c589dea7a8a79d1e8/assets/enum2array.svg',
+    image: '/projects/enum2array.svg',
+    width: 250,
+    height: 250,
     link: 'https://www.npmjs.com/package/enum2array',
   },
 ];
@@ -63,7 +85,7 @@ const ProjectsPage = () => {
       </div>
 
       <div className="projects-grid">
-        {PROJECTS.map((project) => (
+        {PROJECTS.map((project, index) => (
           <a
             key={project.key}
             href={project.link}
@@ -76,7 +98,11 @@ const ProjectsPage = () => {
                 src={project.image}
                 alt={t(`projects.${project.key}.title`)}
                 className="project-image"
-                loading="lazy"
+                width={project.width}
+                height={project.height}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : undefined}
+                decoding="async"
               />
             </div>
             <div className="project-content">

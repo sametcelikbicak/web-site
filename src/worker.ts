@@ -64,11 +64,13 @@ Until 2024, Samet worked as a Fullstack Developer. Since 2024, he has continued 
 
 ## Projects
 
+- OpenCode Team: https://github.com/sametcelikbicak/opencode-team
+- VidFix: https://github.com/sametcelikbicak/vidfix
 - Enum2Array: https://www.npmjs.com/package/enum2array
 - TSCI CLI: https://www.npmjs.com/package/tsci
 - Storage Function: https://www.npmjs.com/package/storage-function
 - Pomodoro: https://sametcelikbicak.github.io/pomodoro/
-- RoleCraft: https://www.npmjs.com/package/rolecraft
+- RoleCraft: https://rolecraft-sh.github.io/rolecraft/
 - Task Decomposer: https://agentskill.sh/@sametcelikbicak/task-decomposer
 - Flaky Test Detector: https://agentskill.sh/@sametcelikbicak/flaky-test-detector
 - Coverage Guard: https://agentskill.sh/@sametcelikbicak/coverage-guard

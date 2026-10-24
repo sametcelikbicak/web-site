@@ -42,6 +42,18 @@ Samet has professional experience as a Software Developer, Senior Software Devel
 
 ## Projects
 
+### OpenCode Team
+
+14 agent roles, 12 pipeline stages and 12 skills that take a product from research to launch, with an approval gate at every stage.
+
+URL: https://github.com/sametcelikbicak/opencode-team
+
+### VidFix
+
+ffmpeg-based CLI that diagnoses frozen or black playback and converts the video to H.264 8-bit 4:2:0 + AAC. The source file is never modified.
+
+URL: https://github.com/sametcelikbicak/vidfix
+
 ### Enum2Array
 
 A function to help convert enums to arrays.
@@ -68,9 +80,9 @@ URL: https://sametcelikbicak.github.io/pomodoro/
 
 ### RoleCraft
 
-Zero-dependency CLI to install AI agent skills as roles & behaviors from any source. No marketplace, no registry, no signup — just point it at a local folder or a GitHub repo and it works.
+Security-first skill manager for AI agents: scores skills before install, manages skills and MCP servers across 90 agents. Zero dependencies.
 
-URL: https://www.npmjs.com/package/rolecraft
+URL: https://rolecraft-sh.github.io/rolecraft/
 
 ### Task Decomposer
 

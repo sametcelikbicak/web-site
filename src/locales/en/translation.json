@@ -156,8 +156,16 @@
       "description": "An AI agent skill that helps developers decompose complex requests into structured, AI-friendly task sequences. Optimizes context window usage, manages multi-session workflows, and produces better results from fewer, more focused prompts."
     },
     "rolecraft": {
-      "title": "RoleCraft — Simple Skill Installer for AI",
-      "description": "Zero-dependency CLI to install AI agent skills as roles & behaviors from any source. No marketplace, no registry, no signup — just point it at a local folder or a GitHub repo and it works."
+      "title": "RoleCraft — The Security-First Skill Manager for AI Agents",
+      "description": "Zero-dependency CLI that security-scores every AI agent skill before install. Manages skills and MCP servers across 90 agents — no marketplace or signup required."
+    },
+    "opencode-team": {
+      "title": "OpenCode Team — AI agent team from idea to launch",
+      "description": "14 agent roles, 12 pipeline stages and 12 skills on OpenCode that take a product from research to launch — with an approval gate at every stage. No framework, no extra dependencies."
+    },
+    "vidfix": {
+      "title": "VidFix — Fix unplayable videos in one command",
+      "description": "ffmpeg-based CLI that diagnoses frozen or black playback and converts the video to H.264 8-bit 4:2:0 + AAC so it plays everywhere. The source file is never modified."
     }
   },
   "blog": {

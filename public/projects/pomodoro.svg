@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Pomodoro Logo</title>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b" />
+      <stop offset="100%" stop-color="#ff3b3b" />
+    </linearGradient>
+  </defs>
+  <!-- outer tomato circle -->
+  <circle cx="64" cy="64" r="48" fill="url(#g)" stroke="#b22222" stroke-width="2" />
+  <!-- stem -->
+  <g transform="translate(64,24)">
+    <path d="M-10 -6 C-18 -18, -2 -28, 8 -18" fill="none" stroke="#2f6f2f" stroke-width="4" stroke-linecap="round" />
+    <path d="M-2 -10 C4 -18, 14 -14, 10 -6" fill="none" stroke="#2f6f2f" stroke-width="4" stroke-linecap="round" />
+  </g>
+  <!-- clock hands -->
+  <g transform="translate(64,64)">
+    <circle r="28" fill="rgba(255,255,255,0.06)" />
+    <line x1="0" y1="0" x2="0" y2="-18" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+    <line x1="0" y1="0" x2="14" y2="4" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+    <circle r="3" fill="#fff" />
+  </g>
+</svg>

@@ -156,8 +156,16 @@
       "description": "Geliştiricilerin karmaşık istekleri yapılandırılmış, yapay zeka dostu görev dizilerine ayırmasına yardımcı olan bir yapay zeka ajanı becerisi. Bağlam penceresi kullanımını optimize eder, çok oturumlu iş akışlarını yönetir ve daha az sayıda, daha odaklı komutla daha iyi sonuçlar üretir."
     },
     "rolecraft": {
-      "title": "RoleCraft — Simple Skill Installer for AI",
-      "description": "Herhangi bir kaynaktan yapay zeka ajan becerilerini rol ve davranış olarak yüklemek için sıfır bağımlılığa sahip komut satırı aracı. Pazar yeri yok, kayıt defteri yok, üyelik yok — sadece yerel bir klasöre veya GitHub deposuna işaret edin ve çalışır."
+      "title": "RoleCraft — Yapay zeka ajanları için güvenlik odaklı beceri yöneticisi",
+      "description": "Her yapay zeka ajan becerisini kurmadan önce güvenlik puanından geçiren sıfır bağımlılıklı CLI. 90 ajan için beceri ve MCP sunucularını yönetir — pazar yeri veya üyelik gerekmez."
+    },
+    "opencode-team": {
+      "title": "OpenCode Team — Fikirden yayına yapay zeka ajan ekibi",
+      "description": "OpenCode üzerinde bir ürünü araştırmadan yayına kadar götüren 14 ajan rolü, 12 pipeline aşaması ve 12 beceri — her aşamada onay kapısı. Ek framework veya bağımlılık yok."
+    },
+    "vidfix": {
+      "title": "VidFix — Oynatılamayan videoları tek komutla düzeltin",
+      "description": "Donmuş veya siyah görüntüyle oynatılan videoları teşhis eden, dosyayı her yerde oynayan H.264 8-bit 4:2:0 + AAC biçimine dönüştüren ffmpeg tabanlı CLI. Kaynak dosya asla değiştirilmez."
     }
   },
   "blog": {

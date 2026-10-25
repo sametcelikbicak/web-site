@@ -43,6 +43,9 @@
 /.well-known/agent-skills/profile-summary/SKILL.md
   Content-Type: text/markdown; charset=utf-8
 
+/projects/*
+  Cache-Control: public, max-age=86400
+
 /openapi.json
   Content-Type: application/vnd.oai.openapi+json; charset=utf-8
 

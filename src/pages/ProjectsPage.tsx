@@ -4,7 +4,7 @@ import './ProjectsPage.css';
 const PROJECTS = [
   {
     key: 'opencode-team',
-    image: '/projects/opencode-team.webp',
+    image: '/projects/opencode-team.svg',
     width: 1200,
     height: 600,
     link: 'https://github.com/sametcelikbicak/opencode-team',

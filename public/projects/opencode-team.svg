@@ -1,0 +1,16 @@
+<svg width="680" height="180" viewBox="0 0 680 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(16 42)">
+
+  
+    <path d="M48 5 83.5 25.5v41L48 87 12.5 66.5v-41L48 5Z" fill="#10131A" stroke="#303844" stroke-width="2"/>
+  <path d="M25 31.5 47.5 18 70 31.5M25 64.5 47.5 78 70 64.5" stroke="#B7FF5A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 32v32l24 14M71 32v32L48 78" stroke="#F6F7F2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m35 39 13-7.5L61 39v17L48 63.5 35 56V39Z" fill="#10131A" stroke="#B7FF5A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M48 31.5v32M35 39l13 8 13-8" stroke="#B7FF5A" stroke-width="4"/>
+  <circle cx="24" cy="32" r="4" fill="#B7FF5A"/>
+  <circle cx="71" cy="32" r="4" fill="#B7FF5A"/>
+  <circle cx="24" cy="64" r="4" fill="#F6F7F2"/>
+  <circle cx="71" cy="64" r="4" fill="#F6F7F2"/>
+  </g>
+  <text x="132" y="108" fill="#F6F7F2" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800" letter-spacing="-4" textLength="500" lengthAdjust="spacingAndGlyphs">OpenCode <tspan fill="#B7FF5A">Team</tspan></text>
+</svg>
